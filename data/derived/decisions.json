@@ -1,0 +1,1343 @@
+{
+ "table": [
+  {
+   "key": "even|none|ahead",
+   "moments": 8615,
+   "best": {
+    "action": "push",
+    "moments": 5271,
+    "avgGoldSwing": 919,
+    "othersGoldSwing": 178
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 5271,
+     "avgGoldSwing": 919,
+     "tookObjective": 0.058,
+     "lostAPlayer": 0.715
+    },
+    {
+     "action": "recall",
+     "moments": 28,
+     "avgGoldSwing": 655,
+     "tookObjective": 0.286,
+     "lostAPlayer": 0.571
+    },
+    {
+     "action": "split",
+     "moments": 3153,
+     "avgGoldSwing": 217,
+     "tookObjective": 0.043,
+     "lostAPlayer": 0.711
+    },
+    {
+     "action": "defend",
+     "moments": 97,
+     "avgGoldSwing": -495,
+     "tookObjective": 0.113,
+     "lostAPlayer": 0.732
+    },
+    {
+     "action": "trade",
+     "moments": 66,
+     "avgGoldSwing": -914,
+     "tookObjective": 0.015,
+     "lostAPlayer": 0.879
+    }
+   ]
+  },
+  {
+   "key": "even|none|even",
+   "moments": 8411,
+   "best": {
+    "action": "push",
+    "moments": 2961,
+    "avgGoldSwing": 569,
+    "othersGoldSwing": -150
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 2961,
+     "avgGoldSwing": 569,
+     "tookObjective": 0.03,
+     "lostAPlayer": 0.749
+    },
+    {
+     "action": "split",
+     "moments": 5169,
+     "avgGoldSwing": -116,
+     "tookObjective": 0.013,
+     "lostAPlayer": 0.754
+    },
+    {
+     "action": "recall",
+     "moments": 34,
+     "avgGoldSwing": -665,
+     "tookObjective": 0.029,
+     "lostAPlayer": 0.735
+    },
+    {
+     "action": "defend",
+     "moments": 164,
+     "avgGoldSwing": -696,
+     "tookObjective": 0.067,
+     "lostAPlayer": 0.78
+    },
+    {
+     "action": "trade",
+     "moments": 83,
+     "avgGoldSwing": -1007,
+     "tookObjective": 0.012,
+     "lostAPlayer": 0.855
+    }
+   ]
+  },
+  {
+   "key": "even|none|behind",
+   "moments": 7550,
+   "best": {
+    "action": "push",
+    "moments": 2126,
+    "avgGoldSwing": 276,
+    "othersGoldSwing": -712
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 2126,
+     "avgGoldSwing": 276,
+     "tookObjective": 0.019,
+     "lostAPlayer": 0.808
+    },
+    {
+     "action": "recall",
+     "moments": 62,
+     "avgGoldSwing": -8,
+     "tookObjective": 0.016,
+     "lostAPlayer": 0.871
+    },
+    {
+     "action": "split",
+     "moments": 4341,
+     "avgGoldSwing": -684,
+     "tookObjective": 0.008,
+     "lostAPlayer": 0.831
+    },
+    {
+     "action": "trade",
+     "moments": 219,
+     "avgGoldSwing": -732,
+     "tookObjective": 0.009,
+     "lostAPlayer": 0.817
+    },
+    {
+     "action": "defend",
+     "moments": 802,
+     "avgGoldSwing": -912,
+     "tookObjective": 0.002,
+     "lostAPlayer": 0.818
+    }
+   ]
+  },
+  {
+   "key": "up|none|ahead",
+   "moments": 2941,
+   "best": {
+    "action": "push",
+    "moments": 2159,
+    "avgGoldSwing": 1383,
+    "othersGoldSwing": 884
+   },
+   "actions": [
+    {
+     "action": "recall",
+     "moments": 7,
+     "avgGoldSwing": 1519,
+     "tookObjective": 0.571,
+     "lostAPlayer": 0.714
+    },
+    {
+     "action": "push",
+     "moments": 2159,
+     "avgGoldSwing": 1383,
+     "tookObjective": 0.107,
+     "lostAPlayer": 0.632
+    },
+    {
+     "action": "split",
+     "moments": 735,
+     "avgGoldSwing": 931,
+     "tookObjective": 0.135,
+     "lostAPlayer": 0.604
+    },
+    {
+     "action": "defend",
+     "moments": 23,
+     "avgGoldSwing": 620,
+     "tookObjective": 0.217,
+     "lostAPlayer": 0.565
+    },
+    {
+     "action": "trade",
+     "moments": 17,
+     "avgGoldSwing": -1030,
+     "tookObjective": 0.118,
+     "lostAPlayer": 0.882
+    }
+   ]
+  },
+  {
+   "key": "even|up|even",
+   "moments": 2812,
+   "best": {
+    "action": "push",
+    "moments": 102,
+    "avgGoldSwing": 951,
+    "othersGoldSwing": 104
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 102,
+     "avgGoldSwing": 951,
+     "tookObjective": 0,
+     "lostAPlayer": 0.784
+    },
+    {
+     "action": "take",
+     "moments": 1264,
+     "avgGoldSwing": 475,
+     "tookObjective": 1,
+     "lostAPlayer": 0.67
+    },
+    {
+     "action": "recall",
+     "moments": 7,
+     "avgGoldSwing": 219,
+     "tookObjective": 0,
+     "lostAPlayer": 0.571
+    },
+    {
+     "action": "trade",
+     "moments": 261,
+     "avgGoldSwing": -43,
+     "tookObjective": 0,
+     "lostAPlayer": 0.82
+    },
+    {
+     "action": "split",
+     "moments": 1158,
+     "avgGoldSwing": -261,
+     "tookObjective": 0,
+     "lostAPlayer": 0.769
+    },
+    {
+     "action": "defend",
+     "moments": 20,
+     "avgGoldSwing": -380,
+     "tookObjective": 0,
+     "lostAPlayer": 0.65
+    }
+   ]
+  },
+  {
+   "key": "even|up|ahead",
+   "moments": 2765,
+   "best": {
+    "action": "push",
+    "moments": 248,
+    "avgGoldSwing": 1139,
+    "othersGoldSwing": 673
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 248,
+     "avgGoldSwing": 1139,
+     "tookObjective": 0,
+     "lostAPlayer": 0.722
+    },
+    {
+     "action": "take",
+     "moments": 1784,
+     "avgGoldSwing": 844,
+     "tookObjective": 1,
+     "lostAPlayer": 0.644
+    },
+    {
+     "action": "split",
+     "moments": 516,
+     "avgGoldSwing": 360,
+     "tookObjective": 0,
+     "lostAPlayer": 0.696
+    },
+    {
+     "action": "trade",
+     "moments": 196,
+     "avgGoldSwing": 135,
+     "tookObjective": 0,
+     "lostAPlayer": 0.745
+    },
+    {
+     "action": "recall",
+     "moments": 3,
+     "avgGoldSwing": -824,
+     "tookObjective": 0,
+     "lostAPlayer": 0.667
+    },
+    {
+     "action": "defend",
+     "moments": 18,
+     "avgGoldSwing": -1136,
+     "tookObjective": 0,
+     "lostAPlayer": 0.611
+    }
+   ]
+  },
+  {
+   "key": "even|soon|ahead",
+   "moments": 2754,
+   "best": {
+    "action": "take",
+    "moments": 1635,
+    "avgGoldSwing": 840,
+    "othersGoldSwing": 72
+   },
+   "actions": [
+    {
+     "action": "take",
+     "moments": 1635,
+     "avgGoldSwing": 840,
+     "tookObjective": 1,
+     "lostAPlayer": 0.636
+    },
+    {
+     "action": "push",
+     "moments": 414,
+     "avgGoldSwing": 773,
+     "tookObjective": 0,
+     "lostAPlayer": 0.787
+    },
+    {
+     "action": "split",
+     "moments": 241,
+     "avgGoldSwing": 34,
+     "tookObjective": 0,
+     "lostAPlayer": 0.809
+    },
+    {
+     "action": "trade",
+     "moments": 228,
+     "avgGoldSwing": -149,
+     "tookObjective": 0,
+     "lostAPlayer": 0.811
+    },
+    {
+     "action": "recall",
+     "moments": 2,
+     "avgGoldSwing": -677,
+     "tookObjective": 0,
+     "lostAPlayer": 0.5
+    },
+    {
+     "action": "setup",
+     "moments": 222,
+     "avgGoldSwing": -892,
+     "tookObjective": 0,
+     "lostAPlayer": 0.874
+    },
+    {
+     "action": "defend",
+     "moments": 12,
+     "avgGoldSwing": -1180,
+     "tookObjective": 0,
+     "lostAPlayer": 0.917
+    }
+   ]
+  },
+  {
+   "key": "even|soon|behind",
+   "moments": 2317,
+   "best": {
+    "action": "take",
+    "moments": 554,
+    "avgGoldSwing": 694,
+    "othersGoldSwing": -535
+   },
+   "actions": [
+    {
+     "action": "take",
+     "moments": 554,
+     "avgGoldSwing": 694,
+     "tookObjective": 1,
+     "lostAPlayer": 0.724
+    },
+    {
+     "action": "push",
+     "moments": 151,
+     "avgGoldSwing": 360,
+     "tookObjective": 0,
+     "lostAPlayer": 0.894
+    },
+    {
+     "action": "trade",
+     "moments": 345,
+     "avgGoldSwing": -180,
+     "tookObjective": 0,
+     "lostAPlayer": 0.832
+    },
+    {
+     "action": "setup",
+     "moments": 328,
+     "avgGoldSwing": -542,
+     "tookObjective": 0,
+     "lostAPlayer": 0.857
+    },
+    {
+     "action": "split",
+     "moments": 740,
+     "avgGoldSwing": -771,
+     "tookObjective": 0,
+     "lostAPlayer": 0.851
+    },
+    {
+     "action": "recall",
+     "moments": 17,
+     "avgGoldSwing": -894,
+     "tookObjective": 0,
+     "lostAPlayer": 0.882
+    },
+    {
+     "action": "defend",
+     "moments": 182,
+     "avgGoldSwing": -941,
+     "tookObjective": 0,
+     "lostAPlayer": 0.885
+    }
+   ]
+  },
+  {
+   "key": "even|up|behind",
+   "moments": 2279,
+   "best": {
+    "action": "push",
+    "moments": 81,
+    "avgGoldSwing": 431,
+    "othersGoldSwing": -435
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 81,
+     "avgGoldSwing": 431,
+     "tookObjective": 0,
+     "lostAPlayer": 0.815
+    },
+    {
+     "action": "take",
+     "moments": 612,
+     "avgGoldSwing": 392,
+     "tookObjective": 1,
+     "lostAPlayer": 0.724
+    },
+    {
+     "action": "trade",
+     "moments": 301,
+     "avgGoldSwing": -319,
+     "tookObjective": 0,
+     "lostAPlayer": 0.88
+    },
+    {
+     "action": "split",
+     "moments": 1135,
+     "avgGoldSwing": -834,
+     "tookObjective": 0,
+     "lostAPlayer": 0.863
+    },
+    {
+     "action": "defend",
+     "moments": 138,
+     "avgGoldSwing": -950,
+     "tookObjective": 0,
+     "lostAPlayer": 0.775
+    },
+    {
+     "action": "recall",
+     "moments": 12,
+     "avgGoldSwing": -1913,
+     "tookObjective": 0,
+     "lostAPlayer": 0.833
+    }
+   ]
+  },
+  {
+   "key": "even|soon|even",
+   "moments": 2267,
+   "best": {
+    "action": "push",
+    "moments": 151,
+    "avgGoldSwing": 705,
+    "othersGoldSwing": 66
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 151,
+     "avgGoldSwing": 705,
+     "tookObjective": 0,
+     "lostAPlayer": 0.841
+    },
+    {
+     "action": "take",
+     "moments": 936,
+     "avgGoldSwing": 577,
+     "tookObjective": 1,
+     "lostAPlayer": 0.655
+    },
+    {
+     "action": "trade",
+     "moments": 274,
+     "avgGoldSwing": -122,
+     "tookObjective": 0,
+     "lostAPlayer": 0.814
+    },
+    {
+     "action": "setup",
+     "moments": 318,
+     "avgGoldSwing": -346,
+     "tookObjective": 0,
+     "lostAPlayer": 0.84
+    },
+    {
+     "action": "split",
+     "moments": 556,
+     "avgGoldSwing": -363,
+     "tookObjective": 0,
+     "lostAPlayer": 0.82
+    },
+    {
+     "action": "recall",
+     "moments": 4,
+     "avgGoldSwing": -1556,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    },
+    {
+     "action": "defend",
+     "moments": 28,
+     "avgGoldSwing": -1763,
+     "tookObjective": 0,
+     "lostAPlayer": 0.857
+    }
+   ]
+  },
+  {
+   "key": "up|none|even",
+   "moments": 1312,
+   "best": {
+    "action": "push",
+    "moments": 662,
+    "avgGoldSwing": 1121,
+    "othersGoldSwing": 396
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 662,
+     "avgGoldSwing": 1121,
+     "tookObjective": 0.069,
+     "lostAPlayer": 0.659
+    },
+    {
+     "action": "defend",
+     "moments": 14,
+     "avgGoldSwing": 873,
+     "tookObjective": 0.214,
+     "lostAPlayer": 0.857
+    },
+    {
+     "action": "split",
+     "moments": 617,
+     "avgGoldSwing": 390,
+     "tookObjective": 0.063,
+     "lostAPlayer": 0.684
+    },
+    {
+     "action": "recall",
+     "moments": 6,
+     "avgGoldSwing": 318,
+     "tookObjective": 0.333,
+     "lostAPlayer": 0.167
+    },
+    {
+     "action": "trade",
+     "moments": 13,
+     "avgGoldSwing": 211,
+     "tookObjective": 0,
+     "lostAPlayer": 0.846
+    }
+   ]
+  },
+  {
+   "key": "up|up|ahead",
+   "moments": 1034,
+   "best": {
+    "action": "push",
+    "moments": 94,
+    "avgGoldSwing": 1688,
+    "othersGoldSwing": 1180
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 94,
+     "avgGoldSwing": 1688,
+     "tookObjective": 0,
+     "lostAPlayer": 0.617
+    },
+    {
+     "action": "take",
+     "moments": 805,
+     "avgGoldSwing": 1298,
+     "tookObjective": 1,
+     "lostAPlayer": 0.569
+    },
+    {
+     "action": "split",
+     "moments": 106,
+     "avgGoldSwing": 677,
+     "tookObjective": 0,
+     "lostAPlayer": 0.689
+    },
+    {
+     "action": "recall",
+     "moments": 1,
+     "avgGoldSwing": 658,
+     "tookObjective": 0,
+     "lostAPlayer": 0
+    },
+    {
+     "action": "trade",
+     "moments": 28,
+     "avgGoldSwing": -285,
+     "tookObjective": 0,
+     "lostAPlayer": 0.893
+    }
+   ]
+  },
+  {
+   "key": "up|soon|ahead",
+   "moments": 873,
+   "best": {
+    "action": "take",
+    "moments": 592,
+    "avgGoldSwing": 1348,
+    "othersGoldSwing": 466
+   },
+   "actions": [
+    {
+     "action": "take",
+     "moments": 592,
+     "avgGoldSwing": 1348,
+     "tookObjective": 1,
+     "lostAPlayer": 0.547
+    },
+    {
+     "action": "push",
+     "moments": 162,
+     "avgGoldSwing": 886,
+     "tookObjective": 0,
+     "lostAPlayer": 0.809
+    },
+    {
+     "action": "split",
+     "moments": 48,
+     "avgGoldSwing": 222,
+     "tookObjective": 0,
+     "lostAPlayer": 0.771
+    },
+    {
+     "action": "defend",
+     "moments": 1,
+     "avgGoldSwing": -34,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    },
+    {
+     "action": "setup",
+     "moments": 34,
+     "avgGoldSwing": -250,
+     "tookObjective": 0,
+     "lostAPlayer": 0.735
+    },
+    {
+     "action": "trade",
+     "moments": 36,
+     "avgGoldSwing": -410,
+     "tookObjective": 0,
+     "lostAPlayer": 0.861
+    }
+   ]
+  },
+  {
+   "key": "up|none|behind",
+   "moments": 814,
+   "best": {
+    "action": "push",
+    "moments": 364,
+    "avgGoldSwing": 1217,
+    "othersGoldSwing": 187
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 364,
+     "avgGoldSwing": 1217,
+     "tookObjective": 0.08,
+     "lostAPlayer": 0.698
+    },
+    {
+     "action": "split",
+     "moments": 362,
+     "avgGoldSwing": 246,
+     "tookObjective": 0.03,
+     "lostAPlayer": 0.757
+    },
+    {
+     "action": "recall",
+     "moments": 8,
+     "avgGoldSwing": 178,
+     "tookObjective": 0.25,
+     "lostAPlayer": 0.5
+    },
+    {
+     "action": "defend",
+     "moments": 56,
+     "avgGoldSwing": 40,
+     "tookObjective": 0.018,
+     "lostAPlayer": 0.732
+    },
+    {
+     "action": "trade",
+     "moments": 24,
+     "avgGoldSwing": -358,
+     "tookObjective": 0,
+     "lostAPlayer": 0.833
+    }
+   ]
+  },
+  {
+   "key": "down|none|behind",
+   "moments": 621,
+   "best": {
+    "action": "push",
+    "moments": 408,
+    "avgGoldSwing": -268,
+    "othersGoldSwing": -1165
+   },
+   "actions": [
+    {
+     "action": "recall",
+     "moments": 11,
+     "avgGoldSwing": 224,
+     "tookObjective": 0,
+     "lostAPlayer": 0.727
+    },
+    {
+     "action": "push",
+     "moments": 408,
+     "avgGoldSwing": -268,
+     "tookObjective": 0.02,
+     "lostAPlayer": 0.804
+    },
+    {
+     "action": "defend",
+     "moments": 99,
+     "avgGoldSwing": -1181,
+     "tookObjective": 0,
+     "lostAPlayer": 0.848
+    },
+    {
+     "action": "trade",
+     "moments": 103,
+     "avgGoldSwing": -1297,
+     "tookObjective": 0.01,
+     "lostAPlayer": 0.767
+    }
+   ]
+  },
+  {
+   "key": "up|up|even",
+   "moments": 554,
+   "best": {
+    "action": "take",
+    "moments": 413,
+    "avgGoldSwing": 1092,
+    "othersGoldSwing": 549
+   },
+   "actions": [
+    {
+     "action": "take",
+     "moments": 413,
+     "avgGoldSwing": 1092,
+     "tookObjective": 1,
+     "lostAPlayer": 0.569
+    },
+    {
+     "action": "push",
+     "moments": 15,
+     "avgGoldSwing": 999,
+     "tookObjective": 0,
+     "lostAPlayer": 0.6
+    },
+    {
+     "action": "trade",
+     "moments": 23,
+     "avgGoldSwing": 549,
+     "tookObjective": 0,
+     "lostAPlayer": 0.783
+    },
+    {
+     "action": "split",
+     "moments": 99,
+     "avgGoldSwing": 518,
+     "tookObjective": 0,
+     "lostAPlayer": 0.747
+    },
+    {
+     "action": "defend",
+     "moments": 4,
+     "avgGoldSwing": -379,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    }
+   ]
+  },
+  {
+   "key": "up|soon|even",
+   "moments": 397,
+   "best": null,
+   "actions": [
+    {
+     "action": "take",
+     "moments": 249,
+     "avgGoldSwing": 1174,
+     "tookObjective": 1,
+     "lostAPlayer": 0.534
+    },
+    {
+     "action": "push",
+     "moments": 29,
+     "avgGoldSwing": 674,
+     "tookObjective": 0,
+     "lostAPlayer": 0.759
+    },
+    {
+     "action": "trade",
+     "moments": 37,
+     "avgGoldSwing": 577,
+     "tookObjective": 0,
+     "lostAPlayer": 0.784
+    },
+    {
+     "action": "split",
+     "moments": 44,
+     "avgGoldSwing": 547,
+     "tookObjective": 0,
+     "lostAPlayer": 0.75
+    },
+    {
+     "action": "setup",
+     "moments": 36,
+     "avgGoldSwing": -239,
+     "tookObjective": 0,
+     "lostAPlayer": 0.833
+    },
+    {
+     "action": "defend",
+     "moments": 2,
+     "avgGoldSwing": -2953,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    }
+   ]
+  },
+  {
+   "key": "down|none|even",
+   "moments": 349,
+   "best": null,
+   "actions": [
+    {
+     "action": "push",
+     "moments": 303,
+     "avgGoldSwing": -101,
+     "tookObjective": 0.023,
+     "lostAPlayer": 0.696
+    },
+    {
+     "action": "trade",
+     "moments": 37,
+     "avgGoldSwing": -534,
+     "tookObjective": 0,
+     "lostAPlayer": 0.622
+    },
+    {
+     "action": "defend",
+     "moments": 9,
+     "avgGoldSwing": -1075,
+     "tookObjective": 0,
+     "lostAPlayer": 0.778
+    }
+   ]
+  },
+  {
+   "key": "down|none|ahead",
+   "moments": 322,
+   "best": null,
+   "actions": [
+    {
+     "action": "push",
+     "moments": 290,
+     "avgGoldSwing": -82,
+     "tookObjective": 0.021,
+     "lostAPlayer": 0.676
+    },
+    {
+     "action": "defend",
+     "moments": 7,
+     "avgGoldSwing": -1261,
+     "tookObjective": 0.143,
+     "lostAPlayer": 0.857
+    },
+    {
+     "action": "trade",
+     "moments": 25,
+     "avgGoldSwing": -1461,
+     "tookObjective": 0,
+     "lostAPlayer": 0.64
+    }
+   ]
+  },
+  {
+   "key": "up|up|behind",
+   "moments": 316,
+   "best": {
+    "action": "take",
+    "moments": 209,
+    "avgGoldSwing": 1442,
+    "othersGoldSwing": 574
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 22,
+     "avgGoldSwing": 1572,
+     "tookObjective": 0,
+     "lostAPlayer": 0.727
+    },
+    {
+     "action": "take",
+     "moments": 209,
+     "avgGoldSwing": 1442,
+     "tookObjective": 1,
+     "lostAPlayer": 0.536
+    },
+    {
+     "action": "trade",
+     "moments": 24,
+     "avgGoldSwing": 681,
+     "tookObjective": 0,
+     "lostAPlayer": 0.75
+    },
+    {
+     "action": "split",
+     "moments": 54,
+     "avgGoldSwing": 230,
+     "tookObjective": 0,
+     "lostAPlayer": 0.741
+    },
+    {
+     "action": "defend",
+     "moments": 7,
+     "avgGoldSwing": -283,
+     "tookObjective": 0,
+     "lostAPlayer": 0.429
+    }
+   ]
+  },
+  {
+   "key": "up|soon|behind",
+   "moments": 295,
+   "best": {
+    "action": "take",
+    "moments": 135,
+    "avgGoldSwing": 1501,
+    "othersGoldSwing": 270
+   },
+   "actions": [
+    {
+     "action": "take",
+     "moments": 135,
+     "avgGoldSwing": 1501,
+     "tookObjective": 1,
+     "lostAPlayer": 0.556
+    },
+    {
+     "action": "trade",
+     "moments": 28,
+     "avgGoldSwing": 975,
+     "tookObjective": 0,
+     "lostAPlayer": 0.679
+    },
+    {
+     "action": "push",
+     "moments": 28,
+     "avgGoldSwing": 637,
+     "tookObjective": 0,
+     "lostAPlayer": 0.714
+    },
+    {
+     "action": "defend",
+     "moments": 15,
+     "avgGoldSwing": 470,
+     "tookObjective": 0,
+     "lostAPlayer": 0.667
+    },
+    {
+     "action": "setup",
+     "moments": 32,
+     "avgGoldSwing": -101,
+     "tookObjective": 0,
+     "lostAPlayer": 0.75
+    },
+    {
+     "action": "split",
+     "moments": 57,
+     "avgGoldSwing": -102,
+     "tookObjective": 0,
+     "lostAPlayer": 0.86
+    }
+   ]
+  },
+  {
+   "key": "down|soon|behind",
+   "moments": 261,
+   "best": {
+    "action": "take",
+    "moments": 80,
+    "avgGoldSwing": 346,
+    "othersGoldSwing": -490
+   },
+   "actions": [
+    {
+     "action": "recall",
+     "moments": 2,
+     "avgGoldSwing": 2418,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    },
+    {
+     "action": "take",
+     "moments": 80,
+     "avgGoldSwing": 346,
+     "tookObjective": 1,
+     "lostAPlayer": 0.713
+    },
+    {
+     "action": "push",
+     "moments": 37,
+     "avgGoldSwing": 250,
+     "tookObjective": 0,
+     "lostAPlayer": 0.838
+    },
+    {
+     "action": "trade",
+     "moments": 94,
+     "avgGoldSwing": -661,
+     "tookObjective": 0,
+     "lostAPlayer": 0.755
+    },
+    {
+     "action": "defend",
+     "moments": 35,
+     "avgGoldSwing": -711,
+     "tookObjective": 0,
+     "lostAPlayer": 0.8
+    },
+    {
+     "action": "setup",
+     "moments": 13,
+     "avgGoldSwing": -1207,
+     "tookObjective": 0,
+     "lostAPlayer": 0.846
+    }
+   ]
+  },
+  {
+   "key": "down|up|behind",
+   "moments": 202,
+   "best": {
+    "action": "take",
+    "moments": 57,
+    "avgGoldSwing": 200,
+    "othersGoldSwing": -900
+   },
+   "actions": [
+    {
+     "action": "take",
+     "moments": 57,
+     "avgGoldSwing": 200,
+     "tookObjective": 1,
+     "lostAPlayer": 0.772
+    },
+    {
+     "action": "trade",
+     "moments": 115,
+     "avgGoldSwing": -756,
+     "tookObjective": 0,
+     "lostAPlayer": 0.843
+    },
+    {
+     "action": "recall",
+     "moments": 3,
+     "avgGoldSwing": -1403,
+     "tookObjective": 0,
+     "lostAPlayer": 0.667
+    },
+    {
+     "action": "defend",
+     "moments": 20,
+     "avgGoldSwing": -1406,
+     "tookObjective": 0,
+     "lostAPlayer": 0.8
+    },
+    {
+     "action": "push",
+     "moments": 7,
+     "avgGoldSwing": -1595,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    }
+   ]
+  },
+  {
+   "key": "down|up|even",
+   "moments": 162,
+   "best": null,
+   "actions": [
+    {
+     "action": "take",
+     "moments": 85,
+     "avgGoldSwing": -425,
+     "tookObjective": 1,
+     "lostAPlayer": 0.694
+    },
+    {
+     "action": "trade",
+     "moments": 69,
+     "avgGoldSwing": -486,
+     "tookObjective": 0,
+     "lostAPlayer": 0.739
+    },
+    {
+     "action": "defend",
+     "moments": 4,
+     "avgGoldSwing": -672,
+     "tookObjective": 0,
+     "lostAPlayer": 0.5
+    },
+    {
+     "action": "push",
+     "moments": 4,
+     "avgGoldSwing": -976,
+     "tookObjective": 0,
+     "lostAPlayer": 0.75
+    }
+   ]
+  },
+  {
+   "key": "down|soon|ahead",
+   "moments": 161,
+   "best": null,
+   "actions": [
+    {
+     "action": "push",
+     "moments": 19,
+     "avgGoldSwing": 633,
+     "tookObjective": 0,
+     "lostAPlayer": 0.632
+    },
+    {
+     "action": "take",
+     "moments": 102,
+     "avgGoldSwing": -289,
+     "tookObjective": 1,
+     "lostAPlayer": 0.539
+    },
+    {
+     "action": "trade",
+     "moments": 25,
+     "avgGoldSwing": -1519,
+     "tookObjective": 0,
+     "lostAPlayer": 0.8
+    },
+    {
+     "action": "defend",
+     "moments": 4,
+     "avgGoldSwing": -1615,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    },
+    {
+     "action": "setup",
+     "moments": 11,
+     "avgGoldSwing": -1839,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    }
+   ]
+  },
+  {
+   "key": "down|soon|even",
+   "moments": 158,
+   "best": {
+    "action": "take",
+    "moments": 92,
+    "avgGoldSwing": -180,
+    "othersGoldSwing": -673
+   },
+   "actions": [
+    {
+     "action": "push",
+     "moments": 10,
+     "avgGoldSwing": 373,
+     "tookObjective": 0,
+     "lostAPlayer": 0.9
+    },
+    {
+     "action": "take",
+     "moments": 92,
+     "avgGoldSwing": -180,
+     "tookObjective": 1,
+     "lostAPlayer": 0.565
+    },
+    {
+     "action": "trade",
+     "moments": 50,
+     "avgGoldSwing": -722,
+     "tookObjective": 0,
+     "lostAPlayer": 0.66
+    },
+    {
+     "action": "setup",
+     "moments": 4,
+     "avgGoldSwing": -1395,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    },
+    {
+     "action": "defend",
+     "moments": 2,
+     "avgGoldSwing": -3228,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    }
+   ]
+  },
+  {
+   "key": "down|up|ahead",
+   "moments": 154,
+   "best": null,
+   "actions": [
+    {
+     "action": "take",
+     "moments": 91,
+     "avgGoldSwing": -221,
+     "tookObjective": 1,
+     "lostAPlayer": 0.692
+    },
+    {
+     "action": "push",
+     "moments": 17,
+     "avgGoldSwing": -688,
+     "tookObjective": 0,
+     "lostAPlayer": 0.765
+    },
+    {
+     "action": "trade",
+     "moments": 45,
+     "avgGoldSwing": -749,
+     "tookObjective": 0,
+     "lostAPlayer": 0.733
+    },
+    {
+     "action": "defend",
+     "moments": 1,
+     "avgGoldSwing": -3236,
+     "tookObjective": 0,
+     "lostAPlayer": 1
+    }
+   ]
+  }
+ ],
+ "engine": {
+  "moments": 50696,
+  "sameAsTeam": 0.262,
+  "swingWhenTeamDidEngineAnswer": 467,
+  "swingOtherwise": 196,
+  "matchesBestMeasured": 0.149,
+  "momentsWithBest": 49151,
+  "perAction": {
+   "take": {
+    "engineSaid": 5813,
+    "teamDidIt": 3432,
+    "swingDid": 833,
+    "swingOther": 146
+   },
+   "setup": {
+    "engineSaid": 17480,
+    "teamDidIt": 619,
+    "swingDid": -503,
+    "swingOther": 475
+   },
+   "trade": {
+    "engineSaid": 10846,
+    "teamDidIt": 880,
+    "swingDid": -331,
+    "swingOther": -371
+   },
+   "push": {
+    "engineSaid": 7972,
+    "teamDidIt": 4151,
+    "swingDid": 1163,
+    "swingOther": 653
+   },
+   "defend": {
+    "engineSaid": 2682,
+    "teamDidIt": 201,
+    "swingDid": -1141,
+    "swingOther": -297
+   },
+   "recall": {
+    "engineSaid": 0,
+    "teamDidIt": 0,
+    "swingDid": null,
+    "swingOther": null
+   },
+   "split": {
+    "engineSaid": 5903,
+    "teamDidIt": 3992,
+    "swingDid": -165,
+    "swingOther": 475
+   },
+   "picks": {
+    "engineSaid": 0,
+    "teamDidIt": 0,
+    "swingDid": null,
+    "swingOther": null
+   }
+  }
+ }
+}
