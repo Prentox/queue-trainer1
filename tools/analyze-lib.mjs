@@ -228,11 +228,17 @@ export function decisionMoments(E, matches, find) {
         const fr = frameAfter(t), P = fr ? fr.pos : null;
         const at = pid => P && P[pid - 1];
         const near = (pt, r) => aliveT.filter(pid => at(pid) && dist(at(pid), pt) <= r).length;
+        /* Actions are read from where the team IS (intent), never from whether it worked:
+           success (objective, tower, deaths) is the outcome we compare afterwards. */
         let action = null, splitter = null;
-        if (objState !== 'none' && tookObj) action = 'take';
-        else if (lostObj && tookTower) action = 'trade';
-        else if (tookTower) action = 'push';
-        else if (objState === 'soon' && P && near(PIT[objName], 3500) >= 3) action = 'setup';
+        const pts = aliveT.filter(pid => at(pid)).map(pid => [pid, at(pid)]);
+        let group = [];
+        for (const [, p] of pts) { const g = pts.filter(([, q]) => dist(p, q) <= 3000); if (g.length > group.length) group = g; }
+        const gc = group.length ? [group.reduce((a, [, p]) => a + p[0], 0) / group.length, group.reduce((a, [, p]) => a + p[1], 0) / group.length] : null;
+        const enemyHalf = p => T === 100 ? p[0] + p[1] > 15800 : p[0] + p[1] < 13800;
+        const grouped = group.length >= 3;
+        if (P && objState !== 'none' && near(PIT[objName], 3500) >= 3) action = objState === 'up' ? 'take' : 'setup';
+        else if (P && objState !== 'none' && grouped && enemyHalf(gc) && dist(gc, PIT[objName]) > 6000) action = 'trade';
         else if (hasBuys ? new Set(win.filter(x => x[1] === 'I' && mine(x[2])).map(x => x[2])).size >= 3 : P && near(FOUNTAIN[T], 2500) >= 3) action = 'recall';
         else if (P && aliveT.length >= 4) {
           for (const pid of aliveT) {
@@ -242,7 +248,8 @@ export function decisionMoments(E, matches, find) {
             if (dist(me, c) > 5000) { action = 'split'; splitter = pid; break; }
           }
         }
-        if (!action && hasWards && killed && !lostPlayer && win.filter(x => x[1] === 'W' && mine(x[2])).length >= 3) action = 'picks';
+        if (!action && grouped && enemyHalf(gc)) action = 'push';
+        if (!action && hasWards && !grouped && win.filter(x => x[1] === 'W' && mine(x[2])).length >= 3 && pts.filter(([, p]) => enemyHalf(p)).length >= 2) action = 'picks';
         if (!action && P && near(FOUNTAIN[T], 6500) >= 3) action = 'defend';
         if (!action) continue;
         /* the same moment as the app would show it, for the engine */
@@ -257,8 +264,9 @@ export function decisionMoments(E, matches, find) {
           respawn: deadSecs.length ? Math.round(Math.min(...deadSecs)) : 0, prio: 'even', wave: 'middle', itemGold: false, goldDiff: Math.round(g0), jg: null
         };
         const { sc } = E.judge(s);
-        const engine = MEASURED.filter(a => (s.objUp || a !== 'take') && (hasWards || a !== 'picks')).sort((a, b) => sc[b] - sc[a])[0];
-        out.push({ key: decisionKey(adv, objState, g0), action, engine, swing: Math.round(g1 - g0), tookObj, lostPlayer, youSplit: champ[youId - 1].sty === 'Split' });
+        const top = Object.keys(sc).filter(a => (s.objUp || a !== 'take') && (hasWards || a !== 'picks')).sort((a, b) => sc[b] - sc[a])[0];
+        const engine = sc[top] > 0 && MEASURED.includes(top) ? top : null; // null: the engine's answer is something we cannot measure (clear the wave, farm)
+        out.push({ key: decisionKey(adv, objState, g0), action, engine, swing: Math.round(g1 - g0), tookObj, tookTower, lostPlayer, youSplit: champ[youId - 1].sty === 'Split' });
       }
     }
   }
@@ -270,11 +278,11 @@ export function decisionCheck(moments, minMoments = 50) {
   for (const x of moments) {
     const k = keys[x.key] || (keys[x.key] = { moments: 0, actions: {} });
     k.moments++;
-    const a = k.actions[x.action] || (k.actions[x.action] = { n: 0, swing: 0, obj: 0, lost: 0 });
-    a.n++; a.swing += x.swing; if (x.tookObj) a.obj++; if (x.lostPlayer) a.lost++;
+    const a = k.actions[x.action] || (k.actions[x.action] = { n: 0, swing: 0, obj: 0, tower: 0, lost: 0 });
+    a.n++; a.swing += x.swing; if (x.tookObj) a.obj++; if (x.tookTower) a.tower++; if (x.lostPlayer) a.lost++;
   }
   const table = Object.entries(keys).map(([key, k]) => {
-    const actions = Object.entries(k.actions).map(([action, a]) => ({ action, moments: a.n, avgGoldSwing: Math.round(a.swing / a.n), tookObjective: rate(a.obj, a.n), lostAPlayer: rate(a.lost, a.n) }))
+    const actions = Object.entries(k.actions).map(([action, a]) => ({ action, moments: a.n, avgGoldSwing: Math.round(a.swing / a.n), tookObjective: rate(a.obj, a.n), tookTower: rate(a.tower, a.n), lostAPlayer: rate(a.lost, a.n) }))
       .sort((a, b) => b.avgGoldSwing - a.avgGoldSwing);
     const ok = actions.filter(a => a.moments >= minMoments);
     let best = null;
@@ -286,19 +294,20 @@ export function decisionCheck(moments, minMoments = 50) {
     return { key, moments: k.moments, best, actions };
   }).sort((a, b) => b.moments - a.moments);
   /* how the engine does on the same moments */
-  const did = moments.filter(x => x.action === x.engine), didNot = moments.filter(x => x.action !== x.engine);
+  const judged = moments.filter(x => x.engine);
+  const did = judged.filter(x => x.action === x.engine), didNot = judged.filter(x => x.action !== x.engine);
   const avg = l => l.length ? Math.round(l.reduce((s, x) => s + x.swing, 0) / l.length) : null;
   const byKey = Object.fromEntries(table.map(r => [r.key, r.best]));
-  const withBest = moments.filter(x => byKey[x.key]);
+  const withBest = judged.filter(x => byKey[x.key]);
   const engine = {
-    moments: moments.length,
-    sameAsTeam: rate(did.length, moments.length),
+    moments: judged.length, unmeasurable: moments.length - judged.length,
+    sameAsTeam: rate(did.length, judged.length),
     swingWhenTeamDidEngineAnswer: avg(did), swingOtherwise: avg(didNot),
     matchesBestMeasured: rate(withBest.filter(x => x.engine === byKey[x.key].action).length, withBest.length), momentsWithBest: withBest.length,
-    perAction: Object.fromEntries(MEASURED.map(a => { const l = moments.filter(x => x.engine === a); const d = l.filter(x => x.action === a), o = l.filter(x => x.action !== a);
+    perAction: Object.fromEntries(MEASURED.map(a => { const l = judged.filter(x => x.engine === a); const d = l.filter(x => x.action === a), o = l.filter(x => x.action !== a);
       return [a, { engineSaid: l.length, teamDidIt: d.length, swingDid: avg(d), swingOther: avg(o) }]; }))
   };
-  return { table, engine };
+  return { method: 2, table, engine }; // method 2: actions read from intent (v0.10.1)
 }
 
 export function decisionReport(check) {
@@ -306,8 +315,9 @@ export function decisionReport(check) {
   const e = check.engine, L = [];
   L.push(`## Decision making vs real results`, ``,
     `Real moments (after a kill, around objective spawns, and once a minute), what the team did in the next 90 seconds, and its gold swing over the next 2 minutes. ` +
-    `Split and grouping are read from positions that exist once a minute, so they are estimates.`, ``,
-    `**Engine check:** ${e.moments} moments. The engine's answer was what the team did in ${pct(e.sameAsTeam)} of them. ` +
+    `The action is read from where the team was (positions exist once a minute, so it is an estimate), not from whether it worked. ` +
+    `Stronger teams also choose more aggressive actions, so compare actions within one situation, not across situations.`, ``,
+    `**Engine check:** ${e.moments} moments (plus ${e.unmeasurable} where the engine's answer, such as clearing a wave or farming, cannot be read from the data). The engine's answer was what the team did in ${pct(e.sameAsTeam)} of them. ` +
     `When the team did the engine's answer: ${g(e.swingWhenTeamDidEngineAnswer)} gold on average; otherwise ${g(e.swingOtherwise)}. ` +
     `Where the data has a clear best action (${e.momentsWithBest} moments), the engine picked it ${pct(e.matchesBestMeasured)} of the time.`, ``,
     `| Engine answer | Engine said it | Team did it | Gold swing when they did | When they did something else |`, `| --- | --- | --- | --- | --- |`);

@@ -27,6 +27,7 @@ function fakeMatch(seed) {
   const frames = [];
   for (let m = 0; m <= 30; m++) {
     const pf = {}; for (let i = 1; i <= 10; i++) pf[i] = { totalGold: 500 + m * 400, level: Math.min(18, 1 + Math.floor(m / 2)), position: { x: 7000, y: 7000 } };
+    if (m === 19) for (const i of [1, 2, 3, 4, 5]) pf[i].position = { x: 9700, y: 4500 }; // team 100 at the dragon pit after the fight
     if (m >= 24 && m <= 26) { pf[1].position = { x: 1200, y: 12500 }; for (const i of [2, 3, 4, 5]) pf[i].position = { x: 9500, y: 9500 }; } // top laner alone in a side lane
     const events = [];
     if (m === 5) for (let i = 1; i <= 10; i++) events.push({ type: 'ITEM_PURCHASED', timestamp: m * 60000 + 1000, participantId: i, itemId: 1001 }, { type: 'ITEM_PURCHASED', timestamp: m * 60000 + 3000, participantId: i, itemId: 2003 });
@@ -117,8 +118,9 @@ test('decision check: real moments are read, scored and compared with the engine
   assert.ok(take.filter(x => x.engine === 'take').length / take.length >= 0.9, 'the engine also says take');
   assert.ok(moments.some(x => x.action === 'split'), 'a lone player in a side lane far from the team is read as a split');
   assert.ok(!moments.some(x => x.action === 'recall'), 'nobody shopped in the scripted windows');
+  assert.ok(moments.every(x => x.engine === null || ['take', 'setup', 'trade', 'push', 'defend', 'recall', 'split', 'picks'].includes(x.engine)));
   const check = decisionCheck(moments, 5);
-  assert.ok(check.engine.moments === moments.length && check.engine.sameAsTeam > 0);
+  assert.ok(check.engine.moments + check.engine.unmeasurable === moments.length && check.engine.sameAsTeam > 0);
   assert.ok(decisionReport(check).includes('Decision making vs real results'));
   /* best action needs enough moments and a clear gold difference */
   const fake = [...Array(60).fill({ key: 'even|none|even', action: 'recall', engine: 'recall', swing: 400 }), ...Array(60).fill({ key: 'even|none|even', action: 'push', engine: 'recall', swing: -100 }),
@@ -128,6 +130,7 @@ test('decision check: real moments are read, scored and compared with the engine
   assert.equal(row('even|none|even').best.othersGoldSwing, -100);
   assert.equal(row('up|none|ahead').best, null, 'a 50-gold difference is not clear enough');
   assert.equal(c2.engine.sameAsTeam, 0.5);
+  assert.equal(decisionCheck([{ key: 'k', action: 'push', engine: null, swing: 0 }]).engine.unmeasurable, 1);
   assert.equal(c2.engine.swingWhenTeamDidEngineAnswer, 350);
 });
 

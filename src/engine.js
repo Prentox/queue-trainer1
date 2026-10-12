@@ -121,7 +121,7 @@ const Engine = (() => {
       t: (c, e) => `Lane: ${e.name} is a tank. ${c.name}'s sustained damage wins the long trades.` },
     { id: 'laneBurst', f: (c, e) => (e.bu >= 3 && e.fr === 0 && (c.fr >= 2 || c.di >= 2)) ? 7 : 0,
       t: (c, e) => `Lane: ${e.name} relies on burst. ${c.name} is ${c.fr >= 2 ? 'durable' : 'slippery'} enough to survive it.` },
-    { id: 'laneEarly', f: (c, e) => (c.sc === 1 && e.sc === 3) ? 7 : 0,
+    { id: 'laneEarly', f: (c, e) => (c.sc === 1 && e.sc === 3) ? 2 : 0, // was 7: in high-elo data this pick won only 43% (419 games)
       t: (c, e) => `Lane: ${c.name} is strongest early and ${e.name} wants to scale. Punish them before they come online.` },
     { id: 'laneBully', f: (c, e) => (c.sc === 3 && e.sc === 1 && c.wc <= 1) ? -6 : 0,
       t: () => '' },
