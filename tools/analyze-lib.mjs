@@ -164,3 +164,156 @@ export function report({ n, patches, champStats, sugg, comp, lane, sit, unknown 
   for (const s of sugg.slice(0, 60)) for (const x of s.notes) L.push(`| ${s.name} | ${s.games} | ${x.field} | ${x.ours} | ${x.data} |`);
   return L.join('\n') + '\n';
 }
+
+/* 5. Decision check: real moments from the games, what the team did in the next 90 s, and how it went.
+   A moment is described the way the app describes one: players up or down, objective up / spawning soon / not,
+   and gold. The action is read from events and positions (positions only exist once a minute, so split
+   and grouping are estimates). The result is the team's gold swing over the next 2 minutes.
+   The same moment is then given to the engine, so the report can show how often the engine's answer was
+   what worked, and the app can use the best measured action as the answer where there is enough data. */
+export const MEASURED = ['take', 'setup', 'trade', 'push', 'defend', 'recall', 'split', 'picks'];
+const FOUNTAIN = { 100: [560, 560], 200: [14300, 14300] }, PIT = { Dragon: [9866, 4414], Baron: [5007, 10471] };
+const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+const sideLane = p => (p[0] < 3500 && p[1] > 5000) || (p[1] > 11500 && p[0] < 10000) || (p[1] < 3500 && p[0] > 5000) || (p[0] > 11500 && p[1] < 10000);
+export const decisionKey = (adv, obj, gold) => `${adv >= 2 ? 'up' : adv <= -2 ? 'down' : 'even'}|${obj}|${gold >= 1500 ? 'ahead' : gold <= -1500 ? 'behind' : 'even'}`;
+
+export function decisionMoments(E, matches, find) {
+  const out = [];
+  for (const m of matches) {
+    if (!m.f || m.f.length < 12) continue;
+    const champ = m.p.map(p => find(p.ch)), pos = m.p.map(p => POS_MAP[p.pos]);
+    if (champ.some(c => !c) || pos.some(x => !x)) continue;
+    const major = parseInt(m.v, 10) || 0, baronFirst = major >= 15 ? 1500 : 1200;
+    const hasWards = m.e.some(e => e[1] === 'W'), hasBuys = m.e.some(e => e[1] === 'I');
+    const ev = m.e.slice().sort((a, b) => a[0] - b[0]);
+    const end = m.dur - 130;
+    const teamGold = (team, t) => {
+      const i = Math.min(m.f.length - 2, Math.floor(t / 60)), a = m.f[i], b = m.f[i + 1], k = Math.min(1, Math.max(0, t / 60 - i));
+      const sum = f => f.gold.reduce((s, g, j) => s + (m.p[j].t === team ? g : 0), 0);
+      return sum(a) + (sum(b) - sum(a)) * k;
+    };
+    const frameAfter = t => m.f.find(f => f.m * 60 > t + 15 && f.m * 60 <= t + 75);
+    const lvlAt = (pid, t) => { const f = m.f[Math.min(m.f.length - 1, Math.floor(t / 60))]; return f ? f.lvl[pid - 1] : 10; };
+    /* candidate times: every kill, 60 s before and at every objective spawn, and once a minute from 10:00 */
+    const dead = Array(11).fill(0);
+    let dragonAt = 300, baronAt = baronFirst;
+    const marks = new Set();
+    for (let t = 600; t < end; t += 60) marks.add(t);
+    const stream = ev.map(e => ({ t: e[0], e })).concat([...marks].map(t => ({ t, e: null }))).sort((a, b) => a.t - b.t || (a.e ? -1 : 1));
+    const lastAt = { 100: -999, 200: -999 };
+    for (let i = 0; i < stream.length; i++) {
+      const { t, e } = stream[i];
+      if (e && e[1] === 'M') { if (e[3] === 'DRAGON') dragonAt = t + 300; if (e[3] === 'BARON_NASHOR') baronAt = t + 360; continue; }
+      if (e && e[1] === 'K') dead[e[3]] = t + deathTimer(lvlAt(e[3], t), t);
+      if (e && e[1] !== 'K') continue;
+      if (e && stream.slice(i + 1).some(x => x.e && x.e[1] === 'K' && x.t - t <= 10)) continue; // read the fight once it is over
+      if (t < 480 || t > end) continue;
+      const soonD = dragonAt - t, soonB = baronAt - t;
+      const objName = t >= baronAt ? 'Baron' : t >= dragonAt ? 'Dragon' : soonB > 0 && soonB <= 60 ? 'Baron' : soonD > 0 && soonD <= 60 ? 'Dragon' : null;
+      const objState = !objName ? 'none' : t >= (objName === 'Baron' ? baronAt : dragonAt) ? 'up' : 'soon';
+      const nextObj = objName || (soonB > 0 && soonB < soonD ? 'Baron' : 'Dragon');
+      for (const T of [100, 200]) {
+        if (!e && t - lastAt[T] < 30) continue; // a fight always counts; the once-a-minute check skips if a fight was just read
+        lastAt[T] = t;
+        const O = T === 100 ? 200 : 100, mine = pid => (pid <= 5) === (T === 100);
+        const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const aliveT = ids.filter(p => mine(p) && dead[p] <= t), aliveO = ids.filter(p => !mine(p) && dead[p] <= t);
+        const adv = aliveT.length - aliveO.length;
+        const g0 = teamGold(T, t) - teamGold(O, t), g1 = teamGold(T, t + 120) - teamGold(O, t + 120);
+        const win = ev.filter(x => x[0] > t && x[0] <= t + 90);
+        const objKill = x => x[1] === 'M' && (x[3] === 'DRAGON' || x[3] === 'BARON_NASHOR');
+        const tookObj = win.some(x => objKill(x) && x[2] === T), lostObj = win.some(x => objKill(x) && x[2] === O);
+        const tookTower = win.some(x => x[1] === 'B' && x[2] === O), lostPlayer = win.some(x => x[1] === 'K' && mine(x[3]));
+        const killed = win.some(x => x[1] === 'K' && !mine(x[3]));
+        const fr = frameAfter(t), P = fr ? fr.pos : null;
+        const at = pid => P && P[pid - 1];
+        const near = (pt, r) => aliveT.filter(pid => at(pid) && dist(at(pid), pt) <= r).length;
+        let action = null, splitter = null;
+        if (objState !== 'none' && tookObj) action = 'take';
+        else if (lostObj && tookTower) action = 'trade';
+        else if (tookTower) action = 'push';
+        else if (objState === 'soon' && P && near(PIT[objName], 3500) >= 3) action = 'setup';
+        else if (hasBuys ? new Set(win.filter(x => x[1] === 'I' && mine(x[2])).map(x => x[2])).size >= 3 : P && near(FOUNTAIN[T], 2500) >= 3) action = 'recall';
+        else if (P && aliveT.length >= 4) {
+          for (const pid of aliveT) {
+            const me = at(pid); if (!me || !sideLane(me)) continue;
+            const rest = aliveT.filter(x => x !== pid && at(x)).map(at); if (rest.length < 3) continue;
+            const c = [rest.reduce((s, p) => s + p[0], 0) / rest.length, rest.reduce((s, p) => s + p[1], 0) / rest.length];
+            if (dist(me, c) > 5000) { action = 'split'; splitter = pid; break; }
+          }
+        }
+        if (!action && hasWards && killed && !lostPlayer && win.filter(x => x[1] === 'W' && mine(x[2])).length >= 3) action = 'picks';
+        if (!action && P && near(FOUNTAIN[T], 6500) >= 3) action = 'defend';
+        if (!action) continue;
+        /* the same moment as the app would show it, for the engine */
+        const deadSecs = (adv >= 0 ? ids.filter(p => !mine(p)) : ids.filter(p => mine(p))).map(p => dead[p] - t).filter(s => s > 0);
+        const team = own => ids.filter(p => mine(p) === own).map(p => ({ pos: pos[p - 1], c: champ[p - 1], alive: dead[p] <= t }));
+        const allies = team(true), enemies = team(false);
+        const youId = splitter || aliveT.find(p => pos[p - 1] === 'mid') || aliveT[0];
+        if (!youId) continue;
+        const s = {
+          time: t, obj: nextObj, objUp: objState === 'up', spawnIn: objState === 'up' ? 0 : Math.max(1, Math.round((nextObj === 'Baron' ? baronAt : dragonAt) - t)),
+          role: pos[youId - 1], you: champ[youId - 1], side: 'mid', allies, enemies, ally: aliveT.length, enemy: aliveO.length,
+          respawn: deadSecs.length ? Math.round(Math.min(...deadSecs)) : 0, prio: 'even', wave: 'middle', itemGold: false, goldDiff: Math.round(g0), jg: null
+        };
+        const { sc } = E.judge(s);
+        const engine = MEASURED.filter(a => (s.objUp || a !== 'take') && (hasWards || a !== 'picks')).sort((a, b) => sc[b] - sc[a])[0];
+        out.push({ key: decisionKey(adv, objState, g0), action, engine, swing: Math.round(g1 - g0), tookObj, lostPlayer, youSplit: champ[youId - 1].sty === 'Split' });
+      }
+    }
+  }
+  return out;
+}
+
+export function decisionCheck(moments, minMoments = 50) {
+  const keys = {};
+  for (const x of moments) {
+    const k = keys[x.key] || (keys[x.key] = { moments: 0, actions: {} });
+    k.moments++;
+    const a = k.actions[x.action] || (k.actions[x.action] = { n: 0, swing: 0, obj: 0, lost: 0 });
+    a.n++; a.swing += x.swing; if (x.tookObj) a.obj++; if (x.lostPlayer) a.lost++;
+  }
+  const table = Object.entries(keys).map(([key, k]) => {
+    const actions = Object.entries(k.actions).map(([action, a]) => ({ action, moments: a.n, avgGoldSwing: Math.round(a.swing / a.n), tookObjective: rate(a.obj, a.n), lostAPlayer: rate(a.lost, a.n) }))
+      .sort((a, b) => b.avgGoldSwing - a.avgGoldSwing);
+    const ok = actions.filter(a => a.moments >= minMoments);
+    let best = null;
+    if (ok.length >= 2) {
+      const b = ok[0], rest = actions.filter(a => a !== b), restN = rest.reduce((s, a) => s + a.moments, 0);
+      const restSwing = Math.round(rest.reduce((s, a) => s + a.avgGoldSwing * a.moments, 0) / Math.max(1, restN));
+      if (b.avgGoldSwing - restSwing >= 150) best = { action: b.action, moments: b.moments, avgGoldSwing: b.avgGoldSwing, othersGoldSwing: restSwing };
+    }
+    return { key, moments: k.moments, best, actions };
+  }).sort((a, b) => b.moments - a.moments);
+  /* how the engine does on the same moments */
+  const did = moments.filter(x => x.action === x.engine), didNot = moments.filter(x => x.action !== x.engine);
+  const avg = l => l.length ? Math.round(l.reduce((s, x) => s + x.swing, 0) / l.length) : null;
+  const byKey = Object.fromEntries(table.map(r => [r.key, r.best]));
+  const withBest = moments.filter(x => byKey[x.key]);
+  const engine = {
+    moments: moments.length,
+    sameAsTeam: rate(did.length, moments.length),
+    swingWhenTeamDidEngineAnswer: avg(did), swingOtherwise: avg(didNot),
+    matchesBestMeasured: rate(withBest.filter(x => x.engine === byKey[x.key].action).length, withBest.length), momentsWithBest: withBest.length,
+    perAction: Object.fromEntries(MEASURED.map(a => { const l = moments.filter(x => x.engine === a); const d = l.filter(x => x.action === a), o = l.filter(x => x.action !== a);
+      return [a, { engineSaid: l.length, teamDidIt: d.length, swingDid: avg(d), swingOther: avg(o) }]; }))
+  };
+  return { table, engine };
+}
+
+export function decisionReport(check) {
+  const pct = x => x == null ? '–' : Math.round(x * 100) + '%', g = x => x == null ? '–' : (x > 0 ? '+' : '') + x;
+  const e = check.engine, L = [];
+  L.push(`## Decision making vs real results`, ``,
+    `Real moments (after a kill, around objective spawns, and once a minute), what the team did in the next 90 seconds, and its gold swing over the next 2 minutes. ` +
+    `Split and grouping are read from positions that exist once a minute, so they are estimates.`, ``,
+    `**Engine check:** ${e.moments} moments. The engine's answer was what the team did in ${pct(e.sameAsTeam)} of them. ` +
+    `When the team did the engine's answer: ${g(e.swingWhenTeamDidEngineAnswer)} gold on average; otherwise ${g(e.swingOtherwise)}. ` +
+    `Where the data has a clear best action (${e.momentsWithBest} moments), the engine picked it ${pct(e.matchesBestMeasured)} of the time.`, ``,
+    `| Engine answer | Engine said it | Team did it | Gold swing when they did | When they did something else |`, `| --- | --- | --- | --- | --- |`);
+  for (const [a, v] of Object.entries(e.perAction)) if (v.engineSaid) L.push(`| ${a} | ${v.engineSaid} | ${v.teamDidIt} | ${g(v.swingDid)} | ${g(v.swingOther)} |`);
+  L.push(``, `**Best measured action per situation** (players up or down | objective | gold; used as the app's answer when it is clear):`, ``,
+    `| Situation | Moments | Best action | Its gold swing | Everything else | All actions (moments, avg gold swing) |`, `| --- | --- | --- | --- | --- | --- |`);
+  for (const r of check.table) L.push(`| ${r.key.replace(/\|/g, ' · ')} | ${r.moments} | ${r.best ? r.best.action : '–'} | ${r.best ? g(r.best.avgGoldSwing) : '–'} | ${r.best ? g(r.best.othersGoldSwing) : '–'} | ${r.actions.map(a => `${a.action} ${a.moments}/${g(a.avgGoldSwing)}`).join(', ')} |`);
+  return L.join('\n') + '\n';
+}

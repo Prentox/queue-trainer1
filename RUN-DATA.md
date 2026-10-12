@@ -43,9 +43,20 @@ Then commit `data/derived/` and push.
 - **Lane rules vs real results:** whether the type-level counterpick rules hold up.
 - **After a kill leaves a team 2+ players up:** how often teams took the objective, a tower, or lost a player.
 - **champions.txt values the data disagrees with:** candidates for you to check (Masters eye).
+- **Decision making vs real results:** real moments (after a fight, around objective spawns, once a minute), what the
+  team did in the next 90 seconds, and its gold swing over the next 2 minutes. Shows how often the engine's answer
+  was what the team did, how teams did when they followed it, and the best measured action per situation.
+  Where one action is clearly best (50+ moments and 150+ gold better than everything else), the app uses it as the answer
+  and says so in the explanation.
+
+## Re-run the analysis without collecting
+
+**Actions → Collect match data → Run workflow** with **0** matches. It skips the Riot API and analyses the matches
+already saved (the key is not used). Use it after an app update that changes the analysis.
 
 ## Good to know
 
 - Development keys are limited to 100 requests per 2 minutes. Each match takes 2 requests, so ~1,500 matches per hour.
 - Lane matchups only show in the app once a pair has 30+ games, so they fill in over several runs.
 - The key is never written to any file, log or commit.
+- Matches collected before v0.10 have no item purchases or wards: recalls are then read from positions, and picks are not measured for them.

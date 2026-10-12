@@ -55,7 +55,8 @@ const Engine = (() => {
   const W = { mixBad: -12, mixGood: 3, frontNeed: 2, frontPer: -10, frontOk: 3, engNeed: 2, eng0: -14, eng1: -5, engOk: 2,
               peel: -8, planFull: 14, planMost: 8, twoSplit: -12, hold131: 6,
               vsEng: 9, vsTank: 12, vsSplit: 6, vsEarly: 3, vsLate: 5, vsPick: 6, vsTF: 8, vsSquishy: 6, vsLowEng: 8,
-              threat0: -14, threat1: -5, lane: 1.5, laneData: 0.8 };
+              threat0: -14, threat1: -5, lane: 1.5, laneData: 0.8,
+              dataAct: 26 };
   const planOf = T => T.tf >= T.pk ? 'teamfight' : 'pick';
   const of5 = (b, a) => `${b} to ${a} (of 5)`;
   /* Draft rules: f(team stats, enemy stats) -> points. t(before, after, enemy) -> explanation. */
@@ -309,9 +310,10 @@ const Engine = (() => {
   const mobility = c => MOBILE.has(c.name) ? 3 : IMMOBILE.has(c.name) ? 0 : 1;
 
   /* Optional real match data (built in from data/derived when it exists). */
-  let DATA = { lanes: null, situations: null };
+  let DATA = { lanes: null, situations: null, decisions: null };
   function setData(d) {
-    DATA = { lanes: null, situations: null };
+    DATA = { lanes: null, situations: null, decisions: null };
+    if (d && d.decisions) { DATA.decisions = {}; for (const r of d.decisions) if (r.best) DATA.decisions[r.key] = r.best; }
     if (d && d.lanes) { DATA.lanes = {}; for (const m of d.lanes.matchups || []) DATA.lanes[`${m.pos}|${m.champion}|${m.versus}`] = m; }
     if (d && d.situations) DATA.situations = d.situations;
   }
@@ -333,6 +335,14 @@ const Engine = (() => {
     split: s => `${!s.objUp ? `With ${s.spawnIn} seconds to ${s.obj}, ` : ''}side-laning as ${s.you.name} and pulling enemies toward you is probably the better option.`,
     picks: () => 'Warding their jungle to catch someone alone is probably the better option.',
     scale: () => 'Farming safely and avoiding fights until your items are in is probably the better option.'
+  };
+  /* Measured in real games: the action that gained teams the most gold in the same kind of moment. */
+  const DID = { take: o => `started the ${o}`, setup: o => `grouped at the ${o} pit before it spawned`, trade: () => 'traded for a tower on the other side',
+    push: () => 'grouped to push a tower', defend: () => 'fell back to defend', recall: () => 'recalled', split: () => 'sent one player to split push', picks: () => 'warded and looked for picks' };
+  const decisionKey = (adv, obj, gold) => `${adv >= 2 ? 'up' : adv <= -2 ? 'down' : 'even'}|${obj}|${gold >= 1500 ? 'ahead' : gold <= -1500 ? 'behind' : 'even'}`;
+  const measuredBest = s => {
+    if (!DATA.decisions) return null;
+    return DATA.decisions[decisionKey(s.ally - s.enemy, s.objUp ? 'up' : !s.objUp && s.spawnIn <= 60 ? 'soon' : 'none', s.goldDiff)] || null;
   };
   const goldWords = g => Math.abs(g) < 1000 ? 'gold is even' : g > 0 ? `your team is ${g.toLocaleString('en-US')} gold ahead` : `your team is ${(-g).toLocaleString('en-US')} gold behind`;
 
@@ -407,6 +417,11 @@ const Engine = (() => {
     if (s.goldDiff <= -3000) { const t = `Your team is ${(-s.goldDiff).toLocaleString('en-US')} gold behind, so even fights favor them.`; add('defend', 10, t); add('trade', 6, t); add('scale', 6, t); }
     if (s.jg && s.jg.ago <= 20 && s.jg.side === 'far') { const t = `Their jungler ${s.jg.name} was seen on the far side ${s.jg.ago} seconds ago.`; add('push', 8, t); add('trade', 6, t); add('split', 8, t); add('picks', -8); }
     if (s.jg && s.jg.ago <= 20 && s.jg.side === 'near') { add('defend', 6, `Their jungler ${s.jg.name} was seen nearby ${s.jg.ago} seconds ago.`); add('push', -10); add('split', -12); }
+    /* real games: where the data has a clear best action for this kind of moment, it weighs heavily */
+    const mb = measuredBest(s);
+    const fits = mb && (mb.action !== 'take' || s.objUp) && (mb.action !== 'setup' || soon) && (mb.action !== 'split' || you.sty === 'Split')
+      && (mb.action !== 'picks' || you.sty === 'Pick' || A.filter(c => c.sty === 'Pick').length >= 2);
+    if (fits) add(mb.action, W.dataAct, `In ${mb.moments} similar high-elo EUW moments, teams that ${DID[mb.action](O)} gained ${mb.avgGoldSwing > 0 ? '+' : ''}${mb.avgGoldSwing.toLocaleString('en-US')} gold over the next 2 minutes, against ${mb.othersGoldSwing > 0 ? '+' : ''}${mb.othersGoldSwing.toLocaleString('en-US')} for everything else.`);
     return { sc, why };
   }
 

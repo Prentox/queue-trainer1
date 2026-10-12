@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       matches:
-        description: 'How many new matches to collect (about 1,500 per hour)'
+        description: 'How many new matches to collect (about 1,500 per hour). 0 = only re-run the analysis'
         default: '1500'
 
 permissions:

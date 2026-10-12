@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadEngine } from '../tests/load-engine.mjs';
-import { championIndex, championStats, suggestions, compRules, lanes, situations, report } from './analyze-lib.mjs';
+import { championIndex, championStats, suggestions, compRules, lanes, situations, report, decisionMoments, decisionCheck, decisionReport } from './analyze-lib.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const rawFile = join(root, 'data', 'raw', 'matches.jsonl');
@@ -18,6 +18,7 @@ const sugg = suggestions(E, champStats);
 const comp = compRules(E, matches, find);
 const lane = lanes(E, matches, find);
 const sit = situations(matches);
+const dec = decisionCheck(decisionMoments(E, matches, find));
 const patches = [...new Set(matches.map(m => m.v))].sort();
 
 const out = join(root, 'data', 'derived');
@@ -28,5 +29,6 @@ save('suggestions.json', sugg);
 save('draft-rules.json', comp);
 save('lanes.json', lane);
 save('situations.json', sit);
-writeFileSync(join(out, 'REPORT.md'), report({ n: matches.length, patches, champStats, sugg, comp, lane, sit, unknown }));
+save('decisions.json', dec);
+writeFileSync(join(out, 'REPORT.md'), report({ n: matches.length, patches, champStats, sugg, comp, lane, sit, unknown }) + '\n' + decisionReport(dec));
 console.log(`Analysed ${matches.length} matches. Read data/derived/REPORT.md`);

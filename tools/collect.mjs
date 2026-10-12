@@ -17,6 +17,7 @@ const arg = (name, def) => { const i = process.argv.indexOf('--' + name); return
 const target = +arg('matches', 1500);
 const tiers = arg('tiers', 'challenger,grandmaster').split(',');
 
+if (target <= 0) { console.log('0 new matches requested: skipping collection, the analysis runs on the matches already saved.'); process.exit(0); }
 const api = createClient(process.env.RIOT_API_KEY);
 const seen = new Set(existsSync(seenFile) ? readFileSync(seenFile, 'utf8').split('\n').filter(Boolean) : []);
 const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };

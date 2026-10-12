@@ -17,8 +17,8 @@ if (champs.includes('`') || champs.includes('${')) throw new Error('champions.tx
 
 // Real match data (aggregates from tools/analyze.mjs), if it has been collected.
 const derived = f => { const p = join(root, 'data', 'derived', f); return existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null; };
-const lanes = derived('lanes.json'), situations = derived('situations.json');
-const matchData = JSON.stringify({ lanes: lanes ? { matchups: lanes.matchups.filter(m => m.games >= 30) } : null, situations });
+const lanes = derived('lanes.json'), situations = derived('situations.json'), decisions = derived('decisions.json');
+const matchData = JSON.stringify({ lanes: lanes ? { matchups: lanes.matchups.filter(m => m.games >= 30) } : null, situations, decisions: decisions ? decisions.table.filter(r => r.best).map(r => ({ key: r.key, best: r.best })) : null });
 
 // Champion icons bundled by tools/fetch-icons.mjs (so the app works offline), if present.
 const iconDir = join(root, 'assets', 'champions');
@@ -96,4 +96,4 @@ self.addEventListener('fetch', e => {
   }));
 });
 `);
-console.log(`built dist/site v${pkg.version}${RELEASE ? ' (release)' : ''}${lanes || situations ? ' · match data' : ''}${Object.keys(iconMap).length ? ` · ${Object.keys(iconMap).length} icons` : ''}`);
+console.log(`built dist/site v${pkg.version}${RELEASE ? ' (release)' : ''}${lanes || situations || decisions ? ' · match data' : ''}${Object.keys(iconMap).length ? ` · ${Object.keys(iconMap).length} icons` : ''}`);

@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { loadEngine } from './load-engine.mjs';
 import { compact } from '../tools/compact.mjs';
 import { createClient } from '../tools/riot.mjs';
-import { championIndex, championStats, suggestions, compRules, lanes, situations, report } from '../tools/analyze-lib.mjs';
+import { championIndex, championStats, suggestions, compRules, lanes, situations, report, decisionMoments, decisionCheck, decisionReport } from '../tools/analyze-lib.mjs';
 
 const E = loadEngine();
 const POS = ['TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'];
@@ -27,7 +27,10 @@ function fakeMatch(seed) {
   const frames = [];
   for (let m = 0; m <= 30; m++) {
     const pf = {}; for (let i = 1; i <= 10; i++) pf[i] = { totalGold: 500 + m * 400, level: Math.min(18, 1 + Math.floor(m / 2)), position: { x: 7000, y: 7000 } };
+    if (m >= 24 && m <= 26) { pf[1].position = { x: 1200, y: 12500 }; for (const i of [2, 3, 4, 5]) pf[i].position = { x: 9500, y: 9500 }; } // top laner alone in a side lane
     const events = [];
+    if (m === 5) for (let i = 1; i <= 10; i++) events.push({ type: 'ITEM_PURCHASED', timestamp: m * 60000 + 1000, participantId: i, itemId: 1001 }, { type: 'ITEM_PURCHASED', timestamp: m * 60000 + 3000, participantId: i, itemId: 2003 });
+    if (m === 6) events.push({ type: 'WARD_PLACED', timestamp: m * 60000 + 2000, creatorId: 3, wardType: 'YELLOW_TRINKET' }, { type: 'WARD_PLACED', timestamp: m * 60000 + 2500, creatorId: 0, wardType: 'UNDEFINED' });
     if (m === 18) { // a fight: team 100 kills three of team 200, then takes dragon and a tower
       events.push({ type: 'CHAMPION_KILL', timestamp: m * 60000 + 1000, killerId: 1, victimId: 6, position: { x: 9800, y: 4400 } });
       events.push({ type: 'CHAMPION_KILL', timestamp: m * 60000 + 3000, killerId: 2, victimId: 7, position: { x: 9800, y: 4400 } });
@@ -96,4 +99,49 @@ test('collected data flows into the explanations', () => {
   E.setData(null);
   assert.ok(laneSeen, 'lane matchup data shows up in Draft explanations');
   assert.ok(sitSeen, 'situation data shows up in Decision explanations');
+});
+
+test('records keep recalls (item purchases) and wards, still anonymous', () => {
+  const buys = data[0].e.filter(e => e[1] === 'I'), wards = data[0].e.filter(e => e[1] === 'W');
+  assert.equal(buys.length, 10, 'one purchase per player per shopping trip');
+  assert.deepEqual(wards.map(w => w[2]), [3], 'player wards only, no undefined wards');
+  assert.ok(buys.every(e => e.length === 3) && wards.every(e => e.length === 3), 'only time and player number');
+});
+
+test('decision check: real moments are read, scored and compared with the engine', () => {
+  const find = championIndex(E);
+  const moments = decisionMoments(E, data, find);
+  const take = moments.filter(x => x.action === 'take' && x.key === 'up|up|even');
+  assert.equal(take.length, 300, 'the scripted 5v2 with dragon up is read as "take" in every match');
+  assert.ok(take.every(x => x.tookObj), 'and the objective was taken');
+  assert.ok(take.filter(x => x.engine === 'take').length / take.length >= 0.9, 'the engine also says take');
+  assert.ok(moments.some(x => x.action === 'split'), 'a lone player in a side lane far from the team is read as a split');
+  assert.ok(!moments.some(x => x.action === 'recall'), 'nobody shopped in the scripted windows');
+  const check = decisionCheck(moments, 5);
+  assert.ok(check.engine.moments === moments.length && check.engine.sameAsTeam > 0);
+  assert.ok(decisionReport(check).includes('Decision making vs real results'));
+  /* best action needs enough moments and a clear gold difference */
+  const fake = [...Array(60).fill({ key: 'even|none|even', action: 'recall', engine: 'recall', swing: 400 }), ...Array(60).fill({ key: 'even|none|even', action: 'push', engine: 'recall', swing: -100 }),
+    ...Array(60).fill({ key: 'up|none|ahead', action: 'push', engine: 'push', swing: 300 }), ...Array(60).fill({ key: 'up|none|ahead', action: 'recall', engine: 'push', swing: 250 })];
+  const c2 = decisionCheck(fake, 50), row = k => c2.table.find(r => r.key === k);
+  assert.equal(row('even|none|even').best.action, 'recall');
+  assert.equal(row('even|none|even').best.othersGoldSwing, -100);
+  assert.equal(row('up|none|ahead').best, null, 'a 50-gold difference is not clear enough');
+  assert.equal(c2.engine.sameAsTeam, 0.5);
+  assert.equal(c2.engine.swingWhenTeamDidEngineAnswer, 350);
+});
+
+test('the best measured action becomes the answer where it fits', () => {
+  E.setData({ decisions: [{ key: 'even|none|even', best: { action: 'recall', moments: 412, avgGoldSwing: 600, othersGoldSwing: -50 } }] });
+  let seen = 0, answered = 0;
+  for (let i = 0; i < 400; i++) {
+    const d = E.decision(3, 'mid', []);
+    const s = d.state;
+    if (s.ally - s.enemy > -2 && s.ally - s.enemy < 2 && !s.objUp && s.spawnIn > 60 && Math.abs(s.goldDiff) < 1500) {
+      seen++; if (d.answer === 'recall') answered++;
+      if (d.answer === 'recall') assert.ok(d.why.some(w => w.includes('412 similar high-elo EUW moments')), 'the data is the reason given');
+    }
+  }
+  E.setData(null);
+  assert.ok(seen > 10 && answered / seen >= 0.5, `recall answered ${answered} of ${seen}`);
 });
