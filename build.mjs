@@ -18,7 +18,7 @@ if (champs.includes('`') || champs.includes('${')) throw new Error('champions.tx
 // Real match data (aggregates from tools/analyze.mjs), if it has been collected.
 const derived = f => { const p = join(root, 'data', 'derived', f); return existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null; };
 const lanes = derived('lanes.json'), situations = derived('situations.json'), decisions = derived('decisions.json');
-const matchData = JSON.stringify({ lanes: lanes ? { matchups: lanes.matchups.filter(m => m.games >= 30) } : null, situations, decisions: decisions && decisions.method === 2 ? decisions.table.filter(r => r.best).map(r => ({ key: r.key, best: r.best })) : null });
+const matchData = JSON.stringify({ lanes: lanes ? { matchups: lanes.matchups.filter(m => m.games >= 30) } : null, situations, decisions: decisions && decisions.method === 3 ? decisions.table.filter(r => r.best).map(r => ({ key: r.key, best: r.best })) : null });
 
 // Champion icons bundled by tools/fetch-icons.mjs (so the app works offline), if present.
 const iconDir = join(root, 'assets', 'champions');

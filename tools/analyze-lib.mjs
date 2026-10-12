@@ -171,7 +171,7 @@ export function report({ n, patches, champStats, sugg, comp, lane, sit, unknown 
    and grouping are estimates). The result is the team's gold swing over the next 2 minutes.
    The same moment is then given to the engine, so the report can show how often the engine's answer was
    what worked, and the app can use the best measured action as the answer where there is enough data. */
-export const MEASURED = ['take', 'setup', 'trade', 'push', 'defend', 'recall', 'split', 'picks'];
+export const MEASURED = ['take', 'setup', 'trade', 'push', 'defend', 'recall', 'split', 'picks', 'farm'];
 const FOUNTAIN = { 100: [560, 560], 200: [14300, 14300] }, PIT = { Dragon: [9866, 4414], Baron: [5007, 10471] };
 const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
 const sideLane = p => (p[0] < 3500 && p[1] > 5000) || (p[1] > 11500 && p[0] < 10000) || (p[1] < 3500 && p[0] > 5000) || (p[0] > 11500 && p[1] < 10000);
@@ -240,17 +240,17 @@ export function decisionMoments(E, matches, find) {
         if (P && objState !== 'none' && near(PIT[objName], 3500) >= 3) action = objState === 'up' ? 'take' : 'setup';
         else if (P && objState !== 'none' && grouped && enemyHalf(gc) && dist(gc, PIT[objName]) > 6000) action = 'trade';
         else if (hasBuys ? new Set(win.filter(x => x[1] === 'I' && mine(x[2])).map(x => x[2])).size >= 3 : P && near(FOUNTAIN[T], 2500) >= 3) action = 'recall';
-        else if (P && aliveT.length >= 4) {
+        else if (P && t >= 840 && grouped && aliveT.length >= 4) {
+          /* split: after laning, one player alone in a side lane while the rest stand together */
           for (const pid of aliveT) {
-            const me = at(pid); if (!me || !sideLane(me)) continue;
-            const rest = aliveT.filter(x => x !== pid && at(x)).map(at); if (rest.length < 3) continue;
-            const c = [rest.reduce((s, p) => s + p[0], 0) / rest.length, rest.reduce((s, p) => s + p[1], 0) / rest.length];
-            if (dist(me, c) > 5000) { action = 'split'; splitter = pid; break; }
+            const me = at(pid); if (!me || !sideLane(me) || group.some(([g]) => g === pid)) continue;
+            if (dist(me, gc) > 5000) { action = 'split'; splitter = pid; break; }
           }
         }
         if (!action && grouped && enemyHalf(gc)) action = 'push';
         if (!action && hasWards && !grouped && win.filter(x => x[1] === 'W' && mine(x[2])).length >= 3 && pts.filter(([, p]) => enemyHalf(p)).length >= 2) action = 'picks';
         if (!action && P && near(FOUNTAIN[T], 6500) >= 3) action = 'defend';
+        if (!action && P && !grouped) action = 'farm'; // spread over the map: farming lanes and jungle
         if (!action) continue;
         /* the same moment as the app would show it, for the engine */
         const deadSecs = (adv >= 0 ? ids.filter(p => !mine(p)) : ids.filter(p => mine(p))).map(p => dead[p] - t).filter(s => s > 0);
@@ -265,7 +265,8 @@ export function decisionMoments(E, matches, find) {
         };
         const { sc } = E.judge(s);
         const top = Object.keys(sc).filter(a => (s.objUp || a !== 'take') && (hasWards || a !== 'picks')).sort((a, b) => sc[b] - sc[a])[0];
-        const engine = sc[top] > 0 && MEASURED.includes(top) ? top : null; // null: the engine's answer is something we cannot measure (clear the wave, farm)
+        const mapped = top === 'scale' || top === 'clear' ? 'farm' : top;
+        const engine = sc[top] > 0 && MEASURED.includes(mapped) ? mapped : null; // null: the engine's answer is something we cannot measure (clear the wave, farm)
         out.push({ key: decisionKey(adv, objState, g0), action, engine, swing: Math.round(g1 - g0), tookObj, tookTower, lostPlayer, youSplit: champ[youId - 1].sty === 'Split' });
       }
     }
@@ -273,24 +274,31 @@ export function decisionMoments(E, matches, find) {
   return out;
 }
 
-export function decisionCheck(moments, minMoments = 50) {
+/* A best action must have 100+ moments, beat everything else by 150+ gold, and the gap must be at least
+   2 standard errors (so it is very unlikely to be chance). */
+export function decisionCheck(moments, minMoments = 100) {
   const keys = {};
   for (const x of moments) {
     const k = keys[x.key] || (keys[x.key] = { moments: 0, actions: {} });
     k.moments++;
-    const a = k.actions[x.action] || (k.actions[x.action] = { n: 0, swing: 0, obj: 0, tower: 0, lost: 0 });
-    a.n++; a.swing += x.swing; if (x.tookObj) a.obj++; if (x.tookTower) a.tower++; if (x.lostPlayer) a.lost++;
+    const a = k.actions[x.action] || (k.actions[x.action] = { n: 0, swing: 0, sq: 0, obj: 0, tower: 0, lost: 0 });
+    a.n++; a.swing += x.swing; a.sq += x.swing * x.swing; if (x.tookObj) a.obj++; if (x.tookTower) a.tower++; if (x.lostPlayer) a.lost++;
   }
   const table = Object.entries(keys).map(([key, k]) => {
-    const actions = Object.entries(k.actions).map(([action, a]) => ({ action, moments: a.n, avgGoldSwing: Math.round(a.swing / a.n), tookObjective: rate(a.obj, a.n), tookTower: rate(a.tower, a.n), lostAPlayer: rate(a.lost, a.n) }))
+    const actions = Object.entries(k.actions).map(([action, a]) => ({ action, moments: a.n, _sum: a.swing, _sq: a.sq, avgGoldSwing: Math.round(a.swing / a.n), tookObjective: rate(a.obj, a.n), tookTower: rate(a.tower, a.n), lostAPlayer: rate(a.lost, a.n) }))
       .sort((a, b) => b.avgGoldSwing - a.avgGoldSwing);
     const ok = actions.filter(a => a.moments >= minMoments);
     let best = null;
-    if (ok.length >= 2) {
-      const b = ok[0], rest = actions.filter(a => a !== b), restN = rest.reduce((s, a) => s + a.moments, 0);
-      const restSwing = Math.round(rest.reduce((s, a) => s + a.avgGoldSwing * a.moments, 0) / Math.max(1, restN));
-      if (b.avgGoldSwing - restSwing >= 150) best = { action: b.action, moments: b.moments, avgGoldSwing: b.avgGoldSwing, othersGoldSwing: restSwing };
+    if (ok.length && actions.length >= 2) {
+      const b = ok[0], rest = actions.filter(a => a !== b);
+      const rn = rest.reduce((s, a) => s + a.moments, 0), rs = rest.reduce((s, a) => s + a._sum, 0), rq = rest.reduce((s, a) => s + a._sq, 0);
+      const varOf = (n, sum, sq) => n > 1 ? Math.max(0, (sq - sum * sum / n) / (n - 1)) : 0;
+      const restSwing = Math.round(rs / Math.max(1, rn));
+      const se = Math.sqrt(varOf(b.moments, b._sum, b._sq) / b.moments + varOf(rn, rs, rq) / Math.max(1, rn));
+      const gap = b.avgGoldSwing - restSwing;
+      if (rn >= 30 && gap >= 150 && gap >= 2 * se) best = { action: b.action, moments: b.moments, avgGoldSwing: b.avgGoldSwing, othersGoldSwing: restSwing };
     }
+    actions.forEach(a => { delete a._sum; delete a._sq; });
     return { key, moments: k.moments, best, actions };
   }).sort((a, b) => b.moments - a.moments);
   /* how the engine does on the same moments */
@@ -307,7 +315,7 @@ export function decisionCheck(moments, minMoments = 50) {
     perAction: Object.fromEntries(MEASURED.map(a => { const l = judged.filter(x => x.engine === a); const d = l.filter(x => x.action === a), o = l.filter(x => x.action !== a);
       return [a, { engineSaid: l.length, teamDidIt: d.length, swingDid: avg(d), swingOther: avg(o) }]; }))
   };
-  return { method: 2, table, engine }; // method 2: actions read from intent (v0.10.1)
+  return { method: 3, table, engine }; // method 3: intent, split only after laning, farm baseline, significance test (v0.10.3)
 }
 
 export function decisionReport(check) {
@@ -322,7 +330,7 @@ export function decisionReport(check) {
     `Where the data has a clear best action (${e.momentsWithBest} moments), the engine picked it ${pct(e.matchesBestMeasured)} of the time.`, ``,
     `| Engine answer | Engine said it | Team did it | Gold swing when they did | When they did something else |`, `| --- | --- | --- | --- | --- |`);
   for (const [a, v] of Object.entries(e.perAction)) if (v.engineSaid) L.push(`| ${a} | ${v.engineSaid} | ${v.teamDidIt} | ${g(v.swingDid)} | ${g(v.swingOther)} |`);
-  L.push(``, `**Best measured action per situation** (players up or down | objective | gold; used as the app's answer when it is clear):`, ``,
+  L.push(``, `**Best measured action per situation** (players up or down | objective | gold). Used as the app's answer only when it is clear: 100+ moments, 150+ gold better than everything else, and at least 2 standard errors (unlikely to be chance).`, ``,
     `| Situation | Moments | Best action | Its gold swing | Everything else | All actions (moments, avg gold swing) |`, `| --- | --- | --- | --- | --- | --- |`);
   for (const r of check.table) L.push(`| ${r.key.replace(/\|/g, ' · ')} | ${r.moments} | ${r.best ? r.best.action : '–'} | ${r.best ? g(r.best.avgGoldSwing) : '–'} | ${r.best ? g(r.best.othersGoldSwing) : '–'} | ${r.actions.map(a => `${a.action} ${a.moments}/${g(a.avgGoldSwing)}`).join(', ')} |`);
   return L.join('\n') + '\n';

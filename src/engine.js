@@ -338,7 +338,7 @@ const Engine = (() => {
   };
   /* Measured in real games: the action that gained teams the most gold in the same kind of moment. */
   const DID = { take: o => `started the ${o}`, setup: o => `grouped at the ${o} pit before it spawned`, trade: () => 'traded for a tower on the other side',
-    push: () => 'grouped to push a tower', defend: () => 'fell back to defend', recall: () => 'recalled', split: () => 'sent one player to split push', picks: () => 'warded and looked for picks' };
+    push: () => 'grouped to push a tower', defend: () => 'fell back to defend', recall: () => 'recalled', split: () => 'sent one player to split push', picks: () => 'warded and looked for picks', farm: () => 'spread out to farm' };
   const decisionKey = (adv, obj, gold) => `${adv >= 2 ? 'up' : adv <= -2 ? 'down' : 'even'}|${obj}|${gold >= 1500 ? 'ahead' : gold <= -1500 ? 'behind' : 'even'}`;
   const measuredBest = s => {
     if (!DATA.decisions) return null;
@@ -421,7 +421,7 @@ const Engine = (() => {
     const mb = measuredBest(s);
     const fits = mb && (mb.action !== 'take' || s.objUp) && (mb.action !== 'setup' || soon) && (mb.action !== 'split' || you.sty === 'Split')
       && (mb.action !== 'picks' || you.sty === 'Pick' || A.filter(c => c.sty === 'Pick').length >= 2);
-    if (fits) add(mb.action, W.dataAct, `In ${mb.moments} similar high-elo EUW moments, teams that ${DID[mb.action](O)} gained ${mb.avgGoldSwing > 0 ? '+' : ''}${mb.avgGoldSwing.toLocaleString('en-US')} gold over the next 2 minutes, against ${mb.othersGoldSwing > 0 ? '+' : ''}${mb.othersGoldSwing.toLocaleString('en-US')} for everything else.`);
+    if (fits) add(mb.action === 'farm' ? 'scale' : mb.action, W.dataAct, `In ${mb.moments} similar high-elo EUW moments, teams that ${DID[mb.action](O)} gained ${mb.avgGoldSwing > 0 ? '+' : ''}${mb.avgGoldSwing.toLocaleString('en-US')} gold over the next 2 minutes, against ${mb.othersGoldSwing > 0 ? '+' : ''}${mb.othersGoldSwing.toLocaleString('en-US')} for everything else.`);
     return { sc, why };
   }
 
