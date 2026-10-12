@@ -52,7 +52,7 @@ const Engine = (() => {
 
   /* Rule weights in one place, so they can be tuned (later: fitted on real match data).
      Team rules count champions (0-5) that bring a trait, e.g. frontliners = champions with frontline 2+. */
-  const W = { mixBad: -12, mixGood: 3, frontNeed: 2, frontPer: -10, frontOk: 3, engNeed: 2, eng0: -14, eng1: -5, engOk: 2,
+  const W = { mixBad: -12, mixGood: 3, frontNeed: 2, frontPer: -5, frontOk: 1, /* front: was -10/3; high-elo teams with 2+ frontliners won 46% vs 52% (3,000 team games) */ engNeed: 2, eng0: -14, eng1: -5, engOk: 2,
               peel: -8, planFull: 14, planMost: 8, twoSplit: -12, hold131: 6,
               vsEng: 9, vsTank: 12, vsSplit: 6, vsEarly: 3, vsLate: 5, vsPick: 6, vsTF: 8, vsSquishy: 6, vsLowEng: 8,
               threat0: -14, threat1: -5, lane: 1.5, laneData: 0.8,
@@ -379,7 +379,8 @@ const Engine = (() => {
     if (Math.abs(adv) < 2 && edge >= 0.2 && (s.objUp || soon)) add(s.objUp ? 'take' : 'setup', 22, `Your team is stronger 5v5: about ${Math.round(edge * 100)}% more engage, frontline and damage alive, and ${goldWords(s.goldDiff)}.`);
     if (Math.abs(adv) < 2 && edge <= -0.1) {
       const t = `The enemy team is stronger 5v5: about ${Math.round(-edge * 100)}% more engage, frontline and damage alive, and ${goldWords(s.goldDiff)}.`;
-      if (edge <= -0.2) { add('trade', 18, t); add('defend', 12, t); add('take', -20); add('setup', -12); }
+      /* trade only when there is an objective to trade for: real teams almost never did it otherwise (80 of 13,676 moments) */
+      if (edge <= -0.2) { if (s.objUp || soon) add('trade', 10, t); add('defend', 12, t); add('take', -20); add('setup', -12); }
       if (you.sty === 'Split') add('split', 14, t);
       if (you.sty === 'Pick') add('picks', 8, t);
     }
