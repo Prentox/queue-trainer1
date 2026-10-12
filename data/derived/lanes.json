@@ -337,6 +337,20 @@
    "winRate": 0.636
   },
   {
+   "pos": "mid",
+   "champion": "Locke",
+   "versus": "Yone",
+   "games": 11,
+   "winRate": 0.455
+  },
+  {
+   "pos": "mid",
+   "champion": "Yone",
+   "versus": "Locke",
+   "games": 11,
+   "winRate": 0.545
+  },
+  {
    "pos": "adc",
    "champion": "Tristana",
    "versus": "Kog'Maw",
@@ -421,6 +435,20 @@
    "winRate": 0.545
   },
   {
+   "pos": "mid",
+   "champion": "Syndra",
+   "versus": "Locke",
+   "games": 18,
+   "winRate": 0.556
+  },
+  {
+   "pos": "mid",
+   "champion": "Locke",
+   "versus": "Syndra",
+   "games": 18,
+   "winRate": 0.444
+  },
+  {
    "pos": "top",
    "champion": "Jayce",
    "versus": "Malphite",
@@ -479,16 +507,16 @@
  ],
  "typeRules": {
   "laneRange": {
-   "games": 501,
-   "winRate": 0.503
+   "games": 538,
+   "winRate": 0.494
   },
   "laneEarly": {
    "games": 419,
    "winRate": 0.434
   },
   "laneBurst": {
-   "games": 640,
-   "winRate": 0.5
+   "games": 687,
+   "winRate": 0.492
   },
   "laneTank": {
    "games": 183,
@@ -499,8 +527,8 @@
    "winRate": 0.569
   },
   "laneSide": {
-   "games": 345,
-   "winRate": 0.496
+   "games": 359,
+   "winRate": 0.499
   }
  }
 }

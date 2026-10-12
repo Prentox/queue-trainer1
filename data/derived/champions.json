@@ -1,4 +1,18 @@
 {
+ "Zaahen": {
+  "games": 27,
+  "winRate": 0.444,
+  "adShare": 0.94,
+  "tankPerMin": 2552,
+  "ccPerMin": 0.97,
+  "helpPerMin": 0,
+  "damagePerMin": 812,
+  "objectivePerMin": 475,
+  "positions": {
+   "top": 25,
+   "jungle": 2
+  }
+ },
  "Talon": {
   "games": 138,
   "winRate": 0.486,
@@ -27,6 +41,23 @@
    "support": 35,
    "adc": 4,
    "top": 5
+  }
+ },
+ "Locke": {
+  "games": 199,
+  "winRate": 0.497,
+  "adShare": 0.05,
+  "tankPerMin": 1548,
+  "ccPerMin": 0.55,
+  "helpPerMin": 0,
+  "damagePerMin": 857,
+  "objectivePerMin": 437,
+  "positions": {
+   "adc": 8,
+   "mid": 158,
+   "jungle": 27,
+   "support": 3,
+   "top": 3
   }
  },
  "Blitzcrank": {
