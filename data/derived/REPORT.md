@@ -149,45 +149,46 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 
 Real moments (after a kill, around objective spawns, and once a minute), what the team did in the next 90 seconds, and its gold swing over the next 2 minutes. The action is read from where the team was (positions exist once a minute, so it is an estimate), not from whether it worked. Stronger teams also choose more aggressive actions, so compare actions within one situation, not across situations.
 
-**Engine check:** 41143 moments (plus 10125 where the engine's answer, such as clearing a wave or farming, cannot be read from the data). The engine's answer was what the team did in 30% of them. When the team did the engine's answer: +284 gold on average; otherwise +276. Where the data has a clear best action (36324 moments), the engine picked it 10% of the time.
+**Engine check:** 59612 moments (plus 9881 where the engine's answer, such as clearing a wave or farming, cannot be read from the data). The engine's answer was what the team did in 15% of them. When the team did the engine's answer: +238 gold on average; otherwise -31. Where the data has a clear best action (34553 moments), the engine picked it 21% of the time.
 
 | Engine answer | Engine said it | Team did it | Gold swing when they did | When they did something else |
 | --- | --- | --- | --- | --- |
-| take | 5457 | 1582 | +473 | +518 |
-| setup | 9538 | 2329 | +414 | +603 |
-| trade | 9707 | 80 | -339 | -453 |
-| push | 8032 | 1171 | +961 | +874 |
-| defend | 742 | 252 | -1110 | -252 |
-| split | 7667 | 7049 | +143 | +96 |
+| take | 6171 | 1582 | +473 | +472 |
+| setup | 11763 | 2329 | +414 | +543 |
+| trade | 13676 | 80 | -339 | -445 |
+| push | 9429 | 1445 | +1004 | +848 |
+| defend | 10175 | 256 | -1097 | -933 |
+| split | 5468 | 1423 | +158 | -39 |
+| farm | 2930 | 1911 | -490 | -163 |
 
-**Best measured action per situation** (players up or down | objective | gold; used as the app's answer when it is clear):
+**Best measured action per situation** (players up or down | objective | gold). Used as the app's answer only when it is clear: 100+ moments, 150+ gold better than everything else, and at least 2 standard errors (unlikely to be chance).
 
 | Situation | Moments | Best action | Its gold swing | Everything else | All actions (moments, avg gold swing) |
 | --- | --- | --- | --- | --- | --- |
-| even · none · ahead | 9282 | recall | +909 | +616 | recall 52/+909, push 1765/+666, split 7294/+620, defend 171/-50 |
-| even · none · even | 9026 | push | +485 | +44 | push 656/+485, recall 58/+226, split 8068/+62, defend 244/-610 |
-| even · none · behind | 8121 | push | +392 | -552 | push 388/+392, recall 77/-73, split 6583/-510, defend 1073/-841 |
-| up · none · ahead | 3094 | – | – | – | defend 77/+1297, split 2376/+1274, push 620/+1088, recall 21/+971 |
-| even · up · even | 3055 | trade | +399 | +42 | trade 58/+399, take 874/+154, push 49/+138, split 2004/+4, recall 15/-58, defend 55/-425 |
-| even · up · ahead | 2756 | trade | +781 | +628 | recall 21/+1669, trade 154/+781, split 1608/+697, take 759/+521, push 174/+516, defend 40/-167 |
-| even · soon · ahead | 2633 | split | +708 | +410 | recall 12/+722, split 1174/+708, trade 160/+547, push 228/+462, setup 1006/+380, defend 53/+280 |
-| even · up · behind | 2477 | take | -173 | -648 | push 32/+823, take 568/-173, trade 51/-226, defend 210/-680, split 1589/-682, recall 27/-949 |
-| even · soon · behind | 2401 | push | +478 | -367 | push 61/+478, setup 748/+88, trade 50/-433, recall 26/-445, split 1249/-577, defend 267/-638 |
-| even · soon · even | 2233 | push | +351 | +60 | recall 8/+497, push 72/+351, trade 44/+293, setup 910/+135, split 1155/+31, defend 44/-1054 |
-| up · none · even | 1390 | push | +1130 | +686 | defend 37/+1235, push 117/+1130, recall 10/+875, split 1226/+668 |
-| up · up · ahead | 1031 | split | +1330 | +1083 | recall 8/+2609, split 602/+1330, take 244/+1266, defend 26/+943, push 59/+928, trade 92/+605 |
-| up · soon · ahead | 872 | split | +1246 | +997 | recall 4/+1588, split 390/+1246, push 81/+1231, setup 294/+1141, defend 20/+959, trade 83/+237 |
-| up · none · behind | 853 | push | +1270 | +487 | push 92/+1270, recall 15/+547, split 668/+519, defend 78/+201 |
-| up · up · even | 544 | – | – | – | push 27/+1350, defend 17/+1095, take 176/+947, split 305/+844, trade 16/+616, recall 3/+119 |
-| up · soon · even | 390 | – | – | – | recall 2/+2470, push 19/+1549, trade 10/+1108, setup 170/+843, split 168/+625, defend 21/+523 |
-| up · soon · behind | 319 | setup | +949 | +587 | push 10/+1430, setup 133/+949, defend 32/+750, split 132/+537, trade 11/+136, recall 1/-1429 |
-| up · up · behind | 300 | – | – | – | push 15/+1816, trade 9/+1326, take 105/+888, split 138/+879, defend 24/+682, recall 9/+494 |
-| down · none · behind | 162 | – | – | – | recall 14/-14, push 26/-365, defend 122/-1145 |
-| down · soon · behind | 73 | – | – | – | push 2/+1137, recall 4/+850, setup 24/-83, defend 43/-848 |
-| down · none · ahead | 59 | – | – | – | push 49/+434, defend 9/-840, recall 1/-917 |
-| down · up · behind | 52 | – | – | – | trade 3/-1084, take 21/-1170, defend 23/-1335, recall 3/-1403, push 2/-2337 |
-| down · soon · ahead | 42 | – | – | – | trade 5/-249, setup 26/-465, push 6/-1177, defend 5/-2207 |
-| down · none · even | 36 | – | – | – | push 22/-539, defend 14/-1172 |
-| down · soon · even | 25 | – | – | – | setup 18/-486, push 3/-500, trade 2/-3138, defend 2/-3228 |
-| down · up · ahead | 22 | – | – | – | trade 3/+183, take 14/-127, push 4/-2367, defend 1/-3236 |
-| down · up · even | 20 | – | – | – | defend 5/-350, take 12/-691, trade 1/-1631, push 2/-2156 |
+| even · none · ahead | 10970 | push | +707 | +492 | recall 52/+909, push 2135/+707, split 1884/+664, farm 6626/+457, defend 273/+86 |
+| even · none · behind | 10137 | push | +243 | -537 | push 506/+243, recall 77/-73, split 1783/-434, farm 6457/-509, defend 1314/-843 |
+| even · none · even | 10121 | push | +474 | -17 | push 980/+474, recall 58/+226, split 1266/+111, farm 7400/-20, defend 417/-377 |
+| even · up · even | 3522 | take | +154 | -46 | trade 58/+399, push 81/+322, take 874/+154, split 138/+96, recall 15/-58, farm 2254/-68, defend 102/-309 |
+| down · none · behind | 3464 | – | – | – | recall 14/-14, push 26/-365, defend 122/-1145, farm 3302/-1228 |
+| up · none · ahead | 3417 | – | – | – | defend 117/+1405, split 750/+1330, farm 1787/+1195, push 742/+1174, recall 21/+971 |
+| even · up · ahead | 3340 | – | – | – | recall 21/+1669, trade 154/+781, push 233/+704, farm 1892/+527, take 759/+521, split 214/+485, defend 67/+228 |
+| even · soon · ahead | 3190 | – | – | – | recall 12/+722, split 277/+596, push 265/+595, trade 160/+547, farm 1397/+481, setup 1006/+380, defend 73/+359 |
+| even · up · behind | 3174 | take | -173 | -598 | push 43/+397, take 568/-173, trade 51/-226, split 223/-571, farm 1991/-613, defend 271/-710, recall 27/-949 |
+| even · soon · behind | 2983 | setup | +88 | -520 | push 65/+464, setup 748/+88, split 327/-390, trade 50/-433, recall 26/-445, farm 1448/-575, defend 319/-625 |
+| even · soon · even | 2594 | – | – | – | recall 8/+497, push 93/+334, trade 44/+293, split 183/+171, setup 910/+135, farm 1285/-46, defend 71/-533 |
+| down · none · even | 1566 | – | – | – | push 22/-539, farm 1530/-676, defend 14/-1172 |
+| up · none · even | 1423 | push | +1043 | +732 | push 167/+1043, recall 10/+875, farm 887/+736, split 290/+727, defend 69/+679 |
+| up · up · ahead | 1159 | – | – | – | recall 8/+2609, split 114/+1444, defend 38/+1333, take 244/+1266, farm 589/+1235, push 74/+1030, trade 92/+605 |
+| down · up · behind | 1120 | – | – | – | trade 3/-1084, farm 1068/-1155, take 21/-1170, defend 23/-1335, recall 3/-1403, push 2/-2337 |
+| down · none · ahead | 1062 | – | – | – | push 49/+434, farm 1003/-633, defend 9/-840, recall 1/-917 |
+| up · soon · ahead | 978 | split | +1501 | +1012 | recall 4/+1588, split 104/+1501, push 87/+1291, setup 294/+1141, farm 377/+1015, defend 29/+973, trade 83/+237 |
+| down · soon · behind | 931 | – | – | – | push 2/+1137, recall 4/+850, setup 24/-83, defend 43/-848, farm 858/-1079 |
+| up · none · behind | 920 | push | +1184 | +589 | push 102/+1184, split 260/+682, farm 440/+578, recall 15/+547, defend 103/+409 |
+| up · up · even | 582 | – | – | – | split 42/+1592, push 32/+1388, take 176/+947, defend 28/+858, farm 285/+815, trade 16/+616, recall 3/+119 |
+| down · up · even | 579 | – | – | – | defend 5/-350, take 12/-691, farm 559/-868, trade 1/-1631, push 2/-2156 |
+| up · soon · even | 424 | – | – | – | recall 2/+2470, push 24/+1237, trade 10/+1108, setup 170/+843, farm 149/+752, split 46/+674, defend 23/+406 |
+| down · soon · even | 414 | – | – | – | setup 18/-486, push 3/-500, farm 389/-735, trade 2/-3138, defend 2/-3228 |
+| up · up · behind | 361 | – | – | – | push 15/+1816, trade 9/+1326, split 43/+1056, farm 149/+1004, take 105/+888, defend 31/+499, recall 9/+494 |
+| down · up · ahead | 360 | – | – | – | trade 3/+183, take 14/-127, farm 338/-841, push 4/-2367, defend 1/-3236 |
+| down · soon · ahead | 351 | – | – | – | trade 5/-249, setup 26/-465, farm 309/-694, push 6/-1177, defend 5/-2207 |
+| up · soon · behind | 351 | – | – | – | push 11/+1310, setup 133/+949, farm 108/+699, defend 35/+695, split 52/+688, trade 11/+136, recall 1/-1429 |
