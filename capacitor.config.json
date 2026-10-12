@@ -1,0 +1,25 @@
+{
+  "appId": "dk.queuetrainer.app",
+  "appName": "Queue Trainer",
+  "webDir": "dist/site",
+  "backgroundColor": "#0a1520",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#0a1520"
+  },
+  "android": {
+    "backgroundColor": "#0a1520"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 600,
+      "backgroundColor": "#0a1520",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#0a1520",
+      "overlaysWebView": true
+    }
+  }
+}

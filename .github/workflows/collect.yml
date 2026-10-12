@@ -1,0 +1,47 @@
+# Collects real EUW high-elo matches with your Riot key, analyses them, and commits the aggregate results
+# (data/derived) so the next deploy uses them. Start it by hand: Actions -> Collect match data -> Run workflow.
+# Needs the repository secret RIOT_API_KEY (Settings -> Secrets and variables -> Actions).
+# Development keys expire after 24 hours: update the secret before each run.
+name: Collect match data
+
+on:
+  workflow_dispatch:
+    inputs:
+      matches:
+        description: 'How many new matches to collect (about 1,500 per hour)'
+        default: '1500'
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Raw matches are too big for git. They are kept in the Actions cache between runs, so each run adds to them.
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/raw
+          key: raw-matches-${{ github.run_id }}
+          restore-keys: raw-matches-
+      - run: node tools/collect.mjs --matches ${{ inputs.matches }}
+        env:
+          RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/raw
+          key: raw-matches-${{ github.run_id }}
+      - run: node tools/analyze.mjs
+      - name: Commit results
+        run: |
+          git config user.name "match-data-bot"
+          git config user.email "match-data-bot@users.noreply.github.com"
+          git add data/derived
+          git diff --cached --quiet || git commit -m "Match data: $(wc -l < data/raw/matches.jsonl) matches"
+          git push

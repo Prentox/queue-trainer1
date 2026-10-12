@@ -1,0 +1,280 @@
+<title>Queue Trainer</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a1520">
+{{FONTS}}
+<style>
+/* Layout: one-screen phone app in a tactical-HUD look. Views stack absolutely; each scrolls on its own. Single dark theme by design. */
+:root{
+  --bg:#0a1520; --grid:#12243399; --panel:#0f2131; --panel2:#163246; --line:#1f3a52; --ink:#e6f1f7; --muted:#7e9bb0; --soft:#b9cbd8;
+  --cyan:#35d0e8; --cyan-ink:#8fe7f4; --cyan-bg:#10303a; --amber:#ffb547; --red:#ff5a5f; --red-ink:#ff9a9d; --red-bg:#2b1a22; --green:#5fe39a; --green-bg:#12301f;
+  --tank:#3d6a8f; --bruiser:#8f5a2a; --carry:#8f3049; --enchanter:#2f7a5a;
+  --map:#0f2131; --river:#17364a; --lane:#1f3a52;
+  --display:'Chakra Petch','Arial Narrow',system-ui,sans-serif; --body:'Barlow',system-ui,-apple-system,sans-serif;
+  --cut:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  --cut-l:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;touch-action:manipulation;-webkit-touch-callout:none}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.4;overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.app{position:relative;height:100%;max-width:520px;margin:0 auto}
+.view{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;padding-inline:16px;padding-block:14px 20px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+h1,h2{font-family:var(--display);font-weight:700;margin:0;letter-spacing:.02em;text-transform:uppercase;text-wrap:balance}
+h1{font-size:30px;line-height:1.05}
+h2{font-size:20px}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.btn{appearance:none;border:0;padding:15px 16px;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;background:var(--amber);color:var(--bg);clip-path:var(--cut-l)}
+.btn.ghost{background:var(--panel);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn:disabled{opacity:.4}
+.row{display:flex;gap:10px;align-items:center}
+.spacer{flex:1}
+/* top bar */
+.bar{display:flex;align-items:center;gap:10px;min-height:40px}
+.icon{appearance:none;border:0;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);min-width:40px;height:40px;padding:0 12px;color:var(--cyan);font-family:var(--display);font-weight:700;letter-spacing:.08em;clip-path:var(--cut)}
+.bar .ttl{flex:1;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .cnt{font-family:var(--display);font-weight:700;color:var(--amber);padding:5px 9px;box-shadow:inset 0 0 0 1px #ffb54766;font-variant-numeric:tabular-nums}
+.timer{height:6px;background:#142c3f;overflow:hidden;flex:none}
+.timer i{display:block;height:100%;width:100%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);transform-origin:left}
+.timer.low i{background:var(--red);box-shadow:0 0 10px var(--red)}
+/* role picker */
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.role{appearance:none;border:0;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);padding:16px;text-align:left;display:flex;flex-direction:column;gap:4px;color:var(--cyan-ink);clip-path:var(--cut-l)}
+.role b{font-family:var(--display);font-size:20px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.role span{font-size:13px;color:var(--muted)}
+.role[aria-pressed="true"]{background:var(--cyan-bg);box-shadow:inset 0 0 0 1px var(--cyan),inset 0 0 18px #35d0e833;color:var(--amber)}
+.roles .role:last-child{grid-column:1 / -1}
+/* champion portraits */
+.badge{position:relative;flex:none;width:30px;height:30px;display:grid;place-items:center;overflow:hidden;font-family:var(--display);font-size:11px;font-weight:700;color:#fff;background:var(--c,var(--panel2));box-shadow:inset 0 -2px 0 var(--cyan)}
+.badge img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.badge.foe{box-shadow:inset 0 2px 0 var(--red)}
+.lane .badge,.roster .who .badge{border-radius:50%}
+.lane .badge.ally,.roster .who.ally .badge{box-shadow:0 0 0 2px var(--cyan)}
+.lane .badge.foe,.roster .who.foe .badge{box-shadow:0 0 0 2px var(--red)}
+.lane .badge.you{border-radius:50%;box-shadow:0 0 0 2px var(--amber)}
+.why .reasons{color:var(--soft);font-size:14px}
+.why .concl{color:var(--ink);font-size:14px;font-weight:600;border-left:2px solid var(--amber);padding-left:10px}
+.badge.you{background:var(--amber);color:var(--bg);box-shadow:none;font-size:15px}
+.k-Tank{--c:var(--tank)} .k-Bruiser{--c:var(--bruiser)} .k-Carry{--c:var(--carry)} .k-Enchanter{--c:var(--enchanter)}
+input[type=search]{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:0;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink);-webkit-user-select:text;user-select:text;clip-path:var(--cut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.champ{appearance:none;display:flex;align-items:center;gap:10px;padding:7px 9px;border:0;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);text-align:left;font-weight:600;font-size:14px;min-width:0}
+.champ .badge{width:34px;height:34px}
+.champ span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.champ[aria-pressed="true"]{background:var(--cyan-bg);box-shadow:inset 0 0 0 1px var(--cyan)}
+.sticky{position:sticky;bottom:-20px;padding-block:12px 4px;background:linear-gradient(transparent,var(--bg) 30%);display:flex;gap:10px}
+.sticky .btn{flex:1}
+/* home */
+.brand{display:flex;flex-direction:column;gap:6px}
+.brand h1{font-size:38px}
+.brand h1 span{color:var(--cyan)}
+.mainrole{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:5px 10px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);color:var(--soft)}
+.tag b{color:var(--cyan-ink)}
+.game{appearance:none;border:0;text-align:left;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);padding:18px;display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;clip-path:var(--cut-l)}
+.game b{font-family:var(--display);font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.game .d{grid-column:1;color:var(--muted);font-size:14px}
+.game .lv{grid-row:1 / span 2;grid-column:2;text-align:right}
+.game .lv strong{display:block;font-family:var(--display);font-size:26px;color:var(--amber);line-height:1}
+.game .lv span{font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.foot{font-size:12px;color:var(--muted);margin-top:auto}
+.resume{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--cyan-bg);box-shadow:inset 0 0 0 1px var(--cyan)}
+.resume p{margin:2px 0 0;font-weight:600}
+.resume .btn{padding:10px 16px;font-size:14px}
+/* draft lanes */
+.sides{display:flex;justify-content:space-between;font-family:var(--display);font-size:11px;letter-spacing:.16em;margin-bottom:-8px}
+.sides span:first-child{color:var(--cyan)} .sides span:last-child{color:var(--red)}
+.lanes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.lane{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 3px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);color:var(--cyan-ink);min-width:0}
+.lane .lr{font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.lane .badge{width:40px;height:40px;font-size:12px}
+.lane .ln{font-size:10px;color:var(--ink);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lane .vs{font-family:var(--display);font-size:9px;letter-spacing:.1em;color:var(--muted)}
+.lane.you{background:var(--cyan-bg);box-shadow:inset 0 0 0 1px var(--cyan);color:var(--amber)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.stats .legend{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);font-family:var(--display);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.legend .a,.stat .a{color:var(--cyan)} .legend .e,.stat .e{color:var(--red)}
+.stat{min-width:0}
+.stat .vals{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 4px}
+.stat .vals b{font-size:16px}
+.stat .vals i{font-style:normal;font-size:10px;color:var(--muted)}
+.stat small{font-size:10px;color:var(--muted)}
+.stat{padding:8px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:2px}
+.stat span{font-family:var(--display);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.stat b{font-family:var(--display);font-size:18px}
+.stat.low{box-shadow:inset 0 0 0 1px #ff5a5f66} .stat.low b{color:var(--red)}
+.stat.mid{box-shadow:inset 0 0 0 1px #ffb54766} .stat.mid b{color:var(--amber)}
+.stat.ok{box-shadow:inset 0 0 0 1px #35d0e866} .stat.ok b{color:var(--cyan)}
+.read{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.read .label{color:var(--red);margin-right:2px}
+.read span.t{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;color:var(--red-ink);background:var(--red-bg);box-shadow:inset 0 0 0 1px #ff5a5f55}
+.q{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.04em;text-transform:uppercase}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{appearance:none;border:0;display:flex;align-items:center;gap:12px;text-align:left;padding:11px 14px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line);min-height:56px;clip-path:var(--cut-l)}
+.opt .badge{width:38px;height:38px;font-size:13px;border-radius:50%;box-shadow:0 0 0 2px var(--cyan)}
+.opt .nm{display:flex;flex-direction:column;min-width:0}
+.opt .nm b{font-size:16px}
+.opt .nm i{font-style:normal;font-size:12px;color:var(--muted)}
+.opt .nm i.sc{font-size:11px;color:var(--cyan-ink);opacity:.8}
+.opt.right{background:var(--cyan-bg);box-shadow:inset 0 0 0 1px var(--cyan),inset 0 0 18px #35d0e833}
+.opt.right .nm i{color:var(--cyan-ink)}
+.opt.wrong{background:var(--red-bg);box-shadow:inset 0 0 0 1px var(--red)}
+.opt[disabled]{cursor:default}
+.why{display:flex;flex-direction:column;gap:8px;padding:12px 14px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line)}
+.why h3{margin:0;font-family:var(--display);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.why.ok h3{color:var(--green)} .why.no h3{color:var(--red)}
+.why p{color:var(--soft);font-size:14px}
+.why ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--soft)}
+.flag{appearance:none;border:0;background:none;color:var(--muted);font-size:13px;text-decoration:underline;padding:0;align-self:flex-start}
+/* decision */
+.roster{display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));gap:6px 6px;align-items:center}
+.roster .side{font-family:var(--display);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.roster .side.a{color:var(--cyan)} .roster .side.e{color:var(--red)}
+.roster .who{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0}
+.roster .who .badge{width:36px;height:36px}
+.roster .who i{font-style:normal;font-size:9px;color:var(--muted);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.roster .dead .badge{opacity:.35;filter:grayscale(1)}
+.roster .dead .badge::after{content:"";position:absolute;inset:0;background:linear-gradient(45deg,transparent 46%,var(--red) 46%,var(--red) 54%,transparent 54%),linear-gradient(-45deg,transparent 46%,var(--red) 46%,var(--red) 54%,transparent 54%)}
+.roster .who.me .badge{box-shadow:0 0 0 3px var(--amber)}
+.roster .me i{color:var(--amber)}
+.youline{font-size:13px;color:var(--soft)} .youline b{color:var(--amber)}
+.scene{display:grid;grid-template-columns:minmax(0,170px) 1fr;gap:12px;align-items:start}
+.scene svg{width:100%;height:auto;display:block;box-shadow:0 0 0 1px var(--line)}
+.facts{display:flex;flex-direction:column;gap:6px;font-size:13px;margin:0;padding:0;list-style:none}
+.facts li{display:flex;flex-direction:column;line-height:1.25}
+.facts li span{font-family:var(--display);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.clock{font-family:var(--display);font-weight:700;font-size:24px;color:var(--amber)}
+@media (max-width:380px){.scene{grid-template-columns:1fr}.scene svg{max-width:220px}}
+/* result */
+#vResult{justify-content:center;gap:16px}
+.total{font-family:var(--display);font-weight:700;font-size:64px;line-height:1;font-variant-numeric:tabular-nums;color:var(--amber)}
+.lvmsg{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.lvmsg.up{color:var(--green)} .lvmsg.down{color:var(--red)} .lvmsg.same{color:var(--muted)}
+.dots{display:flex;gap:6px}
+.dots i{flex:1;height:10px;background:var(--red)}
+.dots i.ok{background:var(--green);box-shadow:0 0 8px #5fe39a66}
+.confirm{display:flex;flex-direction:column;gap:10px;padding:14px;background:var(--red-bg);box-shadow:inset 0 0 0 1px var(--red)}
+.toast{position:absolute;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));padding:12px 14px;background:var(--cyan);color:var(--bg);font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;text-align:center;z-index:10;clip-path:var(--cut)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="app">
+  <!-- ROLE -->
+  <section class="view" id="vRole" hidden>
+    <div class="label" id="roleStep">Step 1 of 2</div>
+    <h1>What's your main role?</h1>
+    <p class="muted">Both games adapt to it. You can change it later in settings.</p>
+    <div class="roles" id="roleList"></div>
+  </section>
+
+  <!-- POOL -->
+  <section class="view" id="vPool" hidden>
+    <div class="label" id="poolStep">Step 2 of 2</div>
+    <h1 id="poolTitle">Your champion pool</h1>
+    <p class="muted">Pick up to 10 champions you play. In Draft you choose between them. Skip it to train with every champion.</p>
+    <input type="search" id="poolSearch" placeholder="Search champions" autocomplete="off" aria-label="Search champions">
+    <div class="row"><span class="label" id="poolCount">0 / 10 selected</span><span class="spacer"></span><button class="flag" type="button" id="poolAll">Show all roles</button></div>
+    <div class="grid" id="poolGrid"></div>
+    <div class="sticky">
+      <button class="btn ghost" type="button" id="poolSkip">Skip</button>
+      <button class="btn" type="button" id="poolSave">Save pool</button>
+    </div>
+  </section>
+
+  <!-- HOME -->
+  <section class="view" id="vHome" hidden>
+    <div class="bar"><div class="spacer"></div><button class="icon" type="button" id="toSettings">Settings</button></div>
+    <div class="brand">
+      <div class="label">Train while you queue</div>
+      <h1>Queue <span>Trainer</span></h1>
+    </div>
+    <div class="mainrole" id="homeRole"></div>
+    <div class="resume" id="resume" hidden>
+      <div><span class="label">Round in progress</span><p id="resumeText"></p></div>
+      <button class="btn" type="button" id="resumeBtn">Continue</button>
+    </div>
+    <button class="game" type="button" id="playDraft">
+      <b>Draft</b><span class="lv" id="lvDraft"></span>
+      <span class="d">Pick the champion your team comp needs.</span>
+    </button>
+    <button class="game" type="button" id="playDecision">
+      <b>Decision making</b><span class="lv" id="lvDecision"></span>
+      <span class="d">Read the moment and make the right call.</span>
+    </button>
+    <p class="muted" style="font-size:14px">5 quick tasks per round. Get 4 right to level up.</p>
+    <p class="foot">{{BUILD_LABEL}}Not endorsed by Riot Games. League of Legends and all champion names are trademarks of Riot Games, Inc.</p>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="view" id="vSettings" hidden>
+    <div class="bar"><button class="icon" type="button" data-home>‹ Back</button><div class="ttl">Settings</div></div>
+    <div class="label">Main role</div>
+    <div class="roles" id="setRoles"></div>
+    <div class="label">Champion pool</div>
+    <div class="mainrole" id="setPool"></div>
+    <button class="btn ghost" type="button" id="editPool">Edit champion pool</button>
+    <div class="label">Flagged tasks</div>
+    <p class="muted" id="flagInfo"></p>
+    <button class="btn ghost" type="button" id="flagCopy">Copy flagged tasks</button>
+    <textarea id="flagText" readonly hidden style="width:100%;min-height:120px;background:var(--panel);color:var(--ink);border:0;box-shadow:inset 0 0 0 1px var(--line);font:12px ui-monospace,monospace;padding:10px;-webkit-user-select:text;user-select:text" aria-label="Flagged tasks"></textarea>
+    <div class="label">About</div>
+    <p class="muted" style="font-size:13px"><a href="privacy.html" style="color:var(--cyan)">Privacy policy</a> · No accounts, no tracking. Everything is stored on this device.</p>
+    <div class="label">Progress</div>
+    <button class="btn ghost" type="button" id="resetAsk">Reset levels</button>
+    <div class="confirm" id="resetBox" hidden>
+      <p>Reset both games to level 1? This cannot be undone.</p>
+      <div class="row"><button class="btn ghost" type="button" id="resetNo" style="flex:1">Cancel</button><button class="btn" type="button" id="resetYes" style="flex:1;background:var(--bad)">Reset</button></div>
+    </div>
+  </section>
+
+  <!-- DRAFT -->
+  <section class="view" id="vDraft" hidden>
+    <div class="bar"><button class="icon" type="button" data-home>‹</button><div class="ttl" id="dTitle">Draft</div><div class="cnt" id="dCount">1/5</div></div>
+    <div class="timer" id="dTimer"><i></i></div>
+    <div class="sides"><span>▲ Your team</span><span>Enemy ▼</span></div>
+    <div class="lanes" id="dLanes"></div>
+    <div class="stats" id="dMeters" hidden></div>
+    <div class="read" id="dRead" hidden></div>
+    <div class="q" id="dQ"></div>
+    <div class="opts" id="dOpts"></div>
+    <div class="why" id="dWhy" hidden></div>
+    <button class="btn" type="button" id="dNext" hidden>Next</button>
+  </section>
+
+  <!-- DECISION -->
+  <section class="view" id="vDecision" hidden>
+    <div class="bar"><button class="icon" type="button" data-home>‹</button><div class="ttl" id="cTitle">Decision making</div><div class="cnt" id="cCount">1/5</div></div>
+    <div class="timer" id="cTimer"><i></i></div>
+    <div class="roster" id="cTeams"></div>
+    <div class="scene"><div id="cMap"></div><ul class="facts" id="cFacts"></ul></div>
+    <div class="q">What is the best call?</div>
+    <div class="opts" id="cOpts"></div>
+    <div class="why" id="cWhy" hidden></div>
+    <button class="btn" type="button" id="cNext" hidden>Next</button>
+  </section>
+
+  <!-- RESULT -->
+  <section class="view" id="vResult" hidden>
+    <div class="label" id="rGame"></div>
+    <div class="total" id="rScore">0</div>
+    <div class="lvmsg" id="rLevel"></div>
+    <div class="muted" id="rStats"></div>
+    <div class="dots" id="rDots"></div>
+    <button class="btn" type="button" id="rAgain">Play again</button>
+    <button class="btn ghost" type="button" data-home>Home</button>
+  </section>
+
+  <div class="toast" id="toast" hidden></div>
+</div>
+
+<script>
+const CHAMPION_DATA = `{{CHAMPIONS}}`;
+const MATCH_DATA = {{MATCH_DATA}};
+const ICON_MAP = {{ICONS}};
+{{ENGINE}}
+{{UI}}
+</script>

@@ -1,0 +1,36 @@
+{
+  "name": "queue-trainer",
+  "version": "0.9.1",
+  "private": true,
+  "type": "module",
+  "description": "Queue-time training games for League of Legends players (test build).",
+  "scripts": {
+    "build": "node build.mjs",
+    "test:engine": "node --test tests/engine.test.mjs tests/pipeline.test.mjs",
+    "test:ui": "playwright test",
+    "test": "npm run test:build && npm run build && npm run test:engine && npm run test:ui",
+    "balance": "node tests/balance-report.mjs",
+    "collect": "node tools/collect.mjs",
+    "analyze": "node tools/analyze.mjs",
+    "fetch-icons": "node tools/fetch-icons.mjs",
+    "build:release": "RELEASE=1 node build.mjs",
+    "app:icons": "node tools/make-app-icons.mjs",
+    "app:sync": "npm run build:release && npx cap sync",
+    "test:build": "node --test tests/build.test.mjs"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.2",
+    "@playwright/test": "1.48.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.2",
+    "@capacitor/core": "8.5.2",
+    "@capacitor/haptics": "8.0.2",
+    "@capacitor/ios": "8.5.2",
+    "@capacitor/preferences": "8.0.1",
+    "@capacitor/splash-screen": "8.0.2",
+    "@capacitor/status-bar": "8.0.3",
+    "@fontsource/barlow": "5.3.0",
+    "@fontsource/chakra-petch": "5.3.0"
+  }
+}

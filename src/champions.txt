@@ -1,0 +1,176 @@
+# name|positions|adShare0-10|class|style|frontline|engage|peel|disengage|dps|burst|waveclear|scaling
+# positions: T top, J jungle, M mid, A adc, S support (first = main role)
+# class: K tank, B bruiser, C carry, E enchanter   style: T teamfight, S split, P pick
+# frontline..waveclear: score 1-5. A champion counts as bringing that trait at 4 or 5.
+# scaling: 1 early / 2 mid / 3 late. First draft by Claude, to be spot-checked against match data.
+Aatrox|T|10|B|T|4|4|1|1|4|4|4|2
+Ahri|M|1|C|P|1|4|1|2|2|5|4|2
+Akali|MT|2|C|P|1|2|1|2|2|5|2|2
+Akshan|MT|10|C|P|1|1|1|2|4|4|2|2
+Alistar|S|2|K|T|5|5|5|4|1|2|1|2
+Ambessa|T|10|B|S|4|4|1|2|4|4|2|2
+Amumu|JS|1|K|T|5|5|2|1|2|2|2|2
+Anivia|M|0|C|T|1|1|4|5|4|2|5|3
+Annie|MS|0|C|T|1|5|2|1|2|5|4|2
+Aphelios|A|10|C|T|1|1|2|1|5|2|4|3
+Ashe|AS|10|C|T|1|4|4|2|4|2|2|2
+Aurelion Sol|M|0|C|T|1|1|1|1|5|2|5|3
+Aurora|MT|0|C|P|1|2|1|4|2|5|4|2
+Azir|M|1|C|T|1|4|4|4|5|2|5|3
+Bard|S|1|E|P|1|4|4|4|1|2|1|2
+Bel'Veth|J|10|C|S|2|2|1|1|5|2|4|3
+Blitzcrank|S|1|K|P|2|5|2|1|1|2|1|1
+Brand|SM|0|C|T|1|2|1|1|5|4|5|2
+Braum|S|2|K|T|4|2|5|4|1|1|1|1
+Briar|J|10|B|T|2|4|1|1|4|4|2|1
+Caitlyn|A|10|C|P|1|1|1|2|4|4|4|2
+Camille|T|10|B|S|2|4|1|2|4|4|2|2
+Cassiopeia|M|0|C|T|1|2|2|1|5|2|5|3
+Cho'Gath|T|1|K|T|5|2|2|1|2|4|4|3
+Corki|M|5|C|T|1|1|1|2|5|2|4|3
+Darius|T|10|B|T|4|2|1|1|5|2|4|1
+Diana|JM|0|B|T|2|5|1|1|4|5|4|2
+Dr. Mundo|TJ|3|K|S|5|2|1|1|4|1|2|3
+Draven|A|10|C|P|1|1|1|2|4|5|2|1
+Ekko|JM|0|C|P|1|2|1|4|4|5|4|2
+Elise|J|0|C|P|1|4|1|2|2|5|2|1
+Evelynn|J|0|C|P|1|2|1|2|2|5|2|2
+Ezreal|A|8|C|P|1|1|1|4|4|4|2|2
+Fiddlesticks|J|0|C|T|1|5|1|1|4|4|4|2
+Fiora|T|10|B|S|1|1|1|2|5|2|2|3
+Fizz|M|0|C|P|1|2|1|4|2|5|2|2
+Galio|MS|0|K|T|5|5|4|1|1|4|4|2
+Gangplank|T|10|C|S|1|1|1|2|4|5|5|3
+Garen|T|10|B|S|4|2|1|1|4|4|2|2
+Gnar|T|10|B|T|4|5|1|2|4|2|4|2
+Gragas|JT|0|K|T|4|5|4|4|2|4|4|2
+Graves|J|10|C|S|2|1|1|2|5|4|4|2
+Gwen|T|0|B|S|2|2|1|2|5|2|4|3
+Hecarim|J|10|B|T|4|5|1|1|4|4|4|2
+Heimerdinger|MT|0|C|T|1|2|2|2|4|2|5|2
+Hwei|MS|0|C|T|1|2|2|2|4|4|5|3
+Illaoi|T|10|B|S|4|1|1|1|5|2|4|2
+Irelia|TM|10|B|S|2|4|1|2|5|2|4|2
+Ivern|J|0|E|T|1|2|5|4|1|1|2|2
+Janna|S|0|E|T|1|1|5|5|1|1|2|2
+Jarvan IV|J|10|B|T|4|5|1|1|2|4|2|1
+Jax|T|5|B|S|2|4|1|2|5|2|4|3
+Jayce|TM|10|C|P|1|1|1|2|2|5|4|1
+Jhin|A|10|C|P|1|2|1|1|4|5|4|2
+Jinx|A|10|C|T|1|1|1|1|5|2|5|3
+K'Sante|T|8|K|T|5|4|4|2|2|2|2|2
+Kai'Sa|A|5|C|P|1|1|1|2|5|4|2|3
+Kalista|A|10|C|T|1|2|2|1|5|2|4|1
+Karma|SM|0|E|T|1|2|5|4|2|2|4|2
+Karthus|JM|0|C|T|1|1|1|1|5|4|5|3
+Kassadin|M|0|C|P|1|1|1|4|2|5|2|3
+Katarina|M|2|C|T|1|1|1|2|4|5|2|2
+Kayle|T|3|C|T|1|1|2|2|5|2|5|3
+Kayn|J|10|B|P|2|2|1|2|4|4|2|2
+Kennen|T|0|C|T|1|5|1|1|4|4|4|2
+Kha'Zix|J|10|C|P|1|1|1|2|2|5|2|2
+Kindred|J|10|C|P|1|1|4|2|5|2|2|3
+Kled|T|10|B|T|4|5|1|1|4|4|2|1
+Kog'Maw|A|5|C|T|1|1|1|1|5|2|2|3
+LeBlanc|M|0|C|P|1|2|1|4|1|5|2|2
+Lee Sin|J|10|B|P|2|4|2|2|2|4|2|1
+Leona|S|1|K|T|5|5|2|1|1|2|1|1
+Lillia|J|0|C|T|1|4|1|2|5|2|4|2
+Lissandra|M|0|C|T|2|5|4|2|2|4|4|2
+Lucian|AM|10|C|P|1|1|1|2|4|4|2|1
+Lulu|S|1|E|T|1|2|5|4|1|1|1|2
+Lux|SM|0|C|P|1|2|4|1|2|5|5|2
+Malphite|TS|1|K|T|5|5|1|1|1|4|2|2
+Malzahar|M|0|C|P|1|2|1|1|4|4|5|2
+Maokai|SJT|1|K|T|5|5|4|2|1|2|2|2
+Master Yi|J|10|C|S|1|1|1|2|5|2|2|3
+Mel|MS|0|C|T|1|1|4|2|2|5|4|2
+Milio|S|0|E|T|1|1|5|4|1|1|1|2
+Miss Fortune|A|10|C|T|1|1|1|1|4|5|4|2
+Mordekaiser|T|0|B|S|4|2|1|1|5|2|4|2
+Morgana|SM|0|E|P|1|4|5|2|2|2|4|2
+Naafiri|M|10|C|P|1|2|1|2|2|5|4|1
+Nami|S|0|E|T|1|4|5|4|1|2|1|2
+Nasus|T|10|B|S|4|1|1|1|5|1|4|3
+Nautilus|S|1|K|T|5|5|4|1|1|2|1|2
+Neeko|MS|0|C|T|1|5|1|1|2|5|4|2
+Nidalee|J|0|C|P|1|1|1|2|2|5|2|1
+Nilah|A|10|C|T|1|2|1|1|5|2|2|3
+Nocturne|J|10|C|P|1|4|1|1|4|4|2|2
+Nunu & Willump|J|0|K|P|4|4|2|2|2|4|2|2
+Olaf|J|10|B|T|4|2|1|1|5|2|4|1
+Orianna|M|0|C|T|1|4|5|2|4|4|5|3
+Ornn|T|3|K|T|5|5|2|1|1|2|2|3
+Pantheon|SMT|10|B|P|2|4|1|1|2|5|2|1
+Poppy|JST|10|K|T|5|4|5|2|1|2|2|2
+Pyke|S|10|C|P|1|4|1|2|1|5|1|1
+Qiyana|JM|10|C|T|1|5|1|1|2|5|2|2
+Quinn|T|10|C|S|1|1|1|2|4|4|2|2
+Rakan|S|0|E|T|1|5|4|2|1|2|1|2
+Rammus|J|1|K|T|5|5|2|1|2|1|2|2
+Rek'Sai|J|10|B|P|4|4|1|1|4|4|2|1
+Rell|S|1|K|T|5|5|2|1|1|2|1|2
+Renata Glasc|S|0|E|T|1|2|5|5|1|1|1|2
+Renekton|T|10|B|T|4|4|1|1|4|4|4|1
+Rengar|JT|10|C|P|1|2|1|1|2|5|2|2
+Riven|T|10|B|S|2|4|1|2|4|5|4|2
+Rumble|TM|0|B|T|2|4|1|2|5|2|4|2
+Ryze|MT|0|C|S|1|1|1|2|5|2|4|3
+Samira|A|10|C|T|1|4|1|1|4|5|2|2
+Sejuani|J|1|K|T|5|5|4|1|2|1|2|2
+Senna|SA|10|C|T|1|1|4|2|5|2|2|3
+Seraphine|SAM|0|E|T|1|4|5|4|2|2|5|3
+Sett|TS|10|B|T|4|4|1|1|2|4|2|2
+Shaco|JS|8|C|P|1|1|1|2|2|5|2|2
+Shen|TS|3|K|S|5|4|5|2|2|2|2|2
+Shyvana|J|3|B|T|4|2|1|1|5|2|5|2
+Singed|T|0|K|S|4|4|2|2|4|1|4|2
+Sion|T|10|K|T|5|5|1|1|2|2|4|3
+Sivir|A|10|C|T|1|1|2|4|5|2|5|3
+Skarner|JT|4|K|T|5|5|4|1|2|2|2|2
+Smolder|A|8|C|T|1|1|1|1|5|2|5|3
+Sona|S|0|E|T|1|2|5|4|2|2|1|3
+Soraka|S|0|E|T|1|1|5|4|1|1|1|2
+Swain|SM|0|B|T|4|4|2|1|5|2|5|2
+Sylas|MJT|0|B|T|2|4|1|1|4|5|4|2
+Syndra|M|0|C|P|1|2|2|2|2|5|4|3
+Tahm Kench|ST|1|K|T|5|2|5|1|2|2|2|2
+Taliyah|JM|0|C|P|1|2|2|4|4|4|5|2
+Talon|MJ|10|C|P|1|1|1|2|2|5|4|1
+Taric|S|2|E|T|2|4|5|2|1|1|1|2
+Teemo|T|0|C|S|1|1|1|2|4|4|4|2
+Thresh|S|1|K|P|2|5|5|4|1|2|1|2
+Tristana|AM|10|C|S|1|2|1|2|5|4|4|3
+Trundle|JT|10|B|S|4|2|1|1|5|2|2|2
+Tryndamere|T|10|C|S|1|1|1|2|5|2|4|3
+Twisted Fate|M|0|C|P|1|2|1|1|2|4|5|2
+Twitch|A|10|C|P|1|2|1|1|5|4|2|3
+Udyr|JT|5|B|S|4|4|1|2|4|2|4|2
+Urgot|T|10|B|T|4|2|1|1|5|2|4|2
+Varus|AM|8|C|P|1|4|1|1|4|5|4|2
+Vayne|AT|10|C|S|1|1|1|2|5|2|2|3
+Veigar|M|0|C|T|1|4|2|1|2|5|4|3
+Vel'Koz|SM|0|C|P|1|2|1|1|4|5|5|2
+Vex|M|0|C|T|1|4|2|4|2|5|5|2
+Vi|J|10|B|P|2|5|1|1|4|4|2|2
+Viego|J|10|B|T|2|2|1|1|4|4|2|2
+Viktor|M|0|C|T|1|2|2|2|5|4|5|3
+Vladimir|MT|0|C|T|1|2|1|2|5|4|5|3
+Volibear|TJ|5|B|T|4|4|1|1|4|4|2|2
+Warwick|JT|5|B|T|4|4|1|1|4|2|2|1
+Wukong|JT|10|B|T|4|5|1|1|4|4|2|2
+Xayah|A|10|C|T|1|1|2|4|5|2|4|3
+Xerath|MS|0|C|P|1|1|1|1|2|5|5|2
+Xin Zhao|J|10|B|T|4|4|1|1|4|4|2|1
+Yasuo|MT|10|C|T|1|4|2|2|5|2|4|3
+Yone|MT|5|C|T|1|4|1|2|5|4|4|3
+Yorick|T|10|B|S|4|1|1|1|5|2|4|3
+Yunara|A|10|C|T|1|1|1|1|5|2|4|3
+Yuumi|S|0|E|T|1|1|5|2|1|1|1|3
+Zac|JT|1|K|T|5|5|2|1|2|2|2|2
+Zed|MJ|10|C|P|1|1|1|2|2|5|4|2
+Zeri|A|10|C|T|1|1|1|4|5|2|4|3
+Ziggs|MA|0|C|S|1|1|1|2|4|4|5|2
+Zilean|SM|0|E|T|1|2|5|4|1|2|2|3
+Zoe|M|0|C|P|1|2|1|2|1|5|4|2
+Zyra|S|0|C|T|1|2|2|2|5|4|5|2

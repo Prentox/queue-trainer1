@@ -1,0 +1,54 @@
+# Every push to main: build, run all tests, and publish to GitHub Pages only if everything passes.
+name: Test and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  # Redeploy after new match data has been committed (commits made by a workflow don't trigger "push").
+  workflow_run:
+    workflows: ["Collect match data"]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:build
+      # Bundle champion icons so the app does not depend on Riot's servers (skipped if Data Dragon is down).
+      - run: npm run fetch-icons || echo "Icons not fetched; the app falls back to initials"
+      - run: npm run build
+      - run: npm run test:engine
+      - run: npm run test:ui
+      - run: npm run balance
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

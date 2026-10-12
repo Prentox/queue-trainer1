@@ -1,0 +1,49 @@
+# Builds the native apps on GitHub's machines, so no Mac or Android Studio is needed to try them.
+#   Android: a test APK you can install on an Android phone (Actions -> this run -> Artifacts).
+#   iOS: compiles the iPhone app for the simulator to prove it builds. Installing on an iPhone needs
+#        an Apple Developer account (TestFlight), see APP-STORE.md.
+name: Native apps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: npm ci
+      - run: npm run fetch-icons || echo "Icons not fetched"
+      - run: npm run build:release
+      - run: npx cap add android
+      - run: npx @capacitor/assets@3.0.5 generate --android --iconBackgroundColor '#0a1520' --splashBackgroundColor '#0a1520' || echo "Default icons kept"
+      - run: npx cap sync android
+      - run: cd android && ./gradlew assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: queue-trainer-android-test
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run fetch-icons || echo "Icons not fetched"
+      - run: npm run build:release
+      - run: npx cap add ios
+      - run: npx @capacitor/assets@3.0.5 generate --ios || echo "Default icons kept"
+      - run: npx cap sync ios
+      - run: xcodebuild -project ios/App/App.xcodeproj -scheme App -sdk iphonesimulator -configuration Debug build CODE_SIGNING_ALLOWED=NO
