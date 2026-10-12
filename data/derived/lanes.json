@@ -1,0 +1,506 @@
+{
+ "matchups": [
+  {
+   "pos": "adc",
+   "champion": "Kalista",
+   "versus": "Yunara",
+   "games": 19,
+   "winRate": 0.474
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Kalista",
+   "games": 19,
+   "winRate": 0.526
+  },
+  {
+   "pos": "adc",
+   "champion": "Aphelios",
+   "versus": "Yunara",
+   "games": 19,
+   "winRate": 0.579
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Aphelios",
+   "games": 19,
+   "winRate": 0.421
+  },
+  {
+   "pos": "top",
+   "champion": "Jayce",
+   "versus": "Camille",
+   "games": 11,
+   "winRate": 0.636
+  },
+  {
+   "pos": "top",
+   "champion": "Camille",
+   "versus": "Jayce",
+   "games": 11,
+   "winRate": 0.364
+  },
+  {
+   "pos": "adc",
+   "champion": "Ezreal",
+   "versus": "Caitlyn",
+   "games": 14,
+   "winRate": 0.5
+  },
+  {
+   "pos": "adc",
+   "champion": "Caitlyn",
+   "versus": "Ezreal",
+   "games": 14,
+   "winRate": 0.5
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Viktor",
+   "games": 11,
+   "winRate": 0.636
+  },
+  {
+   "pos": "adc",
+   "champion": "Viktor",
+   "versus": "Jhin",
+   "games": 11,
+   "winRate": 0.364
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Tristana",
+   "games": 22,
+   "winRate": 0.682
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Jhin",
+   "games": 22,
+   "winRate": 0.318
+  },
+  {
+   "pos": "top",
+   "champion": "Jayce",
+   "versus": "Olaf",
+   "games": 13,
+   "winRate": 0.538
+  },
+  {
+   "pos": "top",
+   "champion": "Olaf",
+   "versus": "Jayce",
+   "games": 13,
+   "winRate": 0.462
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Ezreal",
+   "games": 19,
+   "winRate": 0.526
+  },
+  {
+   "pos": "adc",
+   "champion": "Ezreal",
+   "versus": "Jhin",
+   "games": 19,
+   "winRate": 0.474
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Yunara",
+   "games": 19,
+   "winRate": 0.474
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Jhin",
+   "games": 19,
+   "winRate": 0.526
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Caitlyn",
+   "games": 31,
+   "winRate": 0.581
+  },
+  {
+   "pos": "adc",
+   "champion": "Caitlyn",
+   "versus": "Jhin",
+   "games": 31,
+   "winRate": 0.419
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Ezreal",
+   "games": 16,
+   "winRate": 0.688
+  },
+  {
+   "pos": "adc",
+   "champion": "Ezreal",
+   "versus": "Yunara",
+   "games": 16,
+   "winRate": 0.313
+  },
+  {
+   "pos": "adc",
+   "champion": "Zeri",
+   "versus": "Yunara",
+   "games": 14,
+   "winRate": 0.571
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Zeri",
+   "games": 14,
+   "winRate": 0.429
+  },
+  {
+   "pos": "adc",
+   "champion": "Xayah",
+   "versus": "Kai'Sa",
+   "games": 12,
+   "winRate": 0.583
+  },
+  {
+   "pos": "adc",
+   "champion": "Kai'Sa",
+   "versus": "Xayah",
+   "games": 12,
+   "winRate": 0.417
+  },
+  {
+   "pos": "adc",
+   "champion": "Caitlyn",
+   "versus": "Yunara",
+   "games": 25,
+   "winRate": 0.64
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Caitlyn",
+   "games": 25,
+   "winRate": 0.36
+  },
+  {
+   "pos": "adc",
+   "champion": "Kalista",
+   "versus": "Jhin",
+   "games": 10,
+   "winRate": 0.5
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Kalista",
+   "games": 10,
+   "winRate": 0.5
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Tristana",
+   "games": 22,
+   "winRate": 0.591
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Yunara",
+   "games": 22,
+   "winRate": 0.409
+  },
+  {
+   "pos": "mid",
+   "champion": "Ahri",
+   "versus": "Sylas",
+   "games": 20,
+   "winRate": 0.7
+  },
+  {
+   "pos": "mid",
+   "champion": "Sylas",
+   "versus": "Ahri",
+   "games": 20,
+   "winRate": 0.3
+  },
+  {
+   "pos": "adc",
+   "champion": "Caitlyn",
+   "versus": "Kalista",
+   "games": 11,
+   "winRate": 0.727
+  },
+  {
+   "pos": "adc",
+   "champion": "Kalista",
+   "versus": "Caitlyn",
+   "games": 11,
+   "winRate": 0.273
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Aphelios",
+   "games": 12,
+   "winRate": 0.5
+  },
+  {
+   "pos": "adc",
+   "champion": "Aphelios",
+   "versus": "Jhin",
+   "games": 12,
+   "winRate": 0.5
+  },
+  {
+   "pos": "adc",
+   "champion": "Ezreal",
+   "versus": "Kai'Sa",
+   "games": 16,
+   "winRate": 0.563
+  },
+  {
+   "pos": "adc",
+   "champion": "Kai'Sa",
+   "versus": "Ezreal",
+   "games": 16,
+   "winRate": 0.438
+  },
+  {
+   "pos": "adc",
+   "champion": "Kai'Sa",
+   "versus": "Tristana",
+   "games": 14,
+   "winRate": 0.429
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Kai'Sa",
+   "games": 14,
+   "winRate": 0.571
+  },
+  {
+   "pos": "adc",
+   "champion": "Jhin",
+   "versus": "Kai'Sa",
+   "games": 15,
+   "winRate": 0.267
+  },
+  {
+   "pos": "adc",
+   "champion": "Kai'Sa",
+   "versus": "Jhin",
+   "games": 15,
+   "winRate": 0.733
+  },
+  {
+   "pos": "top",
+   "champion": "Renekton",
+   "versus": "Ambessa",
+   "games": 10,
+   "winRate": 0.6
+  },
+  {
+   "pos": "top",
+   "champion": "Ambessa",
+   "versus": "Renekton",
+   "games": 10,
+   "winRate": 0.4
+  },
+  {
+   "pos": "adc",
+   "champion": "Yunara",
+   "versus": "Jinx",
+   "games": 11,
+   "winRate": 0.364
+  },
+  {
+   "pos": "adc",
+   "champion": "Jinx",
+   "versus": "Yunara",
+   "games": 11,
+   "winRate": 0.636
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Kog'Maw",
+   "games": 11,
+   "winRate": 0.636
+  },
+  {
+   "pos": "adc",
+   "champion": "Kog'Maw",
+   "versus": "Tristana",
+   "games": 11,
+   "winRate": 0.364
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Kalista",
+   "games": 16,
+   "winRate": 0.75
+  },
+  {
+   "pos": "adc",
+   "champion": "Kalista",
+   "versus": "Tristana",
+   "games": 16,
+   "winRate": 0.25
+  },
+  {
+   "pos": "adc",
+   "champion": "Caitlyn",
+   "versus": "Tristana",
+   "games": 11,
+   "winRate": 0.273
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Caitlyn",
+   "games": 11,
+   "winRate": 0.727
+  },
+  {
+   "pos": "adc",
+   "champion": "Zeri",
+   "versus": "Tristana",
+   "games": 13,
+   "winRate": 0.385
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Zeri",
+   "games": 13,
+   "winRate": 0.615
+  },
+  {
+   "pos": "adc",
+   "champion": "Ezreal",
+   "versus": "Tristana",
+   "games": 17,
+   "winRate": 0.529
+  },
+  {
+   "pos": "adc",
+   "champion": "Tristana",
+   "versus": "Ezreal",
+   "games": 17,
+   "winRate": 0.471
+  },
+  {
+   "pos": "mid",
+   "champion": "Viktor",
+   "versus": "Yone",
+   "games": 11,
+   "winRate": 0.455
+  },
+  {
+   "pos": "mid",
+   "champion": "Yone",
+   "versus": "Viktor",
+   "games": 11,
+   "winRate": 0.545
+  },
+  {
+   "pos": "top",
+   "champion": "Jayce",
+   "versus": "Malphite",
+   "games": 10,
+   "winRate": 0.4
+  },
+  {
+   "pos": "top",
+   "champion": "Malphite",
+   "versus": "Jayce",
+   "games": 10,
+   "winRate": 0.6
+  },
+  {
+   "pos": "top",
+   "champion": "K'Sante",
+   "versus": "Jayce",
+   "games": 11,
+   "winRate": 0.636
+  },
+  {
+   "pos": "top",
+   "champion": "Jayce",
+   "versus": "K'Sante",
+   "games": 11,
+   "winRate": 0.364
+  },
+  {
+   "pos": "adc",
+   "champion": "Kai'Sa",
+   "versus": "Yasuo",
+   "games": 10,
+   "winRate": 0.2
+  },
+  {
+   "pos": "adc",
+   "champion": "Yasuo",
+   "versus": "Kai'Sa",
+   "games": 10,
+   "winRate": 0.8
+  },
+  {
+   "pos": "mid",
+   "champion": "Syndra",
+   "versus": "Viktor",
+   "games": 12,
+   "winRate": 0.417
+  },
+  {
+   "pos": "mid",
+   "champion": "Viktor",
+   "versus": "Syndra",
+   "games": 12,
+   "winRate": 0.583
+  }
+ ],
+ "typeRules": {
+  "laneRange": {
+   "games": 501,
+   "winRate": 0.503
+  },
+  "laneEarly": {
+   "games": 419,
+   "winRate": 0.434
+  },
+  "laneBurst": {
+   "games": 640,
+   "winRate": 0.5
+  },
+  "laneTank": {
+   "games": 183,
+   "winRate": 0.541
+  },
+  "laneBully": {
+   "games": 72,
+   "winRate": 0.569
+  },
+  "laneSide": {
+   "games": 345,
+   "winRate": 0.496
+  }
+ }
+}

@@ -1,0 +1,83 @@
+[
+ {
+  "playersUp": 2,
+  "objectiveUp": "baron",
+  "moments": 2704,
+  "tookObjectiveWithin90s": 0.524,
+  "tookTowerWithin90s": 0.483,
+  "lostAPlayerWithin90s": 0.639,
+  "wonTheGame": 0.739
+ },
+ {
+  "playersUp": 2,
+  "objectiveUp": "dragon",
+  "moments": 3062,
+  "tookObjectiveWithin90s": 0.483,
+  "tookTowerWithin90s": 0.349,
+  "lostAPlayerWithin90s": 0.675,
+  "wonTheGame": 0.711
+ },
+ {
+  "playersUp": 2,
+  "objectiveUp": "none",
+  "moments": 11148,
+  "tookObjectiveWithin90s": 0.103,
+  "tookTowerWithin90s": 0.515,
+  "lostAPlayerWithin90s": 0.687,
+  "wonTheGame": 0.7
+ },
+ {
+  "playersUp": 3,
+  "objectiveUp": "baron",
+  "moments": 1359,
+  "tookObjectiveWithin90s": 0.547,
+  "tookTowerWithin90s": 0.59,
+  "lostAPlayerWithin90s": 0.525,
+  "wonTheGame": 0.82
+ },
+ {
+  "playersUp": 3,
+  "objectiveUp": "dragon",
+  "moments": 896,
+  "tookObjectiveWithin90s": 0.579,
+  "tookTowerWithin90s": 0.567,
+  "lostAPlayerWithin90s": 0.542,
+  "wonTheGame": 0.818
+ },
+ {
+  "playersUp": 3,
+  "objectiveUp": "none",
+  "moments": 3965,
+  "tookObjectiveWithin90s": 0.112,
+  "tookTowerWithin90s": 0.678,
+  "lostAPlayerWithin90s": 0.58,
+  "wonTheGame": 0.815
+ },
+ {
+  "playersUp": "4+",
+  "objectiveUp": "baron",
+  "moments": 693,
+  "tookObjectiveWithin90s": 0.459,
+  "tookTowerWithin90s": 0.667,
+  "lostAPlayerWithin90s": 0.364,
+  "wonTheGame": 0.893
+ },
+ {
+  "playersUp": "4+",
+  "objectiveUp": "dragon",
+  "moments": 341,
+  "tookObjectiveWithin90s": 0.446,
+  "tookTowerWithin90s": 0.695,
+  "lostAPlayerWithin90s": 0.408,
+  "wonTheGame": 0.886
+ },
+ {
+  "playersUp": "4+",
+  "objectiveUp": "none",
+  "moments": 1678,
+  "tookObjectiveWithin90s": 0.076,
+  "tookTowerWithin90s": 0.763,
+  "lostAPlayerWithin90s": 0.409,
+  "wonTheGame": 0.898
+ }
+]

@@ -1,0 +1,2540 @@
+{
+ "Talon": {
+  "games": 138,
+  "winRate": 0.486,
+  "adShare": 1,
+  "tankPerMin": 1724,
+  "ccPerMin": 0.25,
+  "helpPerMin": 0,
+  "damagePerMin": 782,
+  "objectivePerMin": 1047,
+  "positions": {
+   "jungle": 133,
+   "mid": 5
+  }
+ },
+ "Zoe": {
+  "games": 108,
+  "winRate": 0.62,
+  "adShare": 0.1,
+  "tankPerMin": 920,
+  "ccPerMin": 1.45,
+  "helpPerMin": 13,
+  "damagePerMin": 824,
+  "objectivePerMin": 242,
+  "positions": {
+   "mid": 64,
+   "support": 35,
+   "adc": 4,
+   "top": 5
+  }
+ },
+ "Blitzcrank": {
+  "games": 82,
+  "winRate": 0.549,
+  "adShare": 0.34,
+  "tankPerMin": 1585,
+  "ccPerMin": 1.61,
+  "helpPerMin": 34,
+  "damagePerMin": 318,
+  "objectivePerMin": 39,
+  "positions": {
+   "support": 82
+  }
+ },
+ "Vladimir": {
+  "games": 65,
+  "winRate": 0.538,
+  "adShare": 0.05,
+  "tankPerMin": 1629,
+  "ccPerMin": 0.15,
+  "helpPerMin": 1,
+  "damagePerMin": 869,
+  "objectivePerMin": 361,
+  "positions": {
+   "top": 26,
+   "adc": 12,
+   "mid": 27
+  }
+ },
+ "Kha'Zix": {
+  "games": 145,
+  "winRate": 0.49,
+  "adShare": 0.93,
+  "tankPerMin": 1530,
+  "ccPerMin": 0.36,
+  "helpPerMin": 0,
+  "damagePerMin": 804,
+  "objectivePerMin": 995,
+  "positions": {
+   "jungle": 145
+  }
+ },
+ "Yone": {
+  "games": 301,
+  "winRate": 0.505,
+  "adShare": 0.82,
+  "tankPerMin": 1976,
+  "ccPerMin": 0.72,
+  "helpPerMin": 0,
+  "damagePerMin": 860,
+  "objectivePerMin": 460,
+  "positions": {
+   "mid": 161,
+   "top": 123,
+   "adc": 17
+  }
+ },
+ "Kai'Sa": {
+  "games": 158,
+  "winRate": 0.449,
+  "adShare": 0.6,
+  "tankPerMin": 1233,
+  "ccPerMin": 0.1,
+  "helpPerMin": 0,
+  "damagePerMin": 889,
+  "objectivePerMin": 515,
+  "positions": {
+   "adc": 153,
+   "jungle": 3,
+   "top": 2
+  }
+ },
+ "K'Sante": {
+  "games": 91,
+  "winRate": 0.462,
+  "adShare": 0.92,
+  "tankPerMin": 2896,
+  "ccPerMin": 1.34,
+  "helpPerMin": 30,
+  "damagePerMin": 650,
+  "objectivePerMin": 269,
+  "positions": {
+   "support": 1,
+   "top": 89,
+   "mid": 1
+  }
+ },
+ "Lucian": {
+  "games": 110,
+  "winRate": 0.491,
+  "adShare": 0.9,
+  "tankPerMin": 1236,
+  "ccPerMin": 0.08,
+  "helpPerMin": 0,
+  "damagePerMin": 921,
+  "objectivePerMin": 442,
+  "positions": {
+   "top": 6,
+   "adc": 67,
+   "mid": 36,
+   "support": 1
+  }
+ },
+ "Elise": {
+  "games": 143,
+  "winRate": 0.545,
+  "adShare": 0.09,
+  "tankPerMin": 1351,
+  "ccPerMin": 1.01,
+  "helpPerMin": 1,
+  "damagePerMin": 717,
+  "objectivePerMin": 860,
+  "positions": {
+   "jungle": 98,
+   "top": 12,
+   "support": 28,
+   "mid": 5
+  }
+ },
+ "Irelia": {
+  "games": 118,
+  "winRate": 0.593,
+  "adShare": 0.75,
+  "tankPerMin": 2225,
+  "ccPerMin": 0.55,
+  "helpPerMin": 0,
+  "damagePerMin": 830,
+  "objectivePerMin": 622,
+  "positions": {
+   "mid": 51,
+   "top": 66,
+   "adc": 1
+  }
+ },
+ "Swain": {
+  "games": 58,
+  "winRate": 0.466,
+  "adShare": 0.08,
+  "tankPerMin": 2140,
+  "ccPerMin": 1.75,
+  "helpPerMin": 1,
+  "damagePerMin": 751,
+  "objectivePerMin": 213,
+  "positions": {
+   "adc": 35,
+   "mid": 10,
+   "support": 11,
+   "top": 2
+  }
+ },
+ "Thresh": {
+  "games": 181,
+  "winRate": 0.497,
+  "adShare": 0.16,
+  "tankPerMin": 1578,
+  "ccPerMin": 1.37,
+  "helpPerMin": 110,
+  "damagePerMin": 274,
+  "objectivePerMin": 60,
+  "positions": {
+   "support": 181
+  }
+ },
+ "Gangplank": {
+  "games": 98,
+  "winRate": 0.5,
+  "adShare": 0.78,
+  "tankPerMin": 1493,
+  "ccPerMin": 0.43,
+  "helpPerMin": 0,
+  "damagePerMin": 925,
+  "objectivePerMin": 383,
+  "positions": {
+   "top": 93,
+   "adc": 1,
+   "mid": 4
+  }
+ },
+ "Hwei": {
+  "games": 79,
+  "winRate": 0.468,
+  "adShare": 0.04,
+  "tankPerMin": 991,
+  "ccPerMin": 0.93,
+  "helpPerMin": 41,
+  "damagePerMin": 882,
+  "objectivePerMin": 275,
+  "positions": {
+   "mid": 41,
+   "adc": 30,
+   "support": 7,
+   "top": 1
+  }
+ },
+ "Jhin": {
+  "games": 248,
+  "winRate": 0.508,
+  "adShare": 0.92,
+  "tankPerMin": 1042,
+  "ccPerMin": 1.06,
+  "helpPerMin": 0,
+  "damagePerMin": 806,
+  "objectivePerMin": 377,
+  "positions": {
+   "adc": 243,
+   "jungle": 3,
+   "top": 2
+  }
+ },
+ "Lux": {
+  "games": 73,
+  "winRate": 0.479,
+  "adShare": 0.08,
+  "tankPerMin": 955,
+  "ccPerMin": 1.46,
+  "helpPerMin": 99,
+  "damagePerMin": 682,
+  "objectivePerMin": 204,
+  "positions": {
+   "support": 33,
+   "adc": 16,
+   "mid": 22,
+   "top": 2
+  }
+ },
+ "Jayce": {
+  "games": 238,
+  "winRate": 0.45,
+  "adShare": 0.82,
+  "tankPerMin": 1385,
+  "ccPerMin": 0.55,
+  "helpPerMin": 0,
+  "damagePerMin": 921,
+  "objectivePerMin": 546,
+  "positions": {
+   "top": 164,
+   "mid": 33,
+   "jungle": 38,
+   "adc": 3
+  }
+ },
+ "Qiyana": {
+  "games": 211,
+  "winRate": 0.483,
+  "adShare": 0.92,
+  "tankPerMin": 1412,
+  "ccPerMin": 0.71,
+  "helpPerMin": 0,
+  "damagePerMin": 854,
+  "objectivePerMin": 993,
+  "positions": {
+   "jungle": 183,
+   "mid": 20,
+   "top": 4,
+   "support": 1,
+   "adc": 3
+  }
+ },
+ "Kalista": {
+  "games": 191,
+  "winRate": 0.44,
+  "adShare": 0.81,
+  "tankPerMin": 1435,
+  "ccPerMin": 0.67,
+  "helpPerMin": 0,
+  "damagePerMin": 961,
+  "objectivePerMin": 600,
+  "positions": {
+   "adc": 175,
+   "mid": 6,
+   "top": 10
+  }
+ },
+ "Pyke": {
+  "games": 103,
+  "winRate": 0.447,
+  "adShare": 0.99,
+  "tankPerMin": 1191,
+  "ccPerMin": 0.98,
+  "helpPerMin": 2,
+  "damagePerMin": 436,
+  "objectivePerMin": 63,
+  "positions": {
+   "support": 103
+  }
+ },
+ "Ivern": {
+  "games": 56,
+  "winRate": 0.482,
+  "adShare": 0.31,
+  "tankPerMin": 890,
+  "ccPerMin": 1.68,
+  "helpPerMin": 526,
+  "damagePerMin": 290,
+  "objectivePerMin": 784,
+  "positions": {
+   "jungle": 54,
+   "support": 2
+  }
+ },
+ "Akali": {
+  "games": 150,
+  "winRate": 0.593,
+  "adShare": 0.07,
+  "tankPerMin": 1526,
+  "ccPerMin": 0.12,
+  "helpPerMin": 0,
+  "damagePerMin": 871,
+  "objectivePerMin": 283,
+  "positions": {
+   "mid": 109,
+   "adc": 1,
+   "top": 40
+  }
+ },
+ "Yunara": {
+  "games": 242,
+  "winRate": 0.504,
+  "adShare": 0.66,
+  "tankPerMin": 1249,
+  "ccPerMin": 0.36,
+  "helpPerMin": 0,
+  "damagePerMin": 964,
+  "objectivePerMin": 494,
+  "positions": {
+   "adc": 239,
+   "top": 3
+  }
+ },
+ "Leona": {
+  "games": 103,
+  "winRate": 0.476,
+  "adShare": 0.32,
+  "tankPerMin": 1929,
+  "ccPerMin": 1.97,
+  "helpPerMin": 49,
+  "damagePerMin": 336,
+  "objectivePerMin": 47,
+  "positions": {
+   "support": 103
+  }
+ },
+ "Diana": {
+  "games": 58,
+  "winRate": 0.603,
+  "adShare": 0.13,
+  "tankPerMin": 2285,
+  "ccPerMin": 0.45,
+  "helpPerMin": 0,
+  "damagePerMin": 818,
+  "objectivePerMin": 1050,
+  "positions": {
+   "top": 4,
+   "jungle": 44,
+   "mid": 10
+  }
+ },
+ "Fizz": {
+  "games": 38,
+  "winRate": 0.421,
+  "adShare": 0.14,
+  "tankPerMin": 1225,
+  "ccPerMin": 0.44,
+  "helpPerMin": 0,
+  "damagePerMin": 691,
+  "objectivePerMin": 370,
+  "positions": {
+   "mid": 34,
+   "adc": 1,
+   "top": 2,
+   "jungle": 1
+  }
+ },
+ "Aphelios": {
+  "games": 116,
+  "winRate": 0.5,
+  "adShare": 0.96,
+  "tankPerMin": 1156,
+  "ccPerMin": 0.56,
+  "helpPerMin": 0,
+  "damagePerMin": 953,
+  "objectivePerMin": 649,
+  "positions": {
+   "adc": 115,
+   "top": 1
+  }
+ },
+ "Kennen": {
+  "games": 60,
+  "winRate": 0.5,
+  "adShare": 0.17,
+  "tankPerMin": 1228,
+  "ccPerMin": 0.97,
+  "helpPerMin": 0,
+  "damagePerMin": 781,
+  "objectivePerMin": 283,
+  "positions": {
+   "support": 5,
+   "top": 34,
+   "mid": 15,
+   "adc": 6
+  }
+ },
+ "Galio": {
+  "games": 111,
+  "winRate": 0.505,
+  "adShare": 0.02,
+  "tankPerMin": 2108,
+  "ccPerMin": 1.3,
+  "helpPerMin": 43,
+  "damagePerMin": 674,
+  "objectivePerMin": 214,
+  "positions": {
+   "top": 11,
+   "mid": 90,
+   "support": 9,
+   "adc": 1
+  }
+ },
+ "Lee Sin": {
+  "games": 258,
+  "winRate": 0.531,
+  "adShare": 0.87,
+  "tankPerMin": 2178,
+  "ccPerMin": 0.79,
+  "helpPerMin": 30,
+  "damagePerMin": 680,
+  "objectivePerMin": 1012,
+  "positions": {
+   "jungle": 257,
+   "support": 1
+  }
+ },
+ "Cho'Gath": {
+  "games": 128,
+  "winRate": 0.477,
+  "adShare": 0.23,
+  "tankPerMin": 2505,
+  "ccPerMin": 2.12,
+  "helpPerMin": 0,
+  "damagePerMin": 687,
+  "objectivePerMin": 741,
+  "positions": {
+   "mid": 16,
+   "top": 38,
+   "jungle": 70,
+   "adc": 4
+  }
+ },
+ "Camille": {
+  "games": 205,
+  "winRate": 0.517,
+  "adShare": 0.91,
+  "tankPerMin": 2108,
+  "ccPerMin": 0.77,
+  "helpPerMin": 0,
+  "damagePerMin": 773,
+  "objectivePerMin": 358,
+  "positions": {
+   "top": 158,
+   "support": 39,
+   "mid": 8
+  }
+ },
+ "Kayn": {
+  "games": 42,
+  "winRate": 0.381,
+  "adShare": 0.91,
+  "tankPerMin": 1730,
+  "ccPerMin": 0.39,
+  "helpPerMin": 0,
+  "damagePerMin": 820,
+  "objectivePerMin": 800,
+  "positions": {
+   "jungle": 42
+  }
+ },
+ "Karma": {
+  "games": 157,
+  "winRate": 0.49,
+  "adShare": 0.12,
+  "tankPerMin": 1208,
+  "ccPerMin": 1.18,
+  "helpPerMin": 308,
+  "damagePerMin": 384,
+  "objectivePerMin": 84,
+  "positions": {
+   "mid": 7,
+   "support": 144,
+   "top": 5,
+   "adc": 1
+  }
+ },
+ "Ezreal": {
+  "games": 175,
+  "winRate": 0.457,
+  "adShare": 0.7,
+  "tankPerMin": 1169,
+  "ccPerMin": 0.12,
+  "helpPerMin": 0,
+  "damagePerMin": 963,
+  "objectivePerMin": 479,
+  "positions": {
+   "adc": 175
+  }
+ },
+ "Jax": {
+  "games": 76,
+  "winRate": 0.539,
+  "adShare": 0.54,
+  "tankPerMin": 1976,
+  "ccPerMin": 0.68,
+  "helpPerMin": 0,
+  "damagePerMin": 726,
+  "objectivePerMin": 491,
+  "positions": {
+   "top": 63,
+   "jungle": 3,
+   "support": 2,
+   "mid": 5,
+   "adc": 3
+  }
+ },
+ "Hecarim": {
+  "games": 97,
+  "winRate": 0.474,
+  "adShare": 0.85,
+  "tankPerMin": 2505,
+  "ccPerMin": 0.67,
+  "helpPerMin": 0,
+  "damagePerMin": 717,
+  "objectivePerMin": 962,
+  "positions": {
+   "jungle": 97
+  }
+ },
+ "Syndra": {
+  "games": 255,
+  "winRate": 0.478,
+  "adShare": 0.05,
+  "tankPerMin": 953,
+  "ccPerMin": 1.38,
+  "helpPerMin": 3,
+  "damagePerMin": 844,
+  "objectivePerMin": 253,
+  "positions": {
+   "mid": 198,
+   "adc": 54,
+   "top": 3
+  }
+ },
+ "Nautilus": {
+  "games": 248,
+  "winRate": 0.472,
+  "adShare": 0.32,
+  "tankPerMin": 1988,
+  "ccPerMin": 2.23,
+  "helpPerMin": 42,
+  "damagePerMin": 314,
+  "objectivePerMin": 44,
+  "positions": {
+   "support": 248
+  }
+ },
+ "Aurelion Sol": {
+  "games": 85,
+  "winRate": 0.494,
+  "adShare": 0.01,
+  "tankPerMin": 1036,
+  "ccPerMin": 0.91,
+  "helpPerMin": 0,
+  "damagePerMin": 887,
+  "objectivePerMin": 306,
+  "positions": {
+   "mid": 12,
+   "adc": 64,
+   "top": 6,
+   "support": 3
+  }
+ },
+ "Ashe": {
+  "games": 69,
+  "winRate": 0.507,
+  "adShare": 0.92,
+  "tankPerMin": 1033,
+  "ccPerMin": 1.58,
+  "helpPerMin": 0,
+  "damagePerMin": 779,
+  "objectivePerMin": 473,
+  "positions": {
+   "adc": 69
+  }
+ },
+ "Seraphine": {
+  "games": 86,
+  "winRate": 0.535,
+  "adShare": 0.13,
+  "tankPerMin": 1008,
+  "ccPerMin": 1.03,
+  "helpPerMin": 344,
+  "damagePerMin": 474,
+  "objectivePerMin": 142,
+  "positions": {
+   "support": 62,
+   "adc": 20,
+   "mid": 3,
+   "top": 1
+  }
+ },
+ "Graves": {
+  "games": 120,
+  "winRate": 0.458,
+  "adShare": 0.96,
+  "tankPerMin": 1564,
+  "ccPerMin": 0.77,
+  "helpPerMin": 0,
+  "damagePerMin": 813,
+  "objectivePerMin": 1135,
+  "positions": {
+   "jungle": 118,
+   "top": 2
+  }
+ },
+ "Jinx": {
+  "games": 90,
+  "winRate": 0.556,
+  "adShare": 0.97,
+  "tankPerMin": 1063,
+  "ccPerMin": 0.66,
+  "helpPerMin": 0,
+  "damagePerMin": 903,
+  "objectivePerMin": 601,
+  "positions": {
+   "adc": 89,
+   "top": 1
+  }
+ },
+ "Viktor": {
+  "games": 226,
+  "winRate": 0.518,
+  "adShare": 0.03,
+  "tankPerMin": 1247,
+  "ccPerMin": 0.93,
+  "helpPerMin": 1,
+  "damagePerMin": 988,
+  "objectivePerMin": 316,
+  "positions": {
+   "mid": 129,
+   "adc": 89,
+   "top": 7,
+   "support": 1
+  }
+ },
+ "Zeri": {
+  "games": 143,
+  "winRate": 0.51,
+  "adShare": 0.77,
+  "tankPerMin": 1324,
+  "ccPerMin": 0.25,
+  "helpPerMin": 0,
+  "damagePerMin": 977,
+  "objectivePerMin": 503,
+  "positions": {
+   "adc": 138,
+   "top": 4,
+   "jungle": 1
+  }
+ },
+ "Lulu": {
+  "games": 232,
+  "winRate": 0.539,
+  "adShare": 0.17,
+  "tankPerMin": 938,
+  "ccPerMin": 1.2,
+  "helpPerMin": 233,
+  "damagePerMin": 281,
+  "objectivePerMin": 97,
+  "positions": {
+   "support": 232
+  }
+ },
+ "Master Yi": {
+  "games": 23,
+  "winRate": 0.609,
+  "adShare": 0.95,
+  "tankPerMin": 1776,
+  "ccPerMin": 0.27,
+  "helpPerMin": 0,
+  "damagePerMin": 784,
+  "objectivePerMin": 1136,
+  "positions": {
+   "jungle": 22,
+   "mid": 1
+  }
+ },
+ "Vex": {
+  "games": 43,
+  "winRate": 0.535,
+  "adShare": 0.07,
+  "tankPerMin": 1147,
+  "ccPerMin": 1.23,
+  "helpPerMin": 1,
+  "damagePerMin": 930,
+  "objectivePerMin": 296,
+  "positions": {
+   "mid": 34,
+   "top": 4,
+   "adc": 2,
+   "support": 3
+  }
+ },
+ "Kog'Maw": {
+  "games": 94,
+  "winRate": 0.479,
+  "adShare": 0.22,
+  "tankPerMin": 1158,
+  "ccPerMin": 0.38,
+  "helpPerMin": 0,
+  "damagePerMin": 1017,
+  "objectivePerMin": 465,
+  "positions": {
+   "adc": 55,
+   "top": 7,
+   "mid": 18,
+   "jungle": 12,
+   "support": 2
+  }
+ },
+ "Ornn": {
+  "games": 83,
+  "winRate": 0.494,
+  "adShare": 0.37,
+  "tankPerMin": 2893,
+  "ccPerMin": 1.34,
+  "helpPerMin": 4,
+  "damagePerMin": 601,
+  "objectivePerMin": 192,
+  "positions": {
+   "top": 82,
+   "mid": 1
+  }
+ },
+ "Ekko": {
+  "games": 175,
+  "winRate": 0.52,
+  "adShare": 0.13,
+  "tankPerMin": 1671,
+  "ccPerMin": 0.6,
+  "helpPerMin": 0,
+  "damagePerMin": 784,
+  "objectivePerMin": 591,
+  "positions": {
+   "mid": 91,
+   "adc": 15,
+   "jungle": 56,
+   "top": 9,
+   "support": 4
+  }
+ },
+ "Caitlyn": {
+  "games": 183,
+  "winRate": 0.541,
+  "adShare": 0.97,
+  "tankPerMin": 1035,
+  "ccPerMin": 0.65,
+  "helpPerMin": 0,
+  "damagePerMin": 881,
+  "objectivePerMin": 598,
+  "positions": {
+   "adc": 182,
+   "mid": 1
+  }
+ },
+ "Nidalee": {
+  "games": 79,
+  "winRate": 0.557,
+  "adShare": 0.09,
+  "tankPerMin": 1728,
+  "ccPerMin": 0.4,
+  "helpPerMin": 158,
+  "damagePerMin": 797,
+  "objectivePerMin": 1037,
+  "positions": {
+   "jungle": 72,
+   "mid": 2,
+   "top": 3,
+   "support": 2
+  }
+ },
+ "Corki": {
+  "games": 50,
+  "winRate": 0.44,
+  "adShare": 0.76,
+  "tankPerMin": 1335,
+  "ccPerMin": 0.08,
+  "helpPerMin": 0,
+  "damagePerMin": 963,
+  "objectivePerMin": 464,
+  "positions": {
+   "adc": 21,
+   "top": 17,
+   "mid": 12
+  }
+ },
+ "Vel'Koz": {
+  "games": 83,
+  "winRate": 0.518,
+  "adShare": 0.03,
+  "tankPerMin": 895,
+  "ccPerMin": 0.96,
+  "helpPerMin": 5,
+  "damagePerMin": 914,
+  "objectivePerMin": 249,
+  "positions": {
+   "support": 23,
+   "adc": 35,
+   "mid": 23,
+   "top": 2
+  }
+ },
+ "Shen": {
+  "games": 86,
+  "winRate": 0.5,
+  "adShare": 0.6,
+  "tankPerMin": 2419,
+  "ccPerMin": 1.11,
+  "helpPerMin": 83,
+  "damagePerMin": 569,
+  "objectivePerMin": 268,
+  "positions": {
+   "top": 59,
+   "support": 11,
+   "mid": 9,
+   "adc": 2,
+   "jungle": 5
+  }
+ },
+ "Aurora": {
+  "games": 120,
+  "winRate": 0.467,
+  "adShare": 0.08,
+  "tankPerMin": 1156,
+  "ccPerMin": 0.32,
+  "helpPerMin": 1,
+  "damagePerMin": 951,
+  "objectivePerMin": 268,
+  "positions": {
+   "mid": 94,
+   "top": 22,
+   "adc": 4
+  }
+ },
+ "Mel": {
+  "games": 38,
+  "winRate": 0.368,
+  "adShare": 0.08,
+  "tankPerMin": 1020,
+  "ccPerMin": 1.02,
+  "helpPerMin": 1,
+  "damagePerMin": 805,
+  "objectivePerMin": 298,
+  "positions": {
+   "adc": 22,
+   "mid": 13,
+   "top": 1,
+   "support": 2
+  }
+ },
+ "Shaco": {
+  "games": 58,
+  "winRate": 0.431,
+  "adShare": 0.26,
+  "tankPerMin": 1229,
+  "ccPerMin": 1.12,
+  "helpPerMin": 1,
+  "damagePerMin": 792,
+  "objectivePerMin": 837,
+  "positions": {
+   "jungle": 54,
+   "support": 4
+  }
+ },
+ "Alistar": {
+  "games": 133,
+  "winRate": 0.579,
+  "adShare": 0.16,
+  "tankPerMin": 2099,
+  "ccPerMin": 2.13,
+  "helpPerMin": 182,
+  "damagePerMin": 254,
+  "objectivePerMin": 31,
+  "positions": {
+   "support": 133
+  }
+ },
+ "Wukong": {
+  "games": 110,
+  "winRate": 0.591,
+  "adShare": 0.86,
+  "tankPerMin": 1971,
+  "ccPerMin": 0.64,
+  "helpPerMin": 0,
+  "damagePerMin": 634,
+  "objectivePerMin": 1066,
+  "positions": {
+   "jungle": 108,
+   "top": 2
+  }
+ },
+ "Janna": {
+  "games": 164,
+  "winRate": 0.5,
+  "adShare": 0.18,
+  "tankPerMin": 946,
+  "ccPerMin": 1.34,
+  "helpPerMin": 398,
+  "damagePerMin": 304,
+  "objectivePerMin": 99,
+  "positions": {
+   "support": 163,
+   "top": 1
+  }
+ },
+ "Sion": {
+  "games": 95,
+  "winRate": 0.421,
+  "adShare": 0.63,
+  "tankPerMin": 3992,
+  "ccPerMin": 1.38,
+  "helpPerMin": 1,
+  "damagePerMin": 694,
+  "objectivePerMin": 276,
+  "positions": {
+   "top": 83,
+   "mid": 8,
+   "support": 2,
+   "adc": 2
+  }
+ },
+ "Lillia": {
+  "games": 67,
+  "winRate": 0.478,
+  "adShare": 0.05,
+  "tankPerMin": 1988,
+  "ccPerMin": 1.06,
+  "helpPerMin": 0,
+  "damagePerMin": 770,
+  "objectivePerMin": 877,
+  "positions": {
+   "jungle": 67
+  }
+ },
+ "Tristana": {
+  "games": 279,
+  "winRate": 0.52,
+  "adShare": 0.92,
+  "tankPerMin": 1232,
+  "ccPerMin": 0.29,
+  "helpPerMin": 0,
+  "damagePerMin": 936,
+  "objectivePerMin": 646,
+  "positions": {
+   "adc": 217,
+   "mid": 46,
+   "top": 16
+  }
+ },
+ "Skarner": {
+  "games": 46,
+  "winRate": 0.413,
+  "adShare": 0.69,
+  "tankPerMin": 3046,
+  "ccPerMin": 1.42,
+  "helpPerMin": 1,
+  "damagePerMin": 654,
+  "objectivePerMin": 809,
+  "positions": {
+   "jungle": 41,
+   "support": 5
+  }
+ },
+ "Cassiopeia": {
+  "games": 99,
+  "winRate": 0.556,
+  "adShare": 0.03,
+  "tankPerMin": 1543,
+  "ccPerMin": 1.01,
+  "helpPerMin": 0,
+  "damagePerMin": 838,
+  "objectivePerMin": 367,
+  "positions": {
+   "top": 28,
+   "mid": 64,
+   "adc": 7
+  }
+ },
+ "Kayle": {
+  "games": 12,
+  "winRate": 0.667,
+  "adShare": 0.21,
+  "tankPerMin": 1278,
+  "ccPerMin": 0.29,
+  "helpPerMin": 74,
+  "damagePerMin": 704,
+  "objectivePerMin": 500,
+  "positions": {
+   "mid": 3,
+   "top": 9
+  }
+ },
+ "Katarina": {
+  "games": 87,
+  "winRate": 0.529,
+  "adShare": 0.41,
+  "tankPerMin": 1615,
+  "ccPerMin": 0.08,
+  "helpPerMin": 0,
+  "damagePerMin": 881,
+  "objectivePerMin": 358,
+  "positions": {
+   "support": 1,
+   "mid": 68,
+   "top": 3,
+   "adc": 15
+  }
+ },
+ "Nasus": {
+  "games": 38,
+  "winRate": 0.421,
+  "adShare": 0.77,
+  "tankPerMin": 2818,
+  "ccPerMin": 0.68,
+  "helpPerMin": 0,
+  "damagePerMin": 618,
+  "objectivePerMin": 353,
+  "positions": {
+   "top": 27,
+   "adc": 2,
+   "mid": 9
+  }
+ },
+ "Yuumi": {
+  "games": 41,
+  "winRate": 0.463,
+  "adShare": 0.05,
+  "tankPerMin": 558,
+  "ccPerMin": 0.77,
+  "helpPerMin": 482,
+  "damagePerMin": 311,
+  "objectivePerMin": 20,
+  "positions": {
+   "support": 41
+  }
+ },
+ "Singed": {
+  "games": 59,
+  "winRate": 0.475,
+  "adShare": 0.04,
+  "tankPerMin": 1902,
+  "ccPerMin": 1.25,
+  "helpPerMin": 0,
+  "damagePerMin": 636,
+  "objectivePerMin": 214,
+  "positions": {
+   "adc": 5,
+   "top": 49,
+   "mid": 5
+  }
+ },
+ "Zilean": {
+  "games": 80,
+  "winRate": 0.525,
+  "adShare": 0.19,
+  "tankPerMin": 1154,
+  "ccPerMin": 1.01,
+  "helpPerMin": 136,
+  "damagePerMin": 320,
+  "objectivePerMin": 100,
+  "positions": {
+   "support": 53,
+   "mid": 7,
+   "top": 19,
+   "adc": 1
+  }
+ },
+ "Xayah": {
+  "games": 64,
+  "winRate": 0.688,
+  "adShare": 0.99,
+  "tankPerMin": 1116,
+  "ccPerMin": 0.66,
+  "helpPerMin": 0,
+  "damagePerMin": 932,
+  "objectivePerMin": 759,
+  "positions": {
+   "adc": 63,
+   "top": 1
+  }
+ },
+ "Morgana": {
+  "games": 33,
+  "winRate": 0.485,
+  "adShare": 0.08,
+  "tankPerMin": 1247,
+  "ccPerMin": 2.05,
+  "helpPerMin": 99,
+  "damagePerMin": 553,
+  "objectivePerMin": 241,
+  "positions": {
+   "support": 19,
+   "jungle": 4,
+   "mid": 8,
+   "adc": 2
+  }
+ },
+ "Olaf": {
+  "games": 109,
+  "winRate": 0.56,
+  "adShare": 0.99,
+  "tankPerMin": 2370,
+  "ccPerMin": 0.54,
+  "helpPerMin": 0,
+  "damagePerMin": 794,
+  "objectivePerMin": 613,
+  "positions": {
+   "top": 83,
+   "mid": 5,
+   "jungle": 16,
+   "adc": 5
+  }
+ },
+ "Vi": {
+  "games": 64,
+  "winRate": 0.516,
+  "adShare": 1,
+  "tankPerMin": 2046,
+  "ccPerMin": 1,
+  "helpPerMin": 0,
+  "damagePerMin": 612,
+  "objectivePerMin": 908,
+  "positions": {
+   "jungle": 60,
+   "support": 3,
+   "top": 1
+  }
+ },
+ "Rakan": {
+  "games": 111,
+  "winRate": 0.532,
+  "adShare": 0.25,
+  "tankPerMin": 1619,
+  "ccPerMin": 1.23,
+  "helpPerMin": 211,
+  "damagePerMin": 259,
+  "objectivePerMin": 69,
+  "positions": {
+   "support": 111
+  }
+ },
+ "Gragas": {
+  "games": 130,
+  "winRate": 0.523,
+  "adShare": 0.08,
+  "tankPerMin": 1733,
+  "ccPerMin": 1.49,
+  "helpPerMin": 1,
+  "damagePerMin": 726,
+  "objectivePerMin": 393,
+  "positions": {
+   "jungle": 7,
+   "top": 102,
+   "mid": 18,
+   "support": 2,
+   "adc": 1
+  }
+ },
+ "Nami": {
+  "games": 75,
+  "winRate": 0.507,
+  "adShare": 0.16,
+  "tankPerMin": 917,
+  "ccPerMin": 1.12,
+  "helpPerMin": 477,
+  "damagePerMin": 344,
+  "objectivePerMin": 81,
+  "positions": {
+   "support": 75
+  }
+ },
+ "Ahri": {
+  "games": 164,
+  "winRate": 0.543,
+  "adShare": 0.11,
+  "tankPerMin": 1157,
+  "ccPerMin": 0.7,
+  "helpPerMin": 1,
+  "damagePerMin": 838,
+  "objectivePerMin": 278,
+  "positions": {
+   "mid": 147,
+   "adc": 5,
+   "top": 11,
+   "support": 1
+  }
+ },
+ "Rengar": {
+  "games": 90,
+  "winRate": 0.556,
+  "adShare": 0.94,
+  "tankPerMin": 1675,
+  "ccPerMin": 0.54,
+  "helpPerMin": 0,
+  "damagePerMin": 767,
+  "objectivePerMin": 867,
+  "positions": {
+   "jungle": 82,
+   "adc": 1,
+   "support": 6,
+   "top": 1
+  }
+ },
+ "Trundle": {
+  "games": 51,
+  "winRate": 0.627,
+  "adShare": 0.86,
+  "tankPerMin": 2524,
+  "ccPerMin": 0.74,
+  "helpPerMin": 2,
+  "damagePerMin": 649,
+  "objectivePerMin": 803,
+  "positions": {
+   "jungle": 9,
+   "top": 38,
+   "support": 2,
+   "mid": 1,
+   "adc": 1
+  }
+ },
+ "Ryze": {
+  "games": 105,
+  "winRate": 0.457,
+  "adShare": 0.05,
+  "tankPerMin": 1535,
+  "ccPerMin": 0.87,
+  "helpPerMin": 0,
+  "damagePerMin": 834,
+  "objectivePerMin": 358,
+  "positions": {
+   "mid": 94,
+   "top": 11
+  }
+ },
+ "Gwen": {
+  "games": 42,
+  "winRate": 0.452,
+  "adShare": 0.16,
+  "tankPerMin": 1912,
+  "ccPerMin": 0.26,
+  "helpPerMin": 0,
+  "damagePerMin": 896,
+  "objectivePerMin": 545,
+  "positions": {
+   "mid": 9,
+   "adc": 4,
+   "top": 26,
+   "jungle": 3
+  }
+ },
+ "Xerath": {
+  "games": 30,
+  "winRate": 0.4,
+  "adShare": 0.03,
+  "tankPerMin": 859,
+  "ccPerMin": 0.89,
+  "helpPerMin": 1,
+  "damagePerMin": 876,
+  "objectivePerMin": 177,
+  "positions": {
+   "adc": 9,
+   "mid": 19,
+   "support": 2
+  }
+ },
+ "Pantheon": {
+  "games": 63,
+  "winRate": 0.429,
+  "adShare": 0.96,
+  "tankPerMin": 1602,
+  "ccPerMin": 0.85,
+  "helpPerMin": 0,
+  "damagePerMin": 693,
+  "objectivePerMin": 248,
+  "positions": {
+   "support": 31,
+   "mid": 4,
+   "jungle": 8,
+   "top": 18,
+   "adc": 2
+  }
+ },
+ "Anivia": {
+  "games": 73,
+  "winRate": 0.452,
+  "adShare": 0.08,
+  "tankPerMin": 1463,
+  "ccPerMin": 1.61,
+  "helpPerMin": 1,
+  "damagePerMin": 707,
+  "objectivePerMin": 255,
+  "positions": {
+   "support": 7,
+   "mid": 38,
+   "top": 20,
+   "adc": 8
+  }
+ },
+ "Twitch": {
+  "games": 33,
+  "winRate": 0.333,
+  "adShare": 0.91,
+  "tankPerMin": 1146,
+  "ccPerMin": 0.31,
+  "helpPerMin": 0,
+  "damagePerMin": 856,
+  "objectivePerMin": 276,
+  "positions": {
+   "adc": 27,
+   "mid": 3,
+   "support": 2,
+   "jungle": 1
+  }
+ },
+ "Yasuo": {
+  "games": 196,
+  "winRate": 0.526,
+  "adShare": 0.91,
+  "tankPerMin": 1847,
+  "ccPerMin": 0.87,
+  "helpPerMin": 0,
+  "damagePerMin": 755,
+  "objectivePerMin": 528,
+  "positions": {
+   "top": 61,
+   "mid": 80,
+   "adc": 54,
+   "support": 1
+  }
+ },
+ "Senna": {
+  "games": 90,
+  "winRate": 0.522,
+  "adShare": 0.92,
+  "tankPerMin": 1069,
+  "ccPerMin": 1.39,
+  "helpPerMin": 232,
+  "damagePerMin": 647,
+  "objectivePerMin": 215,
+  "positions": {
+   "support": 88,
+   "adc": 2
+  }
+ },
+ "Teemo": {
+  "games": 47,
+  "winRate": 0.426,
+  "adShare": 0.15,
+  "tankPerMin": 1186,
+  "ccPerMin": 1.4,
+  "helpPerMin": 1,
+  "damagePerMin": 962,
+  "objectivePerMin": 381,
+  "positions": {
+   "top": 46,
+   "support": 1
+  }
+ },
+ "Bard": {
+  "games": 199,
+  "winRate": 0.462,
+  "adShare": 0.36,
+  "tankPerMin": 1405,
+  "ccPerMin": 1.75,
+  "helpPerMin": 86,
+  "damagePerMin": 442,
+  "objectivePerMin": 65,
+  "positions": {
+   "support": 198,
+   "mid": 1
+  }
+ },
+ "LeBlanc": {
+  "games": 106,
+  "winRate": 0.462,
+  "adShare": 0.08,
+  "tankPerMin": 1098,
+  "ccPerMin": 0.59,
+  "helpPerMin": 2,
+  "damagePerMin": 824,
+  "objectivePerMin": 224,
+  "positions": {
+   "mid": 78,
+   "top": 7,
+   "support": 20,
+   "adc": 1
+  }
+ },
+ "Ambessa": {
+  "games": 148,
+  "winRate": 0.372,
+  "adShare": 0.98,
+  "tankPerMin": 2203,
+  "ccPerMin": 0.42,
+  "helpPerMin": 0,
+  "damagePerMin": 765,
+  "objectivePerMin": 458,
+  "positions": {
+   "top": 105,
+   "jungle": 35,
+   "mid": 8
+  }
+ },
+ "Sylas": {
+  "games": 266,
+  "winRate": 0.477,
+  "adShare": 0.03,
+  "tankPerMin": 2010,
+  "ccPerMin": 0.86,
+  "helpPerMin": 5,
+  "damagePerMin": 742,
+  "objectivePerMin": 474,
+  "positions": {
+   "adc": 5,
+   "support": 17,
+   "mid": 118,
+   "jungle": 102,
+   "top": 24
+  }
+ },
+ "Viego": {
+  "games": 113,
+  "winRate": 0.522,
+  "adShare": 0.91,
+  "tankPerMin": 1751,
+  "ccPerMin": 0.64,
+  "helpPerMin": 2,
+  "damagePerMin": 755,
+  "objectivePerMin": 1063,
+  "positions": {
+   "jungle": 108,
+   "top": 1,
+   "mid": 4
+  }
+ },
+ "Zac": {
+  "games": 51,
+  "winRate": 0.451,
+  "adShare": 0.08,
+  "tankPerMin": 3002,
+  "ccPerMin": 1.58,
+  "helpPerMin": 3,
+  "damagePerMin": 632,
+  "objectivePerMin": 640,
+  "positions": {
+   "top": 13,
+   "jungle": 31,
+   "support": 3,
+   "mid": 4
+  }
+ },
+ "Twisted Fate": {
+  "games": 104,
+  "winRate": 0.567,
+  "adShare": 0.24,
+  "tankPerMin": 1235,
+  "ccPerMin": 1.46,
+  "helpPerMin": 2,
+  "damagePerMin": 697,
+  "objectivePerMin": 372,
+  "positions": {
+   "mid": 76,
+   "adc": 9,
+   "top": 16,
+   "support": 3
+  }
+ },
+ "Rell": {
+  "games": 168,
+  "winRate": 0.524,
+  "adShare": 0.24,
+  "tankPerMin": 1951,
+  "ccPerMin": 1.52,
+  "helpPerMin": 34,
+  "damagePerMin": 308,
+  "objectivePerMin": 59,
+  "positions": {
+   "support": 168
+  }
+ },
+ "Zed": {
+  "games": 130,
+  "winRate": 0.477,
+  "adShare": 0.96,
+  "tankPerMin": 1270,
+  "ccPerMin": 0.25,
+  "helpPerMin": 0,
+  "damagePerMin": 952,
+  "objectivePerMin": 483,
+  "positions": {
+   "mid": 93,
+   "jungle": 21,
+   "top": 15,
+   "adc": 1
+  }
+ },
+ "Taric": {
+  "games": 22,
+  "winRate": 0.5,
+  "adShare": 0.37,
+  "tankPerMin": 1894,
+  "ccPerMin": 1.5,
+  "helpPerMin": 311,
+  "damagePerMin": 248,
+  "objectivePerMin": 106,
+  "positions": {
+   "support": 22
+  }
+ },
+ "Aatrox": {
+  "games": 83,
+  "winRate": 0.518,
+  "adShare": 0.91,
+  "tankPerMin": 2386,
+  "ccPerMin": 0.76,
+  "helpPerMin": 0,
+  "damagePerMin": 805,
+  "objectivePerMin": 549,
+  "positions": {
+   "top": 59,
+   "jungle": 24
+  }
+ },
+ "Nocturne": {
+  "games": 20,
+  "winRate": 0.5,
+  "adShare": 0.93,
+  "tankPerMin": 1775,
+  "ccPerMin": 5.42,
+  "helpPerMin": 0,
+  "damagePerMin": 597,
+  "objectivePerMin": 888,
+  "positions": {
+   "jungle": 20
+  }
+ },
+ "Renata Glasc": {
+  "games": 79,
+  "winRate": 0.494,
+  "adShare": 0.26,
+  "tankPerMin": 1299,
+  "ccPerMin": 0.97,
+  "helpPerMin": 156,
+  "damagePerMin": 292,
+  "objectivePerMin": 133,
+  "positions": {
+   "support": 79
+  }
+ },
+ "Garen": {
+  "games": 74,
+  "winRate": 0.527,
+  "adShare": 1,
+  "tankPerMin": 2508,
+  "ccPerMin": 1.27,
+  "helpPerMin": 0,
+  "damagePerMin": 751,
+  "objectivePerMin": 467,
+  "positions": {
+   "top": 51,
+   "mid": 21,
+   "adc": 2
+  }
+ },
+ "Varus": {
+  "games": 74,
+  "winRate": 0.473,
+  "adShare": 0.51,
+  "tankPerMin": 1345,
+  "ccPerMin": 0.89,
+  "helpPerMin": 0,
+  "damagePerMin": 831,
+  "objectivePerMin": 392,
+  "positions": {
+   "top": 27,
+   "adc": 45,
+   "mid": 2
+  }
+ },
+ "Xin Zhao": {
+  "games": 41,
+  "winRate": 0.537,
+  "adShare": 0.92,
+  "tankPerMin": 2215,
+  "ccPerMin": 0.9,
+  "helpPerMin": 0,
+  "damagePerMin": 712,
+  "objectivePerMin": 1006,
+  "positions": {
+   "jungle": 38,
+   "top": 3
+  }
+ },
+ "Renekton": {
+  "games": 93,
+  "winRate": 0.505,
+  "adShare": 0.83,
+  "tankPerMin": 2504,
+  "ccPerMin": 0.86,
+  "helpPerMin": 0,
+  "damagePerMin": 710,
+  "objectivePerMin": 311,
+  "positions": {
+   "top": 88,
+   "mid": 5
+  }
+ },
+ "Annie": {
+  "games": 27,
+  "winRate": 0.63,
+  "adShare": 0.06,
+  "tankPerMin": 1162,
+  "ccPerMin": 1.29,
+  "helpPerMin": 83,
+  "damagePerMin": 854,
+  "objectivePerMin": 184,
+  "positions": {
+   "mid": 16,
+   "support": 8,
+   "adc": 1,
+   "top": 2
+  }
+ },
+ "Milio": {
+  "games": 45,
+  "winRate": 0.533,
+  "adShare": 0.22,
+  "tankPerMin": 911,
+  "ccPerMin": 0.73,
+  "helpPerMin": 541,
+  "damagePerMin": 213,
+  "objectivePerMin": 78,
+  "positions": {
+   "support": 45
+  }
+ },
+ "Fiddlesticks": {
+  "games": 19,
+  "winRate": 0.474,
+  "adShare": 0.02,
+  "tankPerMin": 1508,
+  "ccPerMin": 1.89,
+  "helpPerMin": 5,
+  "damagePerMin": 672,
+  "objectivePerMin": 603,
+  "positions": {
+   "top": 4,
+   "jungle": 12,
+   "support": 3
+  }
+ },
+ "Naafiri": {
+  "games": 70,
+  "winRate": 0.529,
+  "adShare": 0.99,
+  "tankPerMin": 1672,
+  "ccPerMin": 0.3,
+  "helpPerMin": 0,
+  "damagePerMin": 753,
+  "objectivePerMin": 985,
+  "positions": {
+   "jungle": 64,
+   "top": 3,
+   "mid": 2,
+   "adc": 1
+  }
+ },
+ "Dr. Mundo": {
+  "games": 46,
+  "winRate": 0.478,
+  "adShare": 0.45,
+  "tankPerMin": 3534,
+  "ccPerMin": 0.55,
+  "helpPerMin": 0,
+  "damagePerMin": 819,
+  "objectivePerMin": 559,
+  "positions": {
+   "jungle": 5,
+   "top": 38,
+   "mid": 3
+  }
+ },
+ "Braum": {
+  "games": 68,
+  "winRate": 0.5,
+  "adShare": 0.21,
+  "tankPerMin": 1720,
+  "ccPerMin": 1.42,
+  "helpPerMin": 91,
+  "damagePerMin": 253,
+  "objectivePerMin": 47,
+  "positions": {
+   "support": 68
+  }
+ },
+ "Rammus": {
+  "games": 12,
+  "winRate": 0.5,
+  "adShare": 0.32,
+  "tankPerMin": 3086,
+  "ccPerMin": 1.55,
+  "helpPerMin": 13,
+  "damagePerMin": 473,
+  "objectivePerMin": 715,
+  "positions": {
+   "jungle": 10,
+   "support": 1,
+   "top": 1
+  }
+ },
+ "Kassadin": {
+  "games": 30,
+  "winRate": 0.467,
+  "adShare": 0.1,
+  "tankPerMin": 1733,
+  "ccPerMin": 0.18,
+  "helpPerMin": 0,
+  "damagePerMin": 772,
+  "objectivePerMin": 289,
+  "positions": {
+   "mid": 28,
+   "top": 2
+  }
+ },
+ "Darius": {
+  "games": 80,
+  "winRate": 0.463,
+  "adShare": 1,
+  "tankPerMin": 2192,
+  "ccPerMin": 0.75,
+  "helpPerMin": 0,
+  "damagePerMin": 678,
+  "objectivePerMin": 653,
+  "positions": {
+   "top": 50,
+   "jungle": 28,
+   "mid": 2
+  }
+ },
+ "Sejuani": {
+  "games": 27,
+  "winRate": 0.407,
+  "adShare": 0.59,
+  "tankPerMin": 2700,
+  "ccPerMin": 1.17,
+  "helpPerMin": 8,
+  "damagePerMin": 604,
+  "objectivePerMin": 1009,
+  "positions": {
+   "jungle": 22,
+   "support": 1,
+   "top": 2,
+   "mid": 2
+  }
+ },
+ "Karthus": {
+  "games": 57,
+  "winRate": 0.596,
+  "adShare": 0.01,
+  "tankPerMin": 1284,
+  "ccPerMin": 0.77,
+  "helpPerMin": 0,
+  "damagePerMin": 1342,
+  "objectivePerMin": 678,
+  "positions": {
+   "adc": 28,
+   "mid": 8,
+   "jungle": 20,
+   "top": 1
+  }
+ },
+ "Sona": {
+  "games": 52,
+  "winRate": 0.519,
+  "adShare": 0.23,
+  "tankPerMin": 1118,
+  "ccPerMin": 0.67,
+  "helpPerMin": 503,
+  "damagePerMin": 472,
+  "objectivePerMin": 161,
+  "positions": {
+   "support": 52
+  }
+ },
+ "Malphite": {
+  "games": 66,
+  "winRate": 0.53,
+  "adShare": 0.28,
+  "tankPerMin": 2504,
+  "ccPerMin": 1.15,
+  "helpPerMin": 0,
+  "damagePerMin": 696,
+  "objectivePerMin": 314,
+  "positions": {
+   "top": 60,
+   "jungle": 2,
+   "mid": 4
+  }
+ },
+ "Poppy": {
+  "games": 57,
+  "winRate": 0.579,
+  "adShare": 0.84,
+  "tankPerMin": 2045,
+  "ccPerMin": 1.45,
+  "helpPerMin": 33,
+  "damagePerMin": 471,
+  "objectivePerMin": 124,
+  "positions": {
+   "support": 46,
+   "top": 7,
+   "jungle": 2,
+   "mid": 2
+  }
+ },
+ "Neeko": {
+  "games": 67,
+  "winRate": 0.463,
+  "adShare": 0.08,
+  "tankPerMin": 1111,
+  "ccPerMin": 1.43,
+  "helpPerMin": 15,
+  "damagePerMin": 613,
+  "objectivePerMin": 193,
+  "positions": {
+   "support": 42,
+   "mid": 21,
+   "top": 2,
+   "adc": 2
+  }
+ },
+ "Mordekaiser": {
+  "games": 13,
+  "winRate": 0.615,
+  "adShare": 0.13,
+  "tankPerMin": 2475,
+  "ccPerMin": 0.38,
+  "helpPerMin": 0,
+  "damagePerMin": 896,
+  "objectivePerMin": 509,
+  "positions": {
+   "jungle": 4,
+   "top": 7,
+   "mid": 2
+  }
+ },
+ "Jarvan IV": {
+  "games": 124,
+  "winRate": 0.411,
+  "adShare": 0.93,
+  "tankPerMin": 1987,
+  "ccPerMin": 0.76,
+  "helpPerMin": 0,
+  "damagePerMin": 672,
+  "objectivePerMin": 904,
+  "positions": {
+   "jungle": 124
+  }
+ },
+ "Sivir": {
+  "games": 58,
+  "winRate": 0.431,
+  "adShare": 0.99,
+  "tankPerMin": 1123,
+  "ccPerMin": 0.06,
+  "helpPerMin": 0,
+  "damagePerMin": 868,
+  "objectivePerMin": 405,
+  "positions": {
+   "adc": 55,
+   "mid": 2,
+   "top": 1
+  }
+ },
+ "Draven": {
+  "games": 106,
+  "winRate": 0.396,
+  "adShare": 1,
+  "tankPerMin": 1203,
+  "ccPerMin": 0.36,
+  "helpPerMin": 0,
+  "damagePerMin": 811,
+  "objectivePerMin": 443,
+  "positions": {
+   "adc": 101,
+   "top": 4,
+   "mid": 1
+  }
+ },
+ "Kindred": {
+  "games": 33,
+  "winRate": 0.606,
+  "adShare": 0.85,
+  "tankPerMin": 1500,
+  "ccPerMin": 0.43,
+  "helpPerMin": 113,
+  "damagePerMin": 860,
+  "objectivePerMin": 1060,
+  "positions": {
+   "jungle": 33
+  }
+ },
+ "Miss Fortune": {
+  "games": 28,
+  "winRate": 0.286,
+  "adShare": 0.95,
+  "tankPerMin": 1161,
+  "ccPerMin": 0.28,
+  "helpPerMin": 0,
+  "damagePerMin": 884,
+  "objectivePerMin": 464,
+  "positions": {
+   "adc": 27,
+   "support": 1
+  }
+ },
+ "Shyvana": {
+  "games": 53,
+  "winRate": 0.453,
+  "adShare": 0.56,
+  "tankPerMin": 2350,
+  "ccPerMin": 0.5,
+  "helpPerMin": 0,
+  "damagePerMin": 698,
+  "objectivePerMin": 1056,
+  "positions": {
+   "top": 2,
+   "jungle": 51
+  }
+ },
+ "Riven": {
+  "games": 68,
+  "winRate": 0.412,
+  "adShare": 1,
+  "tankPerMin": 2012,
+  "ccPerMin": 1,
+  "helpPerMin": 0,
+  "damagePerMin": 620,
+  "objectivePerMin": 394,
+  "positions": {
+   "top": 44,
+   "mid": 16,
+   "jungle": 5,
+   "adc": 3
+  }
+ },
+ "Soraka": {
+  "games": 46,
+  "winRate": 0.5,
+  "adShare": 0.14,
+  "tankPerMin": 832,
+  "ccPerMin": 1.25,
+  "helpPerMin": 745,
+  "damagePerMin": 223,
+  "objectivePerMin": 64,
+  "positions": {
+   "support": 45,
+   "adc": 1
+  }
+ },
+ "Malzahar": {
+  "games": 16,
+  "winRate": 0.563,
+  "adShare": 0.02,
+  "tankPerMin": 1148,
+  "ccPerMin": 2.22,
+  "helpPerMin": 0,
+  "damagePerMin": 789,
+  "objectivePerMin": 306,
+  "positions": {
+   "mid": 11,
+   "top": 4,
+   "adc": 1
+  }
+ },
+ "Yorick": {
+  "games": 41,
+  "winRate": 0.512,
+  "adShare": 0.7,
+  "tankPerMin": 1914,
+  "ccPerMin": 0.34,
+  "helpPerMin": 0,
+  "damagePerMin": 732,
+  "objectivePerMin": 556,
+  "positions": {
+   "top": 41
+  }
+ },
+ "Orianna": {
+  "games": 83,
+  "winRate": 0.482,
+  "adShare": 0.06,
+  "tankPerMin": 1186,
+  "ccPerMin": 0.88,
+  "helpPerMin": 67,
+  "damagePerMin": 827,
+  "objectivePerMin": 321,
+  "positions": {
+   "mid": 82,
+   "top": 1
+  }
+ },
+ "Rek'Sai": {
+  "games": 67,
+  "winRate": 0.507,
+  "adShare": 0.8,
+  "tankPerMin": 2208,
+  "ccPerMin": 0.99,
+  "helpPerMin": 0,
+  "damagePerMin": 657,
+  "objectivePerMin": 1016,
+  "positions": {
+   "jungle": 59,
+   "top": 7,
+   "adc": 1
+  }
+ },
+ "Gnar": {
+  "games": 70,
+  "winRate": 0.486,
+  "adShare": 0.84,
+  "tankPerMin": 1857,
+  "ccPerMin": 1.25,
+  "helpPerMin": 0,
+  "damagePerMin": 788,
+  "objectivePerMin": 390,
+  "positions": {
+   "top": 69,
+   "jungle": 1
+  }
+ },
+ "Taliyah": {
+  "games": 66,
+  "winRate": 0.636,
+  "adShare": 0.04,
+  "tankPerMin": 1099,
+  "ccPerMin": 1.26,
+  "helpPerMin": 2,
+  "damagePerMin": 903,
+  "objectivePerMin": 611,
+  "positions": {
+   "jungle": 26,
+   "mid": 35,
+   "adc": 4,
+   "top": 1
+  }
+ },
+ "Quinn": {
+  "games": 75,
+  "winRate": 0.493,
+  "adShare": 1,
+  "tankPerMin": 1233,
+  "ccPerMin": 0.92,
+  "helpPerMin": 0,
+  "damagePerMin": 870,
+  "objectivePerMin": 739,
+  "positions": {
+   "jungle": 55,
+   "support": 2,
+   "top": 15,
+   "mid": 3
+  }
+ },
+ "Warwick": {
+  "games": 31,
+  "winRate": 0.387,
+  "adShare": 0.49,
+  "tankPerMin": 2628,
+  "ccPerMin": 0.88,
+  "helpPerMin": 0,
+  "damagePerMin": 633,
+  "objectivePerMin": 389,
+  "positions": {
+   "top": 25,
+   "jungle": 4,
+   "mid": 2
+  }
+ },
+ "Nunu & Willump": {
+  "games": 44,
+  "winRate": 0.545,
+  "adShare": 0.07,
+  "tankPerMin": 2383,
+  "ccPerMin": 1.28,
+  "helpPerMin": 2,
+  "damagePerMin": 557,
+  "objectivePerMin": 1315,
+  "positions": {
+   "support": 1,
+   "jungle": 42,
+   "mid": 1
+  }
+ },
+ "Tryndamere": {
+  "games": 43,
+  "winRate": 0.535,
+  "adShare": 0.99,
+  "tankPerMin": 2336,
+  "ccPerMin": 0.63,
+  "helpPerMin": 0,
+  "damagePerMin": 735,
+  "objectivePerMin": 651,
+  "positions": {
+   "top": 36,
+   "mid": 5,
+   "support": 1,
+   "jungle": 1
+  }
+ },
+ "Veigar": {
+  "games": 29,
+  "winRate": 0.517,
+  "adShare": 0.05,
+  "tankPerMin": 1320,
+  "ccPerMin": 0.77,
+  "helpPerMin": 10,
+  "damagePerMin": 837,
+  "objectivePerMin": 422,
+  "positions": {
+   "mid": 15,
+   "adc": 8,
+   "top": 4,
+   "support": 2
+  }
+ },
+ "Urgot": {
+  "games": 35,
+  "winRate": 0.429,
+  "adShare": 1,
+  "tankPerMin": 1979,
+  "ccPerMin": 0.78,
+  "helpPerMin": 0,
+  "damagePerMin": 632,
+  "objectivePerMin": 323,
+  "positions": {
+   "mid": 2,
+   "top": 31,
+   "jungle": 2
+  }
+ },
+ "Zyra": {
+  "games": 50,
+  "winRate": 0.42,
+  "adShare": 0.06,
+  "tankPerMin": 1031,
+  "ccPerMin": 1.34,
+  "helpPerMin": 2,
+  "damagePerMin": 822,
+  "objectivePerMin": 886,
+  "positions": {
+   "jungle": 42,
+   "top": 1,
+   "mid": 1,
+   "adc": 4,
+   "support": 2
+  }
+ },
+ "Rumble": {
+  "games": 47,
+  "winRate": 0.468,
+  "adShare": 0.04,
+  "tankPerMin": 1771,
+  "ccPerMin": 0.53,
+  "helpPerMin": 0,
+  "damagePerMin": 930,
+  "objectivePerMin": 296,
+  "positions": {
+   "top": 42,
+   "jungle": 2,
+   "mid": 1,
+   "support": 2
+  }
+ },
+ "Vayne": {
+  "games": 40,
+  "winRate": 0.5,
+  "adShare": 0.96,
+  "tankPerMin": 1284,
+  "ccPerMin": 0.4,
+  "helpPerMin": 0,
+  "damagePerMin": 822,
+  "objectivePerMin": 481,
+  "positions": {
+   "adc": 14,
+   "jungle": 1,
+   "top": 22,
+   "mid": 3
+  }
+ },
+ "Lissandra": {
+  "games": 42,
+  "winRate": 0.476,
+  "adShare": 0.07,
+  "tankPerMin": 1288,
+  "ccPerMin": 1.78,
+  "helpPerMin": 2,
+  "damagePerMin": 763,
+  "objectivePerMin": 245,
+  "positions": {
+   "mid": 33,
+   "top": 6,
+   "support": 2,
+   "adc": 1
+  }
+ },
+ "Udyr": {
+  "games": 16,
+  "winRate": 0.313,
+  "adShare": 0.42,
+  "tankPerMin": 3431,
+  "ccPerMin": 1.36,
+  "helpPerMin": 0,
+  "damagePerMin": 914,
+  "objectivePerMin": 839,
+  "positions": {
+   "jungle": 11,
+   "top": 5
+  }
+ },
+ "Sett": {
+  "games": 29,
+  "winRate": 0.414,
+  "adShare": 0.99,
+  "tankPerMin": 2472,
+  "ccPerMin": 0.95,
+  "helpPerMin": 0,
+  "damagePerMin": 795,
+  "objectivePerMin": 402,
+  "positions": {
+   "top": 26,
+   "mid": 2,
+   "support": 1
+  }
+ },
+ "Akshan": {
+  "games": 37,
+  "winRate": 0.676,
+  "adShare": 0.92,
+  "tankPerMin": 1155,
+  "ccPerMin": 0.09,
+  "helpPerMin": 0,
+  "damagePerMin": 911,
+  "objectivePerMin": 349,
+  "positions": {
+   "mid": 30,
+   "adc": 3,
+   "top": 4
+  }
+ },
+ "Azir": {
+  "games": 19,
+  "winRate": 0.526,
+  "adShare": 0.02,
+  "tankPerMin": 1321,
+  "ccPerMin": 0.39,
+  "helpPerMin": 0,
+  "damagePerMin": 1002,
+  "objectivePerMin": 455,
+  "positions": {
+   "mid": 16,
+   "top": 2,
+   "adc": 1
+  }
+ },
+ "Maokai": {
+  "games": 12,
+  "winRate": 0.667,
+  "adShare": 0.13,
+  "tankPerMin": 2150,
+  "ccPerMin": 2.36,
+  "helpPerMin": 30,
+  "damagePerMin": 510,
+  "objectivePerMin": 144,
+  "positions": {
+   "support": 9,
+   "top": 3
+  }
+ },
+ "Illaoi": {
+  "games": 8,
+  "winRate": 0.375,
+  "adShare": 0.96,
+  "tankPerMin": 2786,
+  "ccPerMin": 0.19,
+  "helpPerMin": 0,
+  "damagePerMin": 996,
+  "objectivePerMin": 453,
+  "positions": {
+   "mid": 2,
+   "top": 6
+  }
+ },
+ "Ziggs": {
+  "games": 28,
+  "winRate": 0.607,
+  "adShare": 0.04,
+  "tankPerMin": 875,
+  "ccPerMin": 0.53,
+  "helpPerMin": 1,
+  "damagePerMin": 875,
+  "objectivePerMin": 527,
+  "positions": {
+   "adc": 23,
+   "mid": 5
+  }
+ },
+ "Heimerdinger": {
+  "games": 19,
+  "winRate": 0.737,
+  "adShare": 0.05,
+  "tankPerMin": 1025,
+  "ccPerMin": 0.82,
+  "helpPerMin": 1,
+  "damagePerMin": 1113,
+  "objectivePerMin": 666,
+  "positions": {
+   "mid": 3,
+   "top": 13,
+   "adc": 3
+  }
+ },
+ "Fiora": {
+  "games": 66,
+  "winRate": 0.485,
+  "adShare": 0.93,
+  "tankPerMin": 2244,
+  "ccPerMin": 0.35,
+  "helpPerMin": 65,
+  "damagePerMin": 833,
+  "objectivePerMin": 479,
+  "positions": {
+   "top": 66
+  }
+ },
+ "Kled": {
+  "games": 37,
+  "winRate": 0.514,
+  "adShare": 0.93,
+  "tankPerMin": 2755,
+  "ccPerMin": 0.42,
+  "helpPerMin": 0,
+  "damagePerMin": 799,
+  "objectivePerMin": 545,
+  "positions": {
+   "mid": 3,
+   "top": 34
+  }
+ },
+ "Samira": {
+  "games": 19,
+  "winRate": 0.421,
+  "adShare": 0.89,
+  "tankPerMin": 1381,
+  "ccPerMin": 0.16,
+  "helpPerMin": 0,
+  "damagePerMin": 945,
+  "objectivePerMin": 450,
+  "positions": {
+   "adc": 18,
+   "mid": 1
+  }
+ },
+ "Brand": {
+  "games": 13,
+  "winRate": 0.462,
+  "adShare": 0.04,
+  "tankPerMin": 1188,
+  "ccPerMin": 1.24,
+  "helpPerMin": 3,
+  "damagePerMin": 813,
+  "objectivePerMin": 290,
+  "positions": {
+   "support": 4,
+   "adc": 4,
+   "mid": 3,
+   "top": 1,
+   "jungle": 1
+  }
+ },
+ "Nilah": {
+  "games": 7,
+  "winRate": 0.429,
+  "adShare": 0.99,
+  "tankPerMin": 1403,
+  "ccPerMin": 0.32,
+  "helpPerMin": 63,
+  "damagePerMin": 664,
+  "objectivePerMin": 615,
+  "positions": {
+   "adc": 7
+  }
+ },
+ "Briar": {
+  "games": 30,
+  "winRate": 0.533,
+  "adShare": 0.91,
+  "tankPerMin": 2122,
+  "ccPerMin": 0.91,
+  "helpPerMin": 0,
+  "damagePerMin": 726,
+  "objectivePerMin": 887,
+  "positions": {
+   "jungle": 27,
+   "mid": 1,
+   "top": 2
+  }
+ },
+ "Tahm Kench": {
+  "games": 5,
+  "winRate": 0.2,
+  "adShare": 0.15,
+  "tankPerMin": 2131,
+  "ccPerMin": 0.96,
+  "helpPerMin": 62,
+  "damagePerMin": 321,
+  "objectivePerMin": 133,
+  "positions": {
+   "top": 1,
+   "support": 4
+  }
+ },
+ "Amumu": {
+  "games": 14,
+  "winRate": 0.5,
+  "adShare": 0.15,
+  "tankPerMin": 1818,
+  "ccPerMin": 1.46,
+  "helpPerMin": 23,
+  "damagePerMin": 418,
+  "objectivePerMin": 274,
+  "positions": {
+   "support": 11,
+   "jungle": 3
+  }
+ },
+ "Smolder": {
+  "games": 24,
+  "winRate": 0.5,
+  "adShare": 0.81,
+  "tankPerMin": 1309,
+  "ccPerMin": 0.43,
+  "helpPerMin": 0,
+  "damagePerMin": 970,
+  "objectivePerMin": 357,
+  "positions": {
+   "adc": 18,
+   "mid": 4,
+   "top": 2
+  }
+ },
+ "Evelynn": {
+  "games": 10,
+  "winRate": 0.6,
+  "adShare": 0.04,
+  "tankPerMin": 1414,
+  "ccPerMin": 0.56,
+  "helpPerMin": 0,
+  "damagePerMin": 695,
+  "objectivePerMin": 993,
+  "positions": {
+   "jungle": 10
+  }
+ },
+ "Bel'Veth": {
+  "games": 5,
+  "winRate": 0.6,
+  "adShare": 0.9,
+  "tankPerMin": 1984,
+  "ccPerMin": 0.73,
+  "helpPerMin": 0,
+  "damagePerMin": 787,
+  "objectivePerMin": 1288,
+  "positions": {
+   "jungle": 5
+  }
+ },
+ "Volibear": {
+  "games": 14,
+  "winRate": 0.429,
+  "adShare": 0.49,
+  "tankPerMin": 2317,
+  "ccPerMin": 0.91,
+  "helpPerMin": 0,
+  "damagePerMin": 888,
+  "objectivePerMin": 577,
+  "positions": {
+   "top": 11,
+   "jungle": 1,
+   "mid": 2
+  }
+ }
+}

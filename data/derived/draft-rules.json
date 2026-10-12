@@ -1,0 +1,146 @@
+{
+ "front": {
+  "rule": "2+ frontliners",
+  "when": {
+   "games": 814,
+   "winRate": 0.479
+  },
+  "otherwise": {
+   "games": 1738,
+   "winRate": 0.51
+  },
+  "difference": -0.031
+ },
+ "engage": {
+  "rule": "2+ engage champions",
+  "when": {
+   "games": 1903,
+   "winRate": 0.501
+  },
+  "otherwise": {
+   "games": 649,
+   "winRate": 0.496
+  },
+  "difference": 0.005
+ },
+ "mix": {
+  "rule": "Magic damage 20-80%",
+  "when": {
+   "games": 2518,
+   "winRate": 0.5
+  },
+  "otherwise": {
+   "games": 34,
+   "winRate": 0.471
+  },
+  "difference": 0.029
+ },
+ "threat": {
+  "rule": "At least one top-damage champion",
+  "when": {
+   "games": 2531,
+   "winRate": 0.5
+  },
+  "otherwise": {
+   "games": 21,
+   "winRate": 0.524
+  },
+  "difference": -0.024
+ },
+ "split": {
+  "rule": "Fewer than 2 split pushers",
+  "when": {
+   "games": 2252,
+   "winRate": 0.5
+  },
+  "otherwise": {
+   "games": 300,
+   "winRate": 0.5
+  },
+  "difference": 0
+ },
+ "plan": {
+  "rule": "4+ champions share one plan (teamfight or pick)",
+  "when": {
+   "games": 706,
+   "winRate": 0.496
+  },
+  "otherwise": {
+   "games": 1846,
+   "winRate": 0.502
+  },
+  "difference": -0.006
+ },
+ "vsSquishy": {
+  "rule": "vs squishy team: 3+ engage/burst champions",
+  "when": {
+   "games": 484,
+   "winRate": 0.523
+  },
+  "otherwise": {
+   "games": 134,
+   "winRate": 0.455
+  },
+  "difference": 0.068
+ },
+ "peel": {
+  "rule": "Late carry with a peeler (teams with a late carry)",
+  "when": {
+   "games": 1636,
+   "winRate": 0.506
+  },
+  "otherwise": {
+   "games": 353,
+   "winRate": 0.484
+  },
+  "difference": 0.022
+ },
+ "vsEng": {
+  "rule": "vs heavy engage: 2+ peel/disengage champions",
+  "when": {
+   "games": 649,
+   "winRate": 0.516
+  },
+  "otherwise": {
+   "games": 296,
+   "winRate": 0.483
+  },
+  "difference": 0.033
+ },
+ "vsTF": {
+  "rule": "vs teamfight comp: disengage or a split pusher",
+  "when": {
+   "games": 345,
+   "winRate": 0.501
+  },
+  "otherwise": {
+   "games": 253,
+   "winRate": 0.51
+  },
+  "difference": -0.009
+ },
+ "vsSplit": {
+  "rule": "vs split pushers: 3+ waveclear champions",
+  "when": {
+   "games": 180,
+   "winRate": 0.472
+  },
+  "otherwise": {
+   "games": 120,
+   "winRate": 0.542
+  },
+  "difference": -0.07
+ },
+ "vsTank": {
+  "rule": "vs tanky team: 2+ sustained-damage carries",
+  "when": {
+   "games": 62,
+   "winRate": 0.452
+  },
+  "otherwise": {
+   "games": 76,
+   "winRate": 0.5
+  },
+  "difference": -0.048
+ }
+}
