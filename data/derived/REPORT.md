@@ -2,37 +2,35 @@
 
 1500 EUW Challenger/Grandmaster solo-queue matches · patches 16.18, 16.19, 16.20.
 
-Champions in the data that are missing from champions.txt: Zaahen, Locke.
-
 ## Draft rules vs real results
 
 | Rule | Win rate when true | Win rate otherwise | Difference | Games (true / otherwise) |
 | --- | --- | --- | --- | --- |
-| 2+ frontliners | 48% | 51% | -3.1 pts | 814 / 1738 |
-| 2+ engage champions | 50% | 50% | +0.5 pts | 1903 / 649 |
-| Magic damage 20-80% | 50% | 47% | +2.9 pts | 2518 / 34 |
-| At least one top-damage champion | 50% | 52% | -2.4 pts | 2531 / 21 |
-| Fewer than 2 split pushers | 50% | 50% | 0 pts | 2252 / 300 |
-| 4+ champions share one plan (teamfight or pick) | 50% | 50% | -0.6 pts | 706 / 1846 |
-| vs squishy team: 3+ engage/burst champions | 52% | 46% | +6.8 pts | 484 / 134 |
-| Late carry with a peeler (teams with a late carry) | 51% | 48% | +2.2 pts | 1636 / 353 |
-| vs heavy engage: 2+ peel/disengage champions | 52% | 48% | +3.3 pts | 649 / 296 |
-| vs teamfight comp: disengage or a split pusher | 50% | 51% | -0.9 pts | 345 / 253 |
-| vs split pushers: 3+ waveclear champions | 47% | 54% | -7 pts | 180 / 120 |
-| vs tanky team: 2+ sustained-damage carries | 45% | 50% | -4.8 pts | 62 / 76 |
+| 2+ frontliners | 46% | 52% | -5.3 pts | 972 / 2028 |
+| 2+ engage champions | 50% | 50% | +0.1 pts | 2219 / 781 |
+| Magic damage 20-80% | 50% | 40% | +10.6 pts | 2962 / 38 |
+| At least one top-damage champion | 50% | 48% | +2 pts | 2975 / 25 |
+| Fewer than 2 split pushers | 50% | 50% | -0.3 pts | 2642 / 358 |
+| 4+ champions share one plan (teamfight or pick) | 49% | 51% | -1.8 pts | 803 / 2197 |
+| Late carry with a peeler (teams with a late carry) | 51% | 50% | +0.6 pts | 1904 / 425 |
+| vs squishy team: 3+ engage/burst champions | 51% | 48% | +3.2 pts | 563 / 147 |
+| vs heavy engage: 2+ peel/disengage champions | 51% | 49% | +2.4 pts | 734 / 349 |
+| vs teamfight comp: disengage or a split pusher | 50% | 53% | -3.2 pts | 381 / 294 |
+| vs split pushers: 3+ waveclear champions | 48% | 52% | -3.3 pts | 205 / 153 |
+| vs tanky team: 2+ sustained-damage carries | 49% | 53% | -4.1 pts | 74 / 91 |
 
 ## Lane rules vs real results
 
 | Lane rule | Win rate when it applies | Games |
 | --- | --- | --- |
-| laneRange | 50% | 501 |
+| laneRange | 49% | 538 |
 | laneEarly | 43% | 419 |
-| laneBurst | 50% | 640 |
+| laneBurst | 49% | 687 |
 | laneTank | 54% | 183 |
 | laneBully | 57% | 72 |
-| laneSide | 50% | 345 |
+| laneSide | 50% | 359 |
 
-Champion-vs-champion matchups with 10+ games: 68.
+Champion-vs-champion matchups with 10+ games: 72.
 
 ## After a kill leaves a team 2+ players up (next 90 s)
 
@@ -54,29 +52,17 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 
 | Champion | Games | Field | Ours | Data |
 | --- | --- | --- | --- | --- |
-| Yone | 301 | AD share | 0.5 | 0.82 |
-| Yone | 301 | frontline | 1 | 4 |
-| Yone | 301 | engage/peel (CC) | 4 | 2 |
-| Irelia | 118 | AD share | 1 | 0.75 |
-| Irelia | 118 | frontline | 2 | 5 |
-| Irelia | 118 | engage/peel (CC) | 4 | 2 |
-| Renata Glasc | 79 | AD share | 0 | 0.26 |
-| Renata Glasc | 79 | frontline | 1 | 3 |
-| Renata Glasc | 79 | engage/peel (CC) | 5 | 3 |
 | Jax | 76 | frontline | 2 | 4 |
 | Jax | 76 | engage/peel (CC) | 4 | 2 |
 | Jax | 76 | damage | 5 | 3 |
-| Shaco | 58 | AD share | 0.8 | 0.26 |
-| Shaco | 58 | engage/peel (CC) | 1 | 4 |
-| Shaco | 58 | damage | 5 | 3 |
+| Yone | 301 | frontline | 1 | 4 |
+| Yone | 301 | engage/peel (CC) | 4 | 2 |
 | Sylas | 266 | frontline | 2 | 4 |
 | Sylas | 266 | damage | 5 | 3 |
 | Lee Sin | 258 | frontline | 2 | 5 |
 | Lee Sin | 258 | damage | 4 | 2 |
 | Qiyana | 211 | frontline | 1 | 3 |
 | Qiyana | 211 | engage/peel (CC) | 5 | 2 |
-| Bard | 199 | AD share | 0.1 | 0.36 |
-| Bard | 199 | frontline | 1 | 3 |
 | Yasuo | 196 | frontline | 1 | 4 |
 | Yasuo | 196 | damage | 5 | 3 |
 | Ekko | 175 | frontline | 1 | 3 |
@@ -91,8 +77,8 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 | Cho'Gath | 128 | damage | 4 | 2 |
 | Jarvan IV | 124 | engage/peel (CC) | 5 | 3 |
 | Jarvan IV | 124 | damage | 4 | 2 |
-| Rakan | 111 | AD share | 0 | 0.25 |
-| Rakan | 111 | frontline | 1 | 3 |
+| Irelia | 118 | frontline | 2 | 5 |
+| Irelia | 118 | engage/peel (CC) | 4 | 2 |
 | Wukong | 110 | engage/peel (CC) | 5 | 2 |
 | Wukong | 110 | damage | 4 | 2 |
 | Ryze | 105 | frontline | 1 | 3 |
@@ -105,10 +91,8 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 | Hecarim | 97 | damage | 4 | 2 |
 | Rengar | 90 | frontline | 1 | 3 |
 | Rengar | 90 | damage | 5 | 3 |
-| Nidalee | 79 | frontline | 1 | 3 |
+| Nidalee | 79 | frontline | 1 | 4 |
 | Nidalee | 79 | damage | 5 | 3 |
-| Varus | 74 | AD share | 0.8 | 0.51 |
-| Varus | 74 | frontline | 1 | 3 |
 | Anivia | 73 | frontline | 1 | 3 |
 | Anivia | 73 | damage | 4 | 2 |
 | Naafiri | 70 | frontline | 1 | 3 |
@@ -121,25 +105,22 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 | Vi | 64 | damage | 4 | 1 |
 | Diana | 58 | frontline | 2 | 5 |
 | Diana | 58 | engage/peel (CC) | 5 | 2 |
-| Shyvana | 53 | AD share | 0.3 | 0.56 |
-| Shyvana | 53 | damage | 5 | 2 |
-| Corki | 50 | AD share | 0.5 | 0.76 |
-| Corki | 50 | frontline | 1 | 3 |
+| Shaco | 58 | engage/peel (CC) | 1 | 4 |
+| Shaco | 58 | damage | 5 | 3 |
 | Rumble | 47 | frontline | 2 | 4 |
 | Rumble | 47 | engage/peel (CC) | 4 | 2 |
 | Tryndamere | 43 | frontline | 1 | 5 |
 | Tryndamere | 43 | damage | 5 | 3 |
-| Yorick | 41 | AD share | 1 | 0.7 |
-| Yorick | 41 | damage | 5 | 3 |
 | Kindred | 33 | frontline | 1 | 3 |
 | Kindred | 33 | engage/peel (CC) | 4 | 2 |
 | Kassadin | 30 | frontline | 1 | 4 |
 | Kassadin | 30 | damage | 5 | 3 |
 | Syndra | 255 | engage/peel (CC) | 2 | 5 |
 | Jhin | 248 | engage/peel (CC) | 2 | 4 |
-| Yunara | 242 | AD share | 1 | 0.66 |
 | Jayce | 238 | frontline | 1 | 3 |
 | Camille | 205 | frontline | 2 | 4 |
+| Locke | 199 | frontline | 1 | 3 |
+| Bard | 199 | frontline | 1 | 3 |
 | Kalista | 191 | frontline | 1 | 3 |
 | Ahri | 164 | engage/peel (CC) | 4 | 2 |
 | Akali | 150 | frontline | 1 | 3 |
@@ -148,59 +129,65 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 | Graves | 120 | engage/peel (CC) | 1 | 3 |
 | Viego | 113 | frontline | 2 | 4 |
 | Galio | 111 | damage | 4 | 2 |
+| Rakan | 111 | frontline | 1 | 3 |
 | Olaf | 109 | damage | 5 | 3 |
 | Zoe | 108 | engage/peel (CC) | 2 | 5 |
 | Pyke | 103 | damage | 5 | 1 |
 | Gangplank | 98 | frontline | 1 | 3 |
-| Sion | 95 | AD share | 1 | 0.63 |
-| Kog'Maw | 94 | AD share | 0.5 | 0.22 |
 | Renekton | 93 | damage | 4 | 2 |
 | Senna | 90 | damage | 5 | 2 |
 | Katarina | 87 | frontline | 1 | 3 |
+| Shen | 86 | AD share | 0.3 | 0.6 |
+| Aurelion Sol | 85 | engage/peel (CC) | 1 | 3 |
+| Orianna | 83 | engage/peel (CC) | 5 | 3 |
+| Darius | 80 | damage | 5 | 2 |
+| Renata Glasc | 79 | engage/peel (CC) | 5 | 3 |
+| Quinn | 75 | engage/peel (CC) | 1 | 3 |
+| Garen | 74 | engage/peel (CC) | 2 | 4 |
 
 ## Decision making vs real results
 
-Real moments (after a kill, around objective spawns, and once a minute), what the team did in the next 90 seconds, and its gold swing over the next 2 minutes. Split and grouping are read from positions that exist once a minute, so they are estimates.
+Real moments (after a kill, around objective spawns, and once a minute), what the team did in the next 90 seconds, and its gold swing over the next 2 minutes. The action is read from where the team was (positions exist once a minute, so it is an estimate), not from whether it worked. Stronger teams also choose more aggressive actions, so compare actions within one situation, not across situations.
 
-**Engine check:** 50696 moments. The engine's answer was what the team did in 26% of them. When the team did the engine's answer: +467 gold on average; otherwise +196. Where the data has a clear best action (49151 moments), the engine picked it 15% of the time.
+**Engine check:** 41143 moments (plus 10125 where the engine's answer, such as clearing a wave or farming, cannot be read from the data). The engine's answer was what the team did in 30% of them. When the team did the engine's answer: +284 gold on average; otherwise +276. Where the data has a clear best action (36324 moments), the engine picked it 10% of the time.
 
 | Engine answer | Engine said it | Team did it | Gold swing when they did | When they did something else |
 | --- | --- | --- | --- | --- |
-| take | 5813 | 3432 | +833 | +146 |
-| setup | 17480 | 619 | -503 | +475 |
-| trade | 10846 | 880 | -331 | -371 |
-| push | 7972 | 4151 | +1163 | +653 |
-| defend | 2682 | 201 | -1141 | -297 |
-| split | 5903 | 3992 | -165 | +475 |
+| take | 5457 | 1582 | +473 | +518 |
+| setup | 9538 | 2329 | +414 | +603 |
+| trade | 9707 | 80 | -339 | -453 |
+| push | 8032 | 1171 | +961 | +874 |
+| defend | 742 | 252 | -1110 | -252 |
+| split | 7667 | 7049 | +143 | +96 |
 
 **Best measured action per situation** (players up or down | objective | gold; used as the app's answer when it is clear):
 
 | Situation | Moments | Best action | Its gold swing | Everything else | All actions (moments, avg gold swing) |
 | --- | --- | --- | --- | --- | --- |
-| even · none · ahead | 8615 | push | +919 | +178 | push 5271/+919, recall 28/+655, split 3153/+217, defend 97/-495, trade 66/-914 |
-| even · none · even | 8411 | push | +569 | -150 | push 2961/+569, split 5169/-116, recall 34/-665, defend 164/-696, trade 83/-1007 |
-| even · none · behind | 7550 | push | +276 | -712 | push 2126/+276, recall 62/-8, split 4341/-684, trade 219/-732, defend 802/-912 |
-| up · none · ahead | 2941 | push | +1383 | +884 | recall 7/+1519, push 2159/+1383, split 735/+931, defend 23/+620, trade 17/-1030 |
-| even · up · even | 2812 | push | +951 | +104 | push 102/+951, take 1264/+475, recall 7/+219, trade 261/-43, split 1158/-261, defend 20/-380 |
-| even · up · ahead | 2765 | push | +1139 | +673 | push 248/+1139, take 1784/+844, split 516/+360, trade 196/+135, recall 3/-824, defend 18/-1136 |
-| even · soon · ahead | 2754 | take | +840 | +72 | take 1635/+840, push 414/+773, split 241/+34, trade 228/-149, recall 2/-677, setup 222/-892, defend 12/-1180 |
-| even · soon · behind | 2317 | take | +694 | -535 | take 554/+694, push 151/+360, trade 345/-180, setup 328/-542, split 740/-771, recall 17/-894, defend 182/-941 |
-| even · up · behind | 2279 | push | +431 | -435 | push 81/+431, take 612/+392, trade 301/-319, split 1135/-834, defend 138/-950, recall 12/-1913 |
-| even · soon · even | 2267 | push | +705 | +66 | push 151/+705, take 936/+577, trade 274/-122, setup 318/-346, split 556/-363, recall 4/-1556, defend 28/-1763 |
-| up · none · even | 1312 | push | +1121 | +396 | push 662/+1121, defend 14/+873, split 617/+390, recall 6/+318, trade 13/+211 |
-| up · up · ahead | 1034 | push | +1688 | +1180 | push 94/+1688, take 805/+1298, split 106/+677, recall 1/+658, trade 28/-285 |
-| up · soon · ahead | 873 | take | +1348 | +466 | take 592/+1348, push 162/+886, split 48/+222, defend 1/-34, setup 34/-250, trade 36/-410 |
-| up · none · behind | 814 | push | +1217 | +187 | push 364/+1217, split 362/+246, recall 8/+178, defend 56/+40, trade 24/-358 |
-| down · none · behind | 621 | push | -268 | -1165 | recall 11/+224, push 408/-268, defend 99/-1181, trade 103/-1297 |
-| up · up · even | 554 | take | +1092 | +549 | take 413/+1092, push 15/+999, trade 23/+549, split 99/+518, defend 4/-379 |
-| up · soon · even | 397 | – | – | – | take 249/+1174, push 29/+674, trade 37/+577, split 44/+547, setup 36/-239, defend 2/-2953 |
-| down · none · even | 349 | – | – | – | push 303/-101, trade 37/-534, defend 9/-1075 |
-| down · none · ahead | 322 | – | – | – | push 290/-82, defend 7/-1261, trade 25/-1461 |
-| up · up · behind | 316 | take | +1442 | +574 | push 22/+1572, take 209/+1442, trade 24/+681, split 54/+230, defend 7/-283 |
-| up · soon · behind | 295 | take | +1501 | +270 | take 135/+1501, trade 28/+975, push 28/+637, defend 15/+470, setup 32/-101, split 57/-102 |
-| down · soon · behind | 261 | take | +346 | -490 | recall 2/+2418, take 80/+346, push 37/+250, trade 94/-661, defend 35/-711, setup 13/-1207 |
-| down · up · behind | 202 | take | +200 | -900 | take 57/+200, trade 115/-756, recall 3/-1403, defend 20/-1406, push 7/-1595 |
-| down · up · even | 162 | – | – | – | take 85/-425, trade 69/-486, defend 4/-672, push 4/-976 |
-| down · soon · ahead | 161 | – | – | – | push 19/+633, take 102/-289, trade 25/-1519, defend 4/-1615, setup 11/-1839 |
-| down · soon · even | 158 | take | -180 | -673 | push 10/+373, take 92/-180, trade 50/-722, setup 4/-1395, defend 2/-3228 |
-| down · up · ahead | 154 | – | – | – | take 91/-221, push 17/-688, trade 45/-749, defend 1/-3236 |
+| even · none · ahead | 9282 | recall | +909 | +616 | recall 52/+909, push 1765/+666, split 7294/+620, defend 171/-50 |
+| even · none · even | 9026 | push | +485 | +44 | push 656/+485, recall 58/+226, split 8068/+62, defend 244/-610 |
+| even · none · behind | 8121 | push | +392 | -552 | push 388/+392, recall 77/-73, split 6583/-510, defend 1073/-841 |
+| up · none · ahead | 3094 | – | – | – | defend 77/+1297, split 2376/+1274, push 620/+1088, recall 21/+971 |
+| even · up · even | 3055 | trade | +399 | +42 | trade 58/+399, take 874/+154, push 49/+138, split 2004/+4, recall 15/-58, defend 55/-425 |
+| even · up · ahead | 2756 | trade | +781 | +628 | recall 21/+1669, trade 154/+781, split 1608/+697, take 759/+521, push 174/+516, defend 40/-167 |
+| even · soon · ahead | 2633 | split | +708 | +410 | recall 12/+722, split 1174/+708, trade 160/+547, push 228/+462, setup 1006/+380, defend 53/+280 |
+| even · up · behind | 2477 | take | -173 | -648 | push 32/+823, take 568/-173, trade 51/-226, defend 210/-680, split 1589/-682, recall 27/-949 |
+| even · soon · behind | 2401 | push | +478 | -367 | push 61/+478, setup 748/+88, trade 50/-433, recall 26/-445, split 1249/-577, defend 267/-638 |
+| even · soon · even | 2233 | push | +351 | +60 | recall 8/+497, push 72/+351, trade 44/+293, setup 910/+135, split 1155/+31, defend 44/-1054 |
+| up · none · even | 1390 | push | +1130 | +686 | defend 37/+1235, push 117/+1130, recall 10/+875, split 1226/+668 |
+| up · up · ahead | 1031 | split | +1330 | +1083 | recall 8/+2609, split 602/+1330, take 244/+1266, defend 26/+943, push 59/+928, trade 92/+605 |
+| up · soon · ahead | 872 | split | +1246 | +997 | recall 4/+1588, split 390/+1246, push 81/+1231, setup 294/+1141, defend 20/+959, trade 83/+237 |
+| up · none · behind | 853 | push | +1270 | +487 | push 92/+1270, recall 15/+547, split 668/+519, defend 78/+201 |
+| up · up · even | 544 | – | – | – | push 27/+1350, defend 17/+1095, take 176/+947, split 305/+844, trade 16/+616, recall 3/+119 |
+| up · soon · even | 390 | – | – | – | recall 2/+2470, push 19/+1549, trade 10/+1108, setup 170/+843, split 168/+625, defend 21/+523 |
+| up · soon · behind | 319 | setup | +949 | +587 | push 10/+1430, setup 133/+949, defend 32/+750, split 132/+537, trade 11/+136, recall 1/-1429 |
+| up · up · behind | 300 | – | – | – | push 15/+1816, trade 9/+1326, take 105/+888, split 138/+879, defend 24/+682, recall 9/+494 |
+| down · none · behind | 162 | – | – | – | recall 14/-14, push 26/-365, defend 122/-1145 |
+| down · soon · behind | 73 | – | – | – | push 2/+1137, recall 4/+850, setup 24/-83, defend 43/-848 |
+| down · none · ahead | 59 | – | – | – | push 49/+434, defend 9/-840, recall 1/-917 |
+| down · up · behind | 52 | – | – | – | trade 3/-1084, take 21/-1170, defend 23/-1335, recall 3/-1403, push 2/-2337 |
+| down · soon · ahead | 42 | – | – | – | trade 5/-249, setup 26/-465, push 6/-1177, defend 5/-2207 |
+| down · none · even | 36 | – | – | – | push 22/-539, defend 14/-1172 |
+| down · soon · even | 25 | – | – | – | setup 18/-486, push 3/-500, trade 2/-3138, defend 2/-3228 |
+| down · up · ahead | 22 | – | – | – | trade 3/+183, take 14/-127, push 4/-2367, defend 1/-3236 |
+| down · up · even | 20 | – | – | – | defend 5/-350, take 12/-691, trade 1/-1631, push 2/-2156 |

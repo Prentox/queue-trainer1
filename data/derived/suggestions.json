@@ -1,68 +1,5 @@
 [
  {
-  "name": "Yone",
-  "games": 301,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 0.5,
-    "data": 0.82
-   },
-   {
-    "field": "frontline",
-    "ours": 1,
-    "data": 4
-   },
-   {
-    "field": "engage/peel (CC)",
-    "ours": 4,
-    "data": 2
-   }
-  ]
- },
- {
-  "name": "Irelia",
-  "games": 118,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 1,
-    "data": 0.75
-   },
-   {
-    "field": "frontline",
-    "ours": 2,
-    "data": 5
-   },
-   {
-    "field": "engage/peel (CC)",
-    "ours": 4,
-    "data": 2
-   }
-  ]
- },
- {
-  "name": "Renata Glasc",
-  "games": 79,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 0,
-    "data": 0.26
-   },
-   {
-    "field": "frontline",
-    "ours": 1,
-    "data": 3
-   },
-   {
-    "field": "engage/peel (CC)",
-    "ours": 5,
-    "data": 3
-   }
-  ]
- },
- {
   "name": "Jax",
   "games": 76,
   "notes": [
@@ -84,23 +21,18 @@
   ]
  },
  {
-  "name": "Shaco",
-  "games": 58,
+  "name": "Yone",
+  "games": 301,
   "notes": [
    {
-    "field": "AD share",
-    "ours": 0.8,
-    "data": 0.26
-   },
-   {
-    "field": "engage/peel (CC)",
+    "field": "frontline",
     "ours": 1,
     "data": 4
    },
    {
-    "field": "damage",
-    "ours": 5,
-    "data": 3
+    "field": "engage/peel (CC)",
+    "ours": 4,
+    "data": 2
    }
   ]
  },
@@ -149,22 +81,6 @@
     "field": "engage/peel (CC)",
     "ours": 5,
     "data": 2
-   }
-  ]
- },
- {
-  "name": "Bard",
-  "games": 199,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 0.1,
-    "data": 0.36
-   },
-   {
-    "field": "frontline",
-    "ours": 1,
-    "data": 3
    }
   ]
  },
@@ -281,18 +197,18 @@
   ]
  },
  {
-  "name": "Rakan",
-  "games": 111,
+  "name": "Irelia",
+  "games": 118,
   "notes": [
    {
-    "field": "AD share",
-    "ours": 0,
-    "data": 0.25
+    "field": "frontline",
+    "ours": 2,
+    "data": 5
    },
    {
-    "field": "frontline",
-    "ours": 1,
-    "data": 3
+    "field": "engage/peel (CC)",
+    "ours": 4,
+    "data": 2
    }
   ]
  },
@@ -399,27 +315,11 @@
    {
     "field": "frontline",
     "ours": 1,
-    "data": 3
+    "data": 4
    },
    {
     "field": "damage",
     "ours": 5,
-    "data": 3
-   }
-  ]
- },
- {
-  "name": "Varus",
-  "games": 74,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 0.8,
-    "data": 0.51
-   },
-   {
-    "field": "frontline",
-    "ours": 1,
     "data": 3
    }
   ]
@@ -521,33 +421,17 @@
   ]
  },
  {
-  "name": "Shyvana",
-  "games": 53,
+  "name": "Shaco",
+  "games": 58,
   "notes": [
    {
-    "field": "AD share",
-    "ours": 0.3,
-    "data": 0.56
+    "field": "engage/peel (CC)",
+    "ours": 1,
+    "data": 4
    },
    {
     "field": "damage",
     "ours": 5,
-    "data": 2
-   }
-  ]
- },
- {
-  "name": "Corki",
-  "games": 50,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 0.5,
-    "data": 0.76
-   },
-   {
-    "field": "frontline",
-    "ours": 1,
     "data": 3
    }
   ]
@@ -576,22 +460,6 @@
     "field": "frontline",
     "ours": 1,
     "data": 5
-   },
-   {
-    "field": "damage",
-    "ours": 5,
-    "data": 3
-   }
-  ]
- },
- {
-  "name": "Yorick",
-  "games": 41,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 1,
-    "data": 0.7
    },
    {
     "field": "damage",
@@ -655,17 +523,6 @@
   ]
  },
  {
-  "name": "Yunara",
-  "games": 242,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 1,
-    "data": 0.66
-   }
-  ]
- },
- {
   "name": "Jayce",
   "games": 238,
   "notes": [
@@ -684,6 +541,28 @@
     "field": "frontline",
     "ours": 2,
     "data": 4
+   }
+  ]
+ },
+ {
+  "name": "Locke",
+  "games": 199,
+  "notes": [
+   {
+    "field": "frontline",
+    "ours": 1,
+    "data": 3
+   }
+  ]
+ },
+ {
+  "name": "Bard",
+  "games": 199,
+  "notes": [
+   {
+    "field": "frontline",
+    "ours": 1,
+    "data": 3
    }
   ]
  },
@@ -776,6 +655,17 @@
   ]
  },
  {
+  "name": "Rakan",
+  "games": 111,
+  "notes": [
+   {
+    "field": "frontline",
+    "ours": 1,
+    "data": 3
+   }
+  ]
+ },
+ {
   "name": "Olaf",
   "games": 109,
   "notes": [
@@ -816,28 +706,6 @@
     "field": "frontline",
     "ours": 1,
     "data": 3
-   }
-  ]
- },
- {
-  "name": "Sion",
-  "games": 95,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 1,
-    "data": 0.63
-   }
-  ]
- },
- {
-  "name": "Kog'Maw",
-  "games": 94,
-  "notes": [
-   {
-    "field": "AD share",
-    "ours": 0.5,
-    "data": 0.22
    }
   ]
  },
@@ -919,6 +787,17 @@
   ]
  },
  {
+  "name": "Renata Glasc",
+  "games": 79,
+  "notes": [
+   {
+    "field": "engage/peel (CC)",
+    "ours": 5,
+    "data": 3
+   }
+  ]
+ },
+ {
   "name": "Quinn",
   "games": 75,
   "notes": [
@@ -937,6 +816,17 @@
     "field": "engage/peel (CC)",
     "ours": 2,
     "data": 4
+   }
+  ]
+ },
+ {
+  "name": "Varus",
+  "games": 74,
+  "notes": [
+   {
+    "field": "frontline",
+    "ours": 1,
+    "data": 3
    }
   ]
  },
@@ -1084,6 +974,17 @@
   ]
  },
  {
+  "name": "Shyvana",
+  "games": 53,
+  "notes": [
+   {
+    "field": "damage",
+    "ours": 5,
+    "data": 2
+   }
+  ]
+ },
+ {
   "name": "Sona",
   "games": 52,
   "notes": [
@@ -1102,6 +1003,17 @@
     "field": "damage",
     "ours": 5,
     "data": 2
+   }
+  ]
+ },
+ {
+  "name": "Corki",
+  "games": 50,
+  "notes": [
+   {
+    "field": "frontline",
+    "ours": 1,
+    "data": 3
    }
   ]
  },
@@ -1201,6 +1113,17 @@
     "field": "damage",
     "ours": 4,
     "data": 2
+   }
+  ]
+ },
+ {
+  "name": "Yorick",
+  "games": 41,
+  "notes": [
+   {
+    "field": "damage",
+    "ours": 5,
+    "data": 3
    }
   ]
  },
