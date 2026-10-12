@@ -1487,10 +1487,10 @@
  "engine": {
   "moments": 59612,
   "unmeasurable": 9881,
-  "sameAsTeam": 0.151,
-  "swingWhenTeamDidEngineAnswer": 238,
-  "swingOtherwise": -31,
-  "matchesBestMeasured": 0.209,
+  "sameAsTeam": 0.18,
+  "swingWhenTeamDidEngineAnswer": 99,
+  "swingOtherwise": -10,
+  "matchesBestMeasured": 0.229,
   "momentsWithBest": 34553,
   "perAction": {
    "take": {
@@ -1500,28 +1500,28 @@
     "swingOther": 472
    },
    "setup": {
-    "engineSaid": 11763,
-    "teamDidIt": 2329,
-    "swingDid": 414,
-    "swingOther": 543
+    "engineSaid": 12909,
+    "teamDidIt": 2641,
+    "swingDid": 358,
+    "swingOther": 470
    },
    "trade": {
-    "engineSaid": 13676,
-    "teamDidIt": 80,
-    "swingDid": -339,
-    "swingOther": -445
+    "engineSaid": 0,
+    "teamDidIt": 0,
+    "swingDid": null,
+    "swingOther": null
    },
    "push": {
-    "engineSaid": 9429,
-    "teamDidIt": 1445,
-    "swingDid": 1004,
-    "swingOther": 848
+    "engineSaid": 9599,
+    "teamDidIt": 1453,
+    "swingDid": 1001,
+    "swingOther": 827
    },
    "defend": {
-    "engineSaid": 10175,
-    "teamDidIt": 256,
-    "swingDid": -1097,
-    "swingOther": -933
+    "engineSaid": 22289,
+    "teamDidIt": 1688,
+    "swingDid": -813,
+    "swingOther": -668
    },
    "recall": {
     "engineSaid": 0,
@@ -1530,10 +1530,10 @@
     "swingOther": null
    },
    "split": {
-    "engineSaid": 5468,
-    "teamDidIt": 1423,
-    "swingDid": 158,
-    "swingOther": -39
+    "engineSaid": 5714,
+    "teamDidIt": 1438,
+    "swingDid": 153,
+    "swingOther": -69
    },
    "picks": {
     "engineSaid": 0,

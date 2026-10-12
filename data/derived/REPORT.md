@@ -149,16 +149,15 @@ Measured from damage, damage taken, crowd control and healing per minute, graded
 
 Real moments (after a kill, around objective spawns, and once a minute), what the team did in the next 90 seconds, and its gold swing over the next 2 minutes. The action is read from where the team was (positions exist once a minute, so it is an estimate), not from whether it worked. Stronger teams also choose more aggressive actions, so compare actions within one situation, not across situations.
 
-**Engine check:** 59612 moments (plus 9881 where the engine's answer, such as clearing a wave or farming, cannot be read from the data). The engine's answer was what the team did in 15% of them. When the team did the engine's answer: +238 gold on average; otherwise -31. Where the data has a clear best action (34553 moments), the engine picked it 21% of the time.
+**Engine check:** 59612 moments (plus 9881 where the engine's answer, such as clearing a wave or farming, cannot be read from the data). The engine's answer was what the team did in 18% of them. When the team did the engine's answer: +99 gold on average; otherwise -10. Where the data has a clear best action (34553 moments), the engine picked it 23% of the time.
 
 | Engine answer | Engine said it | Team did it | Gold swing when they did | When they did something else |
 | --- | --- | --- | --- | --- |
 | take | 6171 | 1582 | +473 | +472 |
-| setup | 11763 | 2329 | +414 | +543 |
-| trade | 13676 | 80 | -339 | -445 |
-| push | 9429 | 1445 | +1004 | +848 |
-| defend | 10175 | 256 | -1097 | -933 |
-| split | 5468 | 1423 | +158 | -39 |
+| setup | 12909 | 2641 | +358 | +470 |
+| push | 9599 | 1453 | +1001 | +827 |
+| defend | 22289 | 1688 | -813 | -668 |
+| split | 5714 | 1438 | +153 | -69 |
 | farm | 2930 | 1911 | -490 | -163 |
 
 **Best measured action per situation** (players up or down | objective | gold). Used as the app's answer only when it is clear: 100+ moments, 150+ gold better than everything else, and at least 2 standard errors (unlikely to be chance).
